@@ -39,7 +39,7 @@
             // 
             // buttonApagar
             // 
-            this.buttonApagar.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonApagar.BackColor = System.Drawing.Color.Azure;
             this.buttonApagar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonApagar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonApagar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -55,7 +55,7 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonEditar.BackColor = System.Drawing.Color.Azure;
             this.buttonEditar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEditar.ForeColor = System.Drawing.SystemColors.WindowText;
             this.buttonEditar.Location = new System.Drawing.Point(93, 12);
@@ -68,7 +68,7 @@
             // 
             // Cadastrar
             // 
-            this.Cadastrar.BackColor = System.Drawing.Color.SkyBlue;
+            this.Cadastrar.BackColor = System.Drawing.Color.Azure;
             this.Cadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Cadastrar.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Cadastrar.Location = new System.Drawing.Point(174, 12);
@@ -83,7 +83,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,

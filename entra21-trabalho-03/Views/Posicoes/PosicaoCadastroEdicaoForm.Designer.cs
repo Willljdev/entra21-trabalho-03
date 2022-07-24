@@ -37,16 +37,16 @@
             // labelPosicao
             // 
             this.labelPosicao.AutoSize = true;
-            this.labelPosicao.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelPosicao.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPosicao.Location = new System.Drawing.Point(12, 9);
             this.labelPosicao.Name = "labelPosicao";
-            this.labelPosicao.Size = new System.Drawing.Size(73, 19);
+            this.labelPosicao.Size = new System.Drawing.Size(65, 18);
             this.labelPosicao.TabIndex = 0;
             this.labelPosicao.Text = "Posição";
             // 
             // textBoxPosicao
             // 
-            this.textBoxPosicao.BackColor = System.Drawing.Color.SkyBlue;
+            this.textBoxPosicao.BackColor = System.Drawing.Color.Azure;
             this.textBoxPosicao.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxPosicao.Location = new System.Drawing.Point(12, 31);
             this.textBoxPosicao.Name = "textBoxPosicao";
@@ -55,7 +55,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonSalvar.BackColor = System.Drawing.Color.Azure;
             this.buttonSalvar.Location = new System.Drawing.Point(153, 60);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 34);
@@ -66,7 +66,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonCancelar.BackColor = System.Drawing.Color.Azure;
             this.buttonCancelar.ForeColor = System.Drawing.SystemColors.WindowText;
             this.buttonCancelar.Location = new System.Drawing.Point(72, 60);
             this.buttonCancelar.Name = "buttonCancelar";
