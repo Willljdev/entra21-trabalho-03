@@ -9,6 +9,12 @@ CREATE TABLE paises(
 	continente VARCHAR(10)
 );
 
+CREATE TABLE clubes(
+	id INTEGER PRIMARY KEY IDENTITY(1,1),
+	nome VARCHAR(72),
+	cidade_sede VARCHAR(60),
+);
+
 CREATE TABLE jogadores(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),
 
@@ -33,16 +39,6 @@ CREATE TABLE competicoes(
 	data_termino DATETIME2
 );
 
-CREATE TABLE clubes(
-	id INTEGER PRIMARY KEY IDENTITY(1,1),
-
-	id_competicao INTEGER,
-
-	nome VARCHAR(72),
-	cidade_sede VARCHAR(60),
-
-	FOREIGN KEY (id_competicao) REFERENCES competicoes(id)
-);
 
 CREATE TABLE tecnicos(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),

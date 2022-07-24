@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using entra21_trabalho_03.DataBase;
 using entra21_trabalho_03.Models;
 
@@ -15,7 +10,7 @@ namespace entra21_trabalho_03.Services
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
-            
+
             comando.CommandText = "DELETE FROM posicoes WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
 
@@ -52,7 +47,7 @@ namespace entra21_trabalho_03.Services
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
-            
+
             comando.CommandText = "SELECT id, nome FROM posicoes WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
 
@@ -87,7 +82,7 @@ namespace entra21_trabalho_03.Services
             for (var i = 0; i < tabelaMemoria.Rows.Count; i++)
             {
                 var linha = tabelaMemoria.Rows[i];
-                
+
                 var posicao = new Posicao();
                 posicao.Id = Convert.ToInt32(linha["id"].ToString());
                 posicao.Nome = linha["nome"].ToString();

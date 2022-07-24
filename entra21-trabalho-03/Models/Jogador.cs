@@ -7,5 +7,6 @@
         public int Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
         public Posicao Posicao { get; set; }
+        public Clube Clube { get; set; }
     }
 }
