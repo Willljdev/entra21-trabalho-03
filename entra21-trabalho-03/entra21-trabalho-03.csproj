@@ -28,4 +28,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="PaisesCompeticoes\Views\" />
+    <Folder Include="PaisesCompeticoes\Services\" />
+  </ItemGroup>
+
 </Project>

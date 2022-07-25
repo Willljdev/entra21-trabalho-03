@@ -1,0 +1,12 @@
+﻿CREATE TABLE paises(
+id INTEGER PRIMARY KEY IDENTITY(1,1),
+nome VARCHAR(30),
+data_inicio DATETIME2,
+data_termino DATETIME2
+
+FOREIGN KEY(id_paises) REFERENCES paises(id));
+
+CREATE TABLE competicoes(
+id INTEGER PRIMARY KEY IDENTITY(1,1),
+nome VARCHAR(30),
+continente VARCHAR(30));
