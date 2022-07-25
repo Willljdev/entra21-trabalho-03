@@ -25,6 +25,15 @@ namespace entra21_trabalho_03.Views.Posicoes
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             var nome = textBoxPosicao.Text.Trim();
+
+            if (nome.Length < 5 || nome.Length > 50)
+            {
+                MessageBox.Show("Digite uma posição que exista");
+                textBoxPosicao.ResetText();
+                textBoxPosicao.Focus();
+                return;
+            }
+
             var posicao = new Posicao();
             posicao.Nome = nome;
 

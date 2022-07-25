@@ -11,7 +11,6 @@ namespace entra21_trabalho_03.DataBase
             var caminhoCompleto = Directory.GetCurrentDirectory().Substring(0, AppContext.BaseDirectory.LastIndexOf("\\bin"));
             conexao.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={caminhoCompleto}\DataBase\{nomeBanco}.mdf;Integrated Security=True";
             conexao.Open();
-            var comando = conexao.CreateCommand();
             return conexao;
         }
     }
