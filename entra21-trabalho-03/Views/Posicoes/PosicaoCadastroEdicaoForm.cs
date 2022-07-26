@@ -52,5 +52,10 @@ namespace entra21_trabalho_03.Views.Posicoes
             MessageBox.Show("Posição alterada com sucesso");
             Close();
         }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

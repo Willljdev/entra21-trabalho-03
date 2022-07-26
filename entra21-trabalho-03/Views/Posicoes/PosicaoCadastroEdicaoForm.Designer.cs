@@ -32,6 +32,7 @@
             this.textBoxPosicao = new System.Windows.Forms.TextBox();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelPosicao
@@ -50,13 +51,13 @@
             this.textBoxPosicao.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxPosicao.Location = new System.Drawing.Point(12, 31);
             this.textBoxPosicao.Name = "textBoxPosicao";
-            this.textBoxPosicao.Size = new System.Drawing.Size(216, 26);
+            this.textBoxPosicao.Size = new System.Drawing.Size(241, 26);
             this.textBoxPosicao.TabIndex = 1;
             // 
             // buttonSalvar
             // 
             this.buttonSalvar.BackColor = System.Drawing.Color.Azure;
-            this.buttonSalvar.Location = new System.Drawing.Point(153, 60);
+            this.buttonSalvar.Location = new System.Drawing.Point(178, 60);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 34);
             this.buttonSalvar.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             this.buttonCancelar.BackColor = System.Drawing.Color.Azure;
             this.buttonCancelar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonCancelar.Location = new System.Drawing.Point(72, 60);
+            this.buttonCancelar.Location = new System.Drawing.Point(12, 60);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 34);
             this.buttonCancelar.TabIndex = 3;
@@ -76,12 +77,24 @@
             this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
+            // buttonMenu
+            // 
+            this.buttonMenu.BackColor = System.Drawing.Color.Azure;
+            this.buttonMenu.Location = new System.Drawing.Point(97, 60);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(75, 34);
+            this.buttonMenu.TabIndex = 4;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = false;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
             // PosicaoCadastroEdicaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(240, 102);
+            this.ClientSize = new System.Drawing.Size(265, 102);
+            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.textBoxPosicao);
@@ -100,5 +113,6 @@
         private TextBox textBoxPosicao;
         private Button buttonSalvar;
         private Button buttonCancelar;
+        private Button buttonMenu;
     }
 }
