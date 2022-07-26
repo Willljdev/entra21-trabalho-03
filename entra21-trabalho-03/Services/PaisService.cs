@@ -1,10 +1,11 @@
 ﻿using entra21_trabalho_03.DataBase;
 using entra21_trabalho_03.PaisesCompeticoes.Models;
+using entra21_trabalho_03.Services;
 using System.Data;
 
 namespace entra21_trabalho_03.PaisesCompeticoes.Services
 {
-    internal class PaisesService : IPaisService
+    internal class PaisService : IPaisService
     {
         public void Apagar(int id)
         {
@@ -18,7 +19,7 @@ namespace entra21_trabalho_03.PaisesCompeticoes.Services
             conexao.Close();
         }
 
-        public void Cadastrar(Paises pais)
+        public void Cadastrar(Pais pais)
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
@@ -31,7 +32,7 @@ namespace entra21_trabalho_03.PaisesCompeticoes.Services
             conexao.Close();
         }
 
-        public void Editar(Paises pais)
+        public void Editar(Pais pais)
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
@@ -45,7 +46,7 @@ namespace entra21_trabalho_03.PaisesCompeticoes.Services
             conexao.Close();
         }
 
-        public Paises ObeterPorId(int id)
+        public Pais ObeterPorId(int id)
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
@@ -60,7 +61,7 @@ namespace entra21_trabalho_03.PaisesCompeticoes.Services
                 return null;
 
             var registro = tabelaEmMemoria.Rows[0];
-            var pais = new Paises();
+            var pais = new Pais();
 
             pais.Id = Convert.ToInt32(registro["id"]);
             pais.Nome = registro["nome"].ToString();
@@ -71,7 +72,7 @@ namespace entra21_trabalho_03.PaisesCompeticoes.Services
 
         }
 
-        public List<Paises> ObterTodos(int id)
+        public List<Pais> ObterTodos(int id)
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
@@ -81,12 +82,12 @@ namespace entra21_trabalho_03.PaisesCompeticoes.Services
             var tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
 
-            var paises = new List<Paises>();
+            var paises = new List<Pais>();
 
             for(var i = 0; i < comando.Parameters.Count; i++)
             {
                 var linha = tabelaEmMemoria.Rows[i];
-                var pais = new Paises();
+                var pais = new Pais();
                 pais.Id = Convert.ToInt32(linha["id"].ToString());
                 pais.Nome = linha["nome"].ToString();
                 pais.Continente = linha["continente"].ToString();

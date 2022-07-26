@@ -1,10 +1,10 @@
 ﻿namespace entra21_trabalho_03.PaisesCompeticoes.Models
 {
-    internal class Competicoes
+    internal class Competicao
     {
-        public int id { get; set; }
-        public string nome { get; set; }
-        public DateTime data_inicio { get; set; }
-        public DateTime data_termino { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public DateTime Data_inicio { get; set; }
+        public DateTime Data_termino { get; set; }
     }
 }

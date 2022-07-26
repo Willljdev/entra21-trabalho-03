@@ -4,10 +4,14 @@ namespace entra21_trabalho_03.Services
 {
     internal interface IPaisService
     {
-        List<Paises> ObterTodos();
-        Paises ObterPorId(int id);
-        void Cadastrar(Paises clube);
-        void Editar(Paises clube);
-        void Apagar(int id);
+        public void Apagar(int id);
+
+        public void Cadastrar(Pais pais);
+
+        public void Editar(Pais pais);
+
+        public Pais ObeterPorId(int id);
+
+        public List<Pais> ObterTodos(int id);
     }
 }
