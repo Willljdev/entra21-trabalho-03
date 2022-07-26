@@ -55,6 +55,9 @@ namespace entra21_trabalho_03.Views.Jogadores
             var cpf = maskedTextBoxCpf.Text.Trim();
             var dataNascimento = Convert.ToDateTime(dateTimePickerDataNascimento.Text);
 
+            if (ValidarDados() == false)
+                return;
+
             var jogador = new Jogador();
             jogador.Nome = nome;
             jogador.Posicao = posicao;
@@ -84,6 +87,7 @@ namespace entra21_trabalho_03.Views.Jogadores
             if (textBoxNome.Text.Length < 2 || textBoxNome.Text.Length > 50)
             {
                 MessageBox.Show("O nome do jogador deve conter entre 2 e 50 caracteres");
+                textBoxNome.ResetText();
                 textBoxNome.Focus();
                 return false;
             }
@@ -99,6 +103,13 @@ namespace entra21_trabalho_03.Views.Jogadores
                 MessageBox.Show("Selecione uma posição para o jogador");
                 comboBoxPosicao.DroppedDown = true;
                 return false;
+            }
+
+            if(maskedTextBoxCpf.Text.Length != 11)
+            {
+                MessageBox.Show("Digite um CPF válido");
+                maskedTextBoxCpf.ResetText();
+                maskedTextBoxCpf.Focus();
             }
             return true;
 
