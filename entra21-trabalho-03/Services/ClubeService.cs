@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace entra21_trabalho_03.Services
 {
-    internal class NomeService
+    internal class ClubeService
     {
     }
 }
