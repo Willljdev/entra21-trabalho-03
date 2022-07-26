@@ -17,6 +17,7 @@ namespace entra21_trabalho_03.Views.Jogadores
 
             //PreencherComboBoxClube();
             PreencherComboBoxPosicao();
+
             _idEditar = -1;
         }
 
