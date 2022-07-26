@@ -28,4 +28,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Clubes\" />
+  </ItemGroup>
+
 </Project>
