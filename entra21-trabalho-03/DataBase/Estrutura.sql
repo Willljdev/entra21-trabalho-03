@@ -37,6 +37,8 @@ CREATE TABLE competicoes(
 	nome VARCHAR(30),
 	data_inicio DATETIME2,
 	data_termino DATETIME2
+
+	FOREIGN KEY (id_pais) REFERENCES paises(id)
 );
 
 
