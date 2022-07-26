@@ -48,6 +48,7 @@ CREATE TABLE tecnicos(
 	nome VARCHAR(50),
 	cpf VARCHAR(14),
 	data_nascimento DATETIME2,
+	cidade_natal VARCHAR(60)
 
 	FOREIGN KEY (id_clube) REFERENCES clubes(id)
 );

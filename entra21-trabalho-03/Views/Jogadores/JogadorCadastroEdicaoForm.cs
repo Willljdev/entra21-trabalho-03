@@ -20,6 +20,33 @@ namespace entra21_trabalho_03.Views.Jogadores
             _idEditar = -1;
         }
 
+        public JogadorCadastroEdicaoForm(Jogador jogador) : this()
+        {
+            _idEditar = jogador.Id;
+            textBoxNome.Text = jogador.Nome;
+            maskedTextBoxCpf.Text = jogador.Cpf;
+            dateTimePickerDataNascimento.Value = jogador.DataNascimento;
+
+            for (var i = 0; i < comboBoxClube.Items.Count; i++)
+            {
+                var clubePercorrido = comboBoxClube.Items[i] as Clube;
+
+                if (clubePercorrido.Id == jogador.Clube.Id)
+                {
+                    comboBoxClube.SelectedItem = clubePercorrido;
+                    break;
+                }
+            }
+
+            for (var i = 0; i < comboBoxPosicao.Items.Count; i++)
+            {
+                var posicaoPercorrida = comboBoxPosicao.Items[i] as Posicao;
+
+                if (posicaoPercorrida.Id == jogador.Posicao.Id)
+                    comboBoxPosicao.SelectedItem = posicaoPercorrida;
+            }
+        }
+
         //private void PreencherComboBoxClube()
         //{
         //    var clubes = _clubeService.ObterTodos();
@@ -105,14 +132,13 @@ namespace entra21_trabalho_03.Views.Jogadores
                 return false;
             }
 
-            if(maskedTextBoxCpf.Text.Length != 11)
+            if (maskedTextBoxCpf.Text.Length != 11)
             {
                 MessageBox.Show("Digite um CPF válido");
                 maskedTextBoxCpf.ResetText();
                 maskedTextBoxCpf.Focus();
             }
             return true;
-
         }
     }
 }
