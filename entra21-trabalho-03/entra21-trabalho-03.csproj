@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Imagens\" />
+    <Folder Include="Views\Clubes\" />
   </ItemGroup>
 
 </Project>
