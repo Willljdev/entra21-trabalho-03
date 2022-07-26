@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public int Cpf { get; set; }
+        public string Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
         public Posicao Posicao { get; set; }
         public Clube Clube { get; set; }

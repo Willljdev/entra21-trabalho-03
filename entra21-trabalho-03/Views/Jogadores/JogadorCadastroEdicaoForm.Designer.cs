@@ -35,11 +35,11 @@
             this.labelDataNascimento = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.comboBoxPosicao = new System.Windows.Forms.ComboBox();
-            this.comboBoxClubes = new System.Windows.Forms.ComboBox();
+            this.comboBoxClube = new System.Windows.Forms.ComboBox();
             this.dateTimePickerDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
-            this.textBoxCpf = new System.Windows.Forms.TextBox();
+            this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -112,17 +112,16 @@
             this.comboBoxPosicao.Size = new System.Drawing.Size(230, 24);
             this.comboBoxPosicao.TabIndex = 10;
             // 
-            // comboBoxClubes
+            // comboBoxClube
             // 
-            this.comboBoxClubes.BackColor = System.Drawing.Color.Azure;
-            this.comboBoxClubes.Cursor = System.Windows.Forms.Cursors.No;
-            this.comboBoxClubes.DisplayMember = "nome";
-            this.comboBoxClubes.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.comboBoxClubes.FormattingEnabled = true;
-            this.comboBoxClubes.Location = new System.Drawing.Point(12, 115);
-            this.comboBoxClubes.Name = "comboBoxClubes";
-            this.comboBoxClubes.Size = new System.Drawing.Size(230, 24);
-            this.comboBoxClubes.TabIndex = 11;
+            this.comboBoxClube.BackColor = System.Drawing.Color.Azure;
+            this.comboBoxClube.DisplayMember = "nome";
+            this.comboBoxClube.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxClube.FormattingEnabled = true;
+            this.comboBoxClube.Location = new System.Drawing.Point(12, 115);
+            this.comboBoxClube.Name = "comboBoxClube";
+            this.comboBoxClube.Size = new System.Drawing.Size(230, 24);
+            this.comboBoxClube.TabIndex = 11;
             // 
             // dateTimePickerDataNascimento
             // 
@@ -161,13 +160,14 @@
             this.buttonSalvar.UseVisualStyleBackColor = false;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // textBoxCpf
+            // maskedTextBoxCpf
             // 
-            this.textBoxCpf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxCpf.Location = new System.Drawing.Point(12, 162);
-            this.textBoxCpf.Name = "textBoxCpf";
-            this.textBoxCpf.Size = new System.Drawing.Size(230, 22);
-            this.textBoxCpf.TabIndex = 16;
+            this.maskedTextBoxCpf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(12, 162);
+            this.maskedTextBoxCpf.Mask = "000.000.000-00";
+            this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(230, 22);
+            this.maskedTextBoxCpf.TabIndex = 16;
             // 
             // JogadorCadastroEdicaoForm
             // 
@@ -175,11 +175,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(254, 271);
-            this.Controls.Add(this.textBoxCpf);
+            this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.dateTimePickerDataNascimento);
-            this.Controls.Add(this.comboBoxClubes);
+            this.Controls.Add(this.comboBoxClube);
             this.Controls.Add(this.comboBoxPosicao);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.labelDataNascimento);
@@ -203,10 +203,10 @@
         private Label labelDataNascimento;
         private TextBox textBoxNome;
         private ComboBox comboBoxPosicao;
-        private ComboBox comboBoxClubes;
+        private ComboBox comboBoxClube;
         private DateTimePicker dateTimePickerDataNascimento;
         private Button buttonCancelar;
         private Button buttonSalvar;
-        private TextBox textBoxCpf;
+        private MaskedTextBox maskedTextBoxCpf;
     }
 }

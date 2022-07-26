@@ -8,7 +8,10 @@ namespace entra21_trabalho_03.Views.Posicoes
         public PosicaoListagemForm()
         {
             InitializeComponent();
+
             posicaoService = new PosicaoService();
+
+            AtualizarDataGrideView();
         }
 
         private void AtualizarDataGrideView()
@@ -37,17 +40,8 @@ namespace entra21_trabalho_03.Views.Posicoes
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione uma posição para alterar");
+            if (ValidarDados() == false)
                 return;
-            }
-
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("Cadastre uma posição");
-                return;
-            }
 
             var linha = dataGridView1.SelectedRows[0];
 
@@ -63,11 +57,52 @@ namespace entra21_trabalho_03.Views.Posicoes
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
+            if (ValidarDados() == false)
+                return;
+
             var id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-            posicaoService.Apagar(id);
 
             AtualizarDataGrideView();
-            MessageBox.Show("Posição apagada com sucesso");
+
+            var apagar = MessageBox.Show("Deseja realmente apagar?", "ATENÇÃO !!!", MessageBoxButtons.YesNo);
+            
+            if (apagar == DialogResult.Yes)
+            {
+                posicaoService.Apagar(id);
+                MessageBox.Show("Posição apagada com sucesso");
+                AtualizarDataGrideView();
+            }
+            else if (apagar != DialogResult.Yes)
+                return;
+        }
+
+        private bool ValidarDados()
+        {
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhuma posição cadastrada");
+                return false;
+            }
+
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma posição para apagar");
+                return false;
+            }
+
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma posição para alterar");
+                return false;
+            }
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Cadastre uma posição");
+                return false;
+            }
+            return true;
         }
     }
 }

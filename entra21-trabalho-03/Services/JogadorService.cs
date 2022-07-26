@@ -24,12 +24,12 @@ namespace entra21_trabalho_03.Services
             var comando = conexao.CreateCommand();
 
             comando.CommandText =
-            @"INSERT INTO jogadores (id_posicao, id_clube, nome, cpf, data_nascimento)
-            VALUES (@ID_POSICAO, @ID_CLUBE, @NOME, @CPF, @DATA_NASCIMENTO);";
+            @"INSERT INTO jogadores (nome, id_posicao, id_clube, cpf, data_nascimento)
+            VALUES (@NOME, @ID_POSICAO, @ID_CLUBE, @CPF, @DATA_NASCIMENTO);";
 
+            comando.Parameters.AddWithValue("@NOME", jogador.Nome);
             comando.Parameters.AddWithValue("@ID_POSICAO", jogador.Posicao.Id);
             comando.Parameters.AddWithValue("@ID_CLUBE", jogador.Clube.Id);
-            comando.Parameters.AddWithValue("@NOME", jogador.Nome);
             comando.Parameters.AddWithValue("@CPF", jogador.Cpf);
             comando.Parameters.AddWithValue("@DATA_NASCIMENTO", jogador.DataNascimento);
 
@@ -122,7 +122,7 @@ INNER JOIN clubes AS c ON(j.id_clube = c.id)";
 
                 jogador.Id = Convert.ToInt32(registro["id"]);
                 jogador.Nome = registro["nome"].ToString();
-                jogador.Cpf = Convert.ToInt32(registro["cpf"]);
+                jogador.Cpf = registro["cpf"].ToString();
                 jogador.DataNascimento = Convert.ToDateTime(registro["data_nascimento"]);
 
                 jogador.Posicao = new Posicao();
