@@ -109,8 +109,18 @@ INNER JOIN clubes AS c ON(c.id_clube = c.id)";
                 var tecnico = new Tecnico();
                 tecnico.Id = Convert.ToInt32(registro["id"]);
                 tecnico.Nome = registro["nome"].ToString();
+                tecnico.Cpf = registro["cpf"].ToString();
+                tecnico.DataNascimento = Convert.ToDateTime(registro["data_nascimento"]);
+                tecnico.CidadeNatal = registro["cidade_natal"].ToString();
 
+                tecnico.Clube = new Clube();
+                tecnico.Clube.Id = Convert.ToInt32(registro["clube_id"]);
+                tecnico.Clube.Nome = registro["clube_nome"].ToString();
+                tecnico.Clube.CidadeSede = registro["clube_cidade_sede"].ToString();
+
+                tecnicos.Add(tecnico);
             }
+            return tecnicos;
         }
     }
 }
