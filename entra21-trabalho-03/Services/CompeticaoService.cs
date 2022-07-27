@@ -49,30 +49,59 @@ namespace entra21_trabalho_03.Services
             conexao.Close();
         }
 
-        //public Competicao ObterPorId(int id)
-        //{
-        //    var conexao = new Conexao().Conectar();
-        //    var comando = conexao.CreateCommand();
+        public Competicao ObterPorId(int id)
+        {
+            var conexao = new Conexao().Conectar();
+            var comando = conexao.CreateCommand();
 
-        //    comando.CommandText = "SELECT nome, data_inicio, data_termino FROM competicoes WHERE id = @ID";
-        //    comando.Parameters.AddWithValue("@ID", id);
+            comando.CommandText = "SELECT nome, data_inicio, data_termino FROM competicoes WHERE id = @ID";
+            comando.Parameters.AddWithValue("@id", id);
 
-        //    var tabelaEmMemoria = new DataTable();
-        //    tabelaEmMemoria.Load(comando.ExecuteReader());
+            var tabelaemmemoria = new DataTable();
+            tabelaemmemoria.Load(comando.ExecuteReader());
 
-        //    if (tabelaEmMemoria.Rows.Count == 0)
-        //        return null;
+            if (tabelaemmemoria.Rows.Count == 0)
+                return null;
 
-        //    var registro = tabelaEmMemoria.Rows[0];
-        //    var competicoes = new Competicao();
-        //    competicoes.Id = Convert.ToInt32(registro["id"]);
+            var registro = tabelaemmemoria.Rows[0];
+            var competicoes = new Competicao();
+            competicoes.Id = Convert.ToInt32(registro["id"]);
 
-        //    competicoes.Pais = new Pais();
-        //}
+            return competicoes;
 
-        //public List<Competicao> ObterTodos()
-        //{
-        //    var lista = new List<Competicao>();
-        //}
+            //Implementar
+        }
+
+        public List<Competicao> ObterTodos()
+        {
+            var conexao = new Conexao().Conectar();
+            var comando = conexao.CreateCommand();
+            
+            //Arrumar
+            comando.CommandText = @"SELECT
+j.id AS 'id'
+j.nome AS 'nome'
+j.data_inicio AS 'data_inicio'
+j.data_termino AS 'data_termino'";
+
+            var tabelaEmMemoria = new DataTable();
+            tabelaEmMemoria.Load(comando.ExecuteReader());
+
+            var competicoes = new List<Competicao>();
+            for(var i = 0; i < tabelaEmMemoria.Rows.Count; i++)
+            {
+                var registro = tabelaEmMemoria.Rows[i];
+                var competicao = new Competicao();
+
+                competicao.Id = Convert.ToInt32(registro["id"]);
+                competicao.Nome = registro["nome"].ToString();
+                competicao.Data_inicio = Convert.ToDateTime(registro["data_inicio"]);
+                competicao.Data_termino = Convert.ToDateTime(registro["data_termino"]);
+
+                competicoes.Add(competicao);
+            }
+            return competicoes;
+
+        }
     }
 }

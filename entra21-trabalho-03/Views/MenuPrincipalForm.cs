@@ -1,5 +1,6 @@
 ﻿using entra21_trabalho_03.Views.Clubes;
 using entra21_trabalho_03.Views.Jogadores;
+using entra21_trabalho_03.Views.Paises;
 using entra21_trabalho_03.Views.Posicoes;
 using entra21_trabalho_03.Views.Técnicos;
 
@@ -21,7 +22,8 @@ namespace entra21_trabalho_03.Views
 
         private void buttonPaises_Click(object sender, EventArgs e)
         {
-            
+            var paises = new PaisCadastroForm();
+            paises.ShowDialog();
         }
 
         private void buttonClubes_Click(object sender, EventArgs e)
