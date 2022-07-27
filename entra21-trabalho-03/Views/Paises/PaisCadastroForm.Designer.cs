@@ -58,7 +58,7 @@
             // labelContinente
             // 
             this.labelContinente.AutoSize = true;
-            this.labelContinente.Location = new System.Drawing.Point(12, 75);
+            this.labelContinente.Location = new System.Drawing.Point(12, 66);
             this.labelContinente.Name = "labelContinente";
             this.labelContinente.Size = new System.Drawing.Size(66, 15);
             this.labelContinente.TabIndex = 2;
@@ -67,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 131);
+            this.label2.Location = new System.Drawing.Point(12, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 15);
             this.label2.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             // textBoxContinente
             // 
-            this.textBoxContinente.Location = new System.Drawing.Point(12, 93);
+            this.textBoxContinente.Location = new System.Drawing.Point(12, 84);
             this.textBoxContinente.Name = "textBoxContinente";
             this.textBoxContinente.Size = new System.Drawing.Size(121, 23);
             this.textBoxContinente.TabIndex = 4;
@@ -83,14 +83,14 @@
             // comboBoxEstado
             // 
             this.comboBoxEstado.FormattingEnabled = true;
-            this.comboBoxEstado.Location = new System.Drawing.Point(12, 149);
+            this.comboBoxEstado.Location = new System.Drawing.Point(12, 137);
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(121, 23);
             this.comboBoxEstado.TabIndex = 5;
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(165, 199);
+            this.buttonSalvar.Location = new System.Drawing.Point(165, 180);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 6;
@@ -100,7 +100,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(3, 199);
+            this.buttonCancelar.Location = new System.Drawing.Point(3, 180);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 7;
@@ -110,7 +110,7 @@
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(84, 199);
+            this.buttonMenu.Location = new System.Drawing.Point(84, 180);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(75, 23);
             this.buttonMenu.TabIndex = 8;

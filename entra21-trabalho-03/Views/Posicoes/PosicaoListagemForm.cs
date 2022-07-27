@@ -104,5 +104,10 @@ namespace entra21_trabalho_03.Views.Posicoes
             }
             return true;
         }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

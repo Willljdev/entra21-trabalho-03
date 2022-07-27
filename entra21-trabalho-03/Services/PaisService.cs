@@ -72,7 +72,7 @@ namespace entra21_trabalho_03.PaisesCompeticoes.Services
 
         }
 
-        public List<Pais> ObterTodos(int id)
+        public List<Pais> ObterTodos()
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();

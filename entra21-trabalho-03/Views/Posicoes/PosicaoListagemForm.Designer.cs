@@ -32,9 +32,9 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.Cadastrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonMenu = new System.Windows.Forms.Button();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPosicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,17 +98,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(273, 296);
             this.dataGridView1.TabIndex = 3;
             // 
-            // buttonMenu
-            // 
-            this.buttonMenu.BackColor = System.Drawing.Color.Azure;
-            this.buttonMenu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(142, 13);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(62, 33);
-            this.buttonMenu.TabIndex = 4;
-            this.buttonMenu.Text = "Menu";
-            this.buttonMenu.UseVisualStyleBackColor = false;
-            // 
             // ColumnId
             // 
             this.ColumnId.HeaderText = "Código";
@@ -120,6 +109,18 @@
             this.ColumnPosicao.HeaderText = "Posição do jogador";
             this.ColumnPosicao.Name = "ColumnPosicao";
             this.ColumnPosicao.ReadOnly = true;
+            // 
+            // buttonMenu
+            // 
+            this.buttonMenu.BackColor = System.Drawing.Color.Azure;
+            this.buttonMenu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonMenu.Location = new System.Drawing.Point(142, 13);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(62, 33);
+            this.buttonMenu.TabIndex = 4;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = false;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // PosicaoListagemForm
             // 
