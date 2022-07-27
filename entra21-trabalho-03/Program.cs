@@ -1,4 +1,5 @@
 using entra21_trabalho_03.Views;
+using entra21_trabalho_03.Views.Jogadores;
 
 namespace entra21_trabalho_03
 {
@@ -13,7 +14,7 @@ namespace entra21_trabalho_03
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MenuPrincipalForm());
+            Application.Run(new JogadorCadastroEdicaoForm());
         }
     }
 }

@@ -118,6 +118,8 @@
             this.comboBoxClube.DisplayMember = "nome";
             this.comboBoxClube.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxClube.FormattingEnabled = true;
+            this.comboBoxClube.Items.AddRange(new object[] {
+            "Flamengo"});
             this.comboBoxClube.Location = new System.Drawing.Point(12, 115);
             this.comboBoxClube.Name = "comboBoxClube";
             this.comboBoxClube.Size = new System.Drawing.Size(230, 24);
