@@ -88,7 +88,29 @@ namespace entra21_trabalho_03.Services
 
         public List<Tecnico> ObterTodos()
         {
-            throw new NotImplementedException();
+            var conexao = new Conexao().Conectar();
+            var comando = conexao.CreateCommand();
+            comando.CommandText = @"SELECT
+t.id AS 'id',
+t.nome AS 'nome',
+c.id AS 'id',
+c.nome AS 'nome',
+FROM tecnicos AS t
+INNER JOIN clubes AS c ON(c.id_clube = c.id)";
+
+            var tabelaEmMemoria = new DataTable();
+            tabelaEmMemoria.Load(comando.ExecuteReader());
+
+            var tecnicos = new List<Tecnico>();
+
+            for(int i =0; i < tabelaEmMemoria.Rows.Count; i++)
+            {
+                var registro = tabelaEmMemoria.Rows[i];
+                var tecnico = new Tecnico();
+                tecnico.Id = Convert.ToInt32(registro["id"]);
+                tecnico.Nome = registro["nome"].ToString();
+
+            }
         }
     }
 }
