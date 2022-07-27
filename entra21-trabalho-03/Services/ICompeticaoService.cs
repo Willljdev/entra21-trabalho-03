@@ -4,15 +4,15 @@ namespace entra21_trabalho_03.Services
 {
     internal interface ICompeticaoService
     {
-        public void Apagar(int id);
+         void Apagar(int id);
 
-        public void Cadastrar(Pais jogador);
+         void Cadastrar(Competicao competicao);
 
-        public void Editar(Pais jogador);
+         void Editar(Competicao competicao);
 
-        public Pais ObterPorId(int id);
+         Pais ObterPorId(int id);
 
-        public List<Pais> ObterTodos();
+         List<Competicao> ObterTodos();
 
 
     }
