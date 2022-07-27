@@ -28,8 +28,8 @@ namespace entra21_trabalho_03.Views.Clubes
             var cidadeSede = textBoxCidadeSede.Text.Trim();
             var dataFundacao = Convert.ToDateTime(dateTimePickerAnoFundacao.Text);
 
-            // if (ValidarDados() == false)
-            //    return;
+            if (ValidarDados() == false)
+                return;
             var clube = new Clube();
             clube.Nome = nome;
             clube.CidadeSede = cidadeSede;
@@ -50,8 +50,30 @@ namespace entra21_trabalho_03.Views.Clubes
                 MessageBox.Show("Clube editado com sucesso!");
                 Close();
             }
+        }
+        private bool ValidarDados()
+        {
+            if(textBoxNomeClube.Text.Length < 3 || textBoxNomeClube.Text.Length > 15)
+            {
+                MessageBox.Show("O nome do clube deve de 3 à 15 caracteres!");
+                textBoxNomeClube.ResetText();
+                textBoxNomeClube.Focus();
+                return false;
+            }
 
+            if(textBoxCidadeSede.Text.Length < 3 || textBoxCidadeSede.Text.Length > 20)
+            {
+                MessageBox.Show("O nome da cidade deve de 3 à 20 caracteres!");
+                textBoxNomeClube.ResetText();
+                textBoxNomeClube.Focus();
+                return false;
+            }
+            return true;
+        }
 
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
