@@ -79,7 +79,7 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT id, nome, cidade_sede";
+            comando.CommandText = "SELECT id, nome, cidade_sede FROM clubes";
 
             var tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
