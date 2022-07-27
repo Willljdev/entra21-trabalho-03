@@ -1,6 +1,6 @@
 ﻿namespace entra21_trabalho_03.PaisesCompeticoes.Models
 {
-    internal class Pais
+    public class Pais
     {
         public int Id { get; set; }
 

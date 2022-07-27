@@ -1,6 +1,6 @@
 ﻿namespace entra21_trabalho_03.PaisesCompeticoes.Models
 {
-    internal class Competicao
+    public class Competicao
     {
         public int Id { get; set; }
         public string Nome { get; set; }
