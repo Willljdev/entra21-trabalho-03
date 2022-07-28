@@ -134,7 +134,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Name = "PaisCadastroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PaisCadastroForm";
+            this.Text = "Cadastro de paises";
             this.ResumeLayout(false);
             this.PerformLayout();
 

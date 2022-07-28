@@ -73,6 +73,7 @@
             this.buttonCadastrar.TabIndex = 3;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // buttonMenu
             // 
@@ -95,7 +96,7 @@
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PaisListagemForm";
-            this.Text = "PaisListagemForm";
+            this.Text = "Listagem de paises";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

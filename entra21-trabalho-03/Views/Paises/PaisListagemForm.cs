@@ -65,6 +65,28 @@ namespace entra21_trabalho_03.Views.Paises
                 MessageBox.Show("Selecione um pais para ser editado!!");
                 return;
             }
+
+            if(dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Cadastra um pais primeiro poh!!");
+                return;
+            }
+
+            var linha = dataGridView1.SelectedRows[0];
+            var id = Convert.ToInt32(linha.Cells[0].Value);
+
+            var paises = _paisService.ObeterPorId(id);
+            var paisForm = new PaisCadastroForm(paises);
+            paisForm.ShowDialog();
+
+            PreencherDataGridView();
+        }
+
+        private void buttonCadastrar_Click(object sender, EventArgs e)
+        {
+            var paisesForm = new PaisCadastroForm();
+            paisesForm.ShowDialog();
+            PreencherDataGridView();
         }
     }
 }
