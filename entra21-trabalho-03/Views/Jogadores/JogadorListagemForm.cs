@@ -91,5 +91,10 @@ namespace entra21_trabalho_03.Views.Jogadores
         {
             this.Close();
         }
+
+        private void JogadorListagemForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
