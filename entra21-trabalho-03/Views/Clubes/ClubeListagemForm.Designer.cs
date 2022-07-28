@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewListaClubes = new System.Windows.Forms.DataGridView();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDataFundacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,26 +36,26 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaClubes)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewListaClubes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewListaClubes.AllowUserToAddRows = false;
+            this.dataGridViewListaClubes.AllowUserToDeleteRows = false;
+            this.dataGridViewListaClubes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaClubes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCodigo,
             this.ColumnNome,
             this.ColumnDataFundacao,
             this.ColumnCidadeSede});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(558, 312);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewListaClubes.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewListaClubes.Name = "dataGridViewListaClubes";
+            this.dataGridViewListaClubes.ReadOnly = true;
+            this.dataGridViewListaClubes.RowHeadersWidth = 51;
+            this.dataGridViewListaClubes.RowTemplate.Height = 29;
+            this.dataGridViewListaClubes.Size = new System.Drawing.Size(558, 312);
+            this.dataGridViewListaClubes.TabIndex = 0;
             // 
             // ColumnCodigo
             // 
@@ -97,6 +97,7 @@
             this.buttonEditar.TabIndex = 1;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonApagar
             // 
@@ -106,6 +107,7 @@
             this.buttonApagar.TabIndex = 2;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // buttonMenu
             // 
@@ -124,19 +126,19 @@
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewListaClubes);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ClubeListagemForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClubeListagemForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaClubes)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewListaClubes;
         private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnDataFundacao;
