@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 414);
+            this.ClientSize = new System.Drawing.Size(256, 396);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
@@ -134,7 +134,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Name = "PaisCadastroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PaisCadastroForm";
+            this.Text = "Cadastro de paises";
             this.ResumeLayout(false);
             this.PerformLayout();
 
