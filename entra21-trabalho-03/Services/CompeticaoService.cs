@@ -70,6 +70,7 @@ namespace entra21_trabalho_03.Services
             competicoes.Data_inicio = Convert.ToDateTime(registro["data_inicio"]);
             competicoes.Data_termino = Convert.ToDateTime(registro["data_termino"]);
 
+
             comando.Connection.Close();
 
             return competicoes;

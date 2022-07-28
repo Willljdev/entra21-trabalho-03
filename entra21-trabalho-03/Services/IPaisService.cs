@@ -12,6 +12,6 @@ namespace entra21_trabalho_03.Services
 
          Pais ObeterPorId(int id);
 
-         List<Pais> ObterTodos(int id);
+         List<Pais> ObterTodos();
     }
 }

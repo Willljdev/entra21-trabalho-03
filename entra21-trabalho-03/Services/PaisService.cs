@@ -84,7 +84,7 @@ namespace entra21_trabalho_03.PaisesCompeticoes.Services
 
             var paises = new List<Pais>();
 
-            for(var i = 0; i < comando.Parameters.Count; i++)
+            for (var i = 0; i < comando.Parameters.Count; i++)
             {
                 var linha = tabelaEmMemoria.Rows[i];
                 var pais = new Pais();

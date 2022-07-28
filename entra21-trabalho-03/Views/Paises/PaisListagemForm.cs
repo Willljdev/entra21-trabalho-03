@@ -17,7 +17,7 @@ namespace entra21_trabalho_03.Views.Paises
             this.Close();
         }
 
-        public void PreencherDataGridView()
+        private void PreencherDataGridView()
         {
             var pais = _paisService.ObterTodos();
             dataGridView1.Rows.Clear();
