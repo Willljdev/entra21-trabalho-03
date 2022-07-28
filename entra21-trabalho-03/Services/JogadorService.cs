@@ -18,7 +18,7 @@ namespace entra21_trabalho_03.Services
             conexao.Close();
         }
 
-        public void Cadastrar(Pais jogador)
+        public void Cadastrar(Jogador jogador)
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
@@ -37,7 +37,7 @@ namespace entra21_trabalho_03.Services
             conexao.Close();
         }
 
-        public void Editar(Pais jogador)
+        public void Editar(Jogador jogador)
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
@@ -58,7 +58,7 @@ namespace entra21_trabalho_03.Services
             conexao.Close();
         }
 
-        public Pais ObterPorId(int id)
+        public Jogador ObterPorId(int id)
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
@@ -76,7 +76,7 @@ namespace entra21_trabalho_03.Services
                 return null;
 
             var registro = tabelaMemoria.Rows[0];
-            var jogador = new Pais();
+            var jogador = new Jogador();
             jogador.Id = Convert.ToInt32(registro["id"]);
 
             jogador.Posicao = new Posicao();
@@ -92,7 +92,7 @@ namespace entra21_trabalho_03.Services
 
         }
 
-        public List<Pais> ObterTodos()
+        public List<Jogador> ObterTodos()
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
@@ -114,11 +114,11 @@ INNER JOIN clubes AS c ON(j.id_clube = c.id)";
             var tabelaMemoria = new DataTable();
             tabelaMemoria.Load(comando.ExecuteReader());
 
-            var jogadores = new List<Pais>();
+            var jogadores = new List<Jogador>();
             for (var i = 0; i < tabelaMemoria.Rows.Count; i++)
             {
                 var registro = tabelaMemoria.Rows[i];
-                var jogador = new Pais();
+                var jogador = new Jogador();
 
                 jogador.Id = Convert.ToInt32(registro["id"]);
                 jogador.Nome = registro["nome"].ToString();
