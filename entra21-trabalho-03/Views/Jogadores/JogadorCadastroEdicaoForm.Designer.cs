@@ -40,6 +40,7 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
+            this.buttonMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -154,7 +155,7 @@
             // 
             this.buttonSalvar.BackColor = System.Drawing.Color.Azure;
             this.buttonSalvar.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonSalvar.Location = new System.Drawing.Point(154, 235);
+            this.buttonSalvar.Location = new System.Drawing.Point(195, 235);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(88, 31);
             this.buttonSalvar.TabIndex = 15;
@@ -171,12 +172,25 @@
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(230, 22);
             this.maskedTextBoxCpf.TabIndex = 16;
             // 
+            // buttonMenu
+            // 
+            this.buttonMenu.BackColor = System.Drawing.Color.Azure;
+            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonMenu.Location = new System.Drawing.Point(101, 235);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(88, 31);
+            this.buttonMenu.TabIndex = 17;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = false;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
             // JogadorCadastroEdicaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(254, 271);
+            this.ClientSize = new System.Drawing.Size(335, 310);
+            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
@@ -210,5 +224,6 @@
         private Button buttonCancelar;
         private Button buttonSalvar;
         private MaskedTextBox maskedTextBoxCpf;
+        private Button buttonMenu;
     }
 }
