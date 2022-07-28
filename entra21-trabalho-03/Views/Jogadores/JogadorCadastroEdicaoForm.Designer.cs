@@ -47,9 +47,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 18);
+            this.label1.Size = new System.Drawing.Size(63, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
@@ -57,9 +57,9 @@
             // 
             this.labelPosicao.AutoSize = true;
             this.labelPosicao.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPosicao.Location = new System.Drawing.Point(12, 53);
+            this.labelPosicao.Location = new System.Drawing.Point(14, 71);
             this.labelPosicao.Name = "labelPosicao";
-            this.labelPosicao.Size = new System.Drawing.Size(65, 18);
+            this.labelPosicao.Size = new System.Drawing.Size(82, 24);
             this.labelPosicao.TabIndex = 2;
             this.labelPosicao.Text = "Posição";
             // 
@@ -67,9 +67,9 @@
             // 
             this.labelClube.AutoSize = true;
             this.labelClube.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelClube.Location = new System.Drawing.Point(12, 97);
+            this.labelClube.Location = new System.Drawing.Point(14, 129);
             this.labelClube.Name = "labelClube";
-            this.labelClube.Size = new System.Drawing.Size(49, 18);
+            this.labelClube.Size = new System.Drawing.Size(62, 24);
             this.labelClube.TabIndex = 4;
             this.labelClube.Text = "Clube";
             // 
@@ -77,9 +77,9 @@
             // 
             this.labelCpf.AutoSize = true;
             this.labelCpf.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCpf.Location = new System.Drawing.Point(12, 141);
+            this.labelCpf.Location = new System.Drawing.Point(14, 188);
             this.labelCpf.Name = "labelCpf";
-            this.labelCpf.Size = new System.Drawing.Size(36, 18);
+            this.labelCpf.Size = new System.Drawing.Size(46, 24);
             this.labelCpf.TabIndex = 6;
             this.labelCpf.Text = "CPF";
             // 
@@ -87,9 +87,9 @@
             // 
             this.labelDataNascimento.AutoSize = true;
             this.labelDataNascimento.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelDataNascimento.Location = new System.Drawing.Point(12, 185);
+            this.labelDataNascimento.Location = new System.Drawing.Point(14, 247);
             this.labelDataNascimento.Name = "labelDataNascimento";
-            this.labelDataNascimento.Size = new System.Drawing.Size(153, 18);
+            this.labelDataNascimento.Size = new System.Drawing.Size(194, 24);
             this.labelDataNascimento.TabIndex = 8;
             this.labelDataNascimento.Text = "Data de nascimento";
             // 
@@ -97,9 +97,10 @@
             // 
             this.textBoxNome.BackColor = System.Drawing.Color.Azure;
             this.textBoxNome.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxNome.Location = new System.Drawing.Point(12, 27);
+            this.textBoxNome.Location = new System.Drawing.Point(14, 36);
+            this.textBoxNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(230, 22);
+            this.textBoxNome.Size = new System.Drawing.Size(262, 26);
             this.textBoxNome.TabIndex = 9;
             // 
             // comboBoxPosicao
@@ -108,9 +109,10 @@
             this.comboBoxPosicao.DisplayMember = "nome";
             this.comboBoxPosicao.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxPosicao.FormattingEnabled = true;
-            this.comboBoxPosicao.Location = new System.Drawing.Point(12, 71);
+            this.comboBoxPosicao.Location = new System.Drawing.Point(14, 95);
+            this.comboBoxPosicao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxPosicao.Name = "comboBoxPosicao";
-            this.comboBoxPosicao.Size = new System.Drawing.Size(230, 24);
+            this.comboBoxPosicao.Size = new System.Drawing.Size(262, 28);
             this.comboBoxPosicao.TabIndex = 10;
             // 
             // comboBoxClube
@@ -121,9 +123,10 @@
             this.comboBoxClube.FormattingEnabled = true;
             this.comboBoxClube.Items.AddRange(new object[] {
             "Flamengo"});
-            this.comboBoxClube.Location = new System.Drawing.Point(12, 115);
+            this.comboBoxClube.Location = new System.Drawing.Point(14, 153);
+            this.comboBoxClube.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxClube.Name = "comboBoxClube";
-            this.comboBoxClube.Size = new System.Drawing.Size(230, 24);
+            this.comboBoxClube.Size = new System.Drawing.Size(262, 28);
             this.comboBoxClube.TabIndex = 11;
             // 
             // dateTimePickerDataNascimento
@@ -134,18 +137,20 @@
             this.dateTimePickerDataNascimento.CalendarTrailingForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dateTimePickerDataNascimento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(12, 203);
+            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(14, 271);
+            this.dateTimePickerDataNascimento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
-            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(230, 26);
+            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(262, 30);
             this.dateTimePickerDataNascimento.TabIndex = 13;
             // 
             // buttonCancelar
             // 
             this.buttonCancelar.BackColor = System.Drawing.Color.Azure;
             this.buttonCancelar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancelar.Location = new System.Drawing.Point(12, 235);
+            this.buttonCancelar.Location = new System.Drawing.Point(14, 313);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(88, 31);
+            this.buttonCancelar.Size = new System.Drawing.Size(101, 41);
             this.buttonCancelar.TabIndex = 14;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
@@ -155,9 +160,10 @@
             // 
             this.buttonSalvar.BackColor = System.Drawing.Color.Azure;
             this.buttonSalvar.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonSalvar.Location = new System.Drawing.Point(195, 235);
+            this.buttonSalvar.Location = new System.Drawing.Point(223, 313);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(88, 31);
+            this.buttonSalvar.Size = new System.Drawing.Size(101, 41);
             this.buttonSalvar.TabIndex = 15;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
@@ -166,19 +172,21 @@
             // maskedTextBoxCpf
             // 
             this.maskedTextBoxCpf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBoxCpf.Location = new System.Drawing.Point(12, 162);
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(14, 216);
+            this.maskedTextBoxCpf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.maskedTextBoxCpf.Mask = "000.000.000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
-            this.maskedTextBoxCpf.Size = new System.Drawing.Size(230, 22);
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(262, 26);
             this.maskedTextBoxCpf.TabIndex = 16;
             // 
             // buttonMenu
             // 
             this.buttonMenu.BackColor = System.Drawing.Color.Azure;
             this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(101, 235);
+            this.buttonMenu.Location = new System.Drawing.Point(115, 313);
+            this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(88, 31);
+            this.buttonMenu.Size = new System.Drawing.Size(101, 41);
             this.buttonMenu.TabIndex = 17;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = false;
@@ -186,10 +194,10 @@
             // 
             // JogadorCadastroEdicaoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(335, 310);
+            this.ClientSize = new System.Drawing.Size(383, 413);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonSalvar);
@@ -203,8 +211,10 @@
             this.Controls.Add(this.labelClube);
             this.Controls.Add(this.labelPosicao);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "JogadorCadastroEdicaoForm";
             this.Text = "Cadastro de jogadores";
+            this.Load += new System.EventHandler(this.JogadorCadastroEdicaoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
