@@ -36,6 +36,7 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonCadastrar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
+            this.buttonApagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaClubes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,12 +118,24 @@
             this.buttonMenu.TabIndex = 3;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
+            // buttonApagar
+            // 
+            this.buttonApagar.Location = new System.Drawing.Point(180, 330);
+            this.buttonApagar.Name = "buttonApagar";
+            this.buttonApagar.Size = new System.Drawing.Size(94, 29);
+            this.buttonApagar.TabIndex = 4;
+            this.buttonApagar.Text = "Apagar";
+            this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click_1);
             // 
             // ClubeListagemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 365);
+            this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.buttonEditar);
@@ -146,5 +159,6 @@
         private Button buttonEditar;
         private Button buttonCadastrar;
         private Button buttonMenu;
+        private Button buttonApagar;
     }
 }
