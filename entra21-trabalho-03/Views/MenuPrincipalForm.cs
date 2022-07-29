@@ -1,4 +1,5 @@
 ﻿using entra21_trabalho_03.Views.Clubes;
+using entra21_trabalho_03.Views.Competicoes;
 using entra21_trabalho_03.Views.Jogadores;
 using entra21_trabalho_03.Views.Paises;
 using entra21_trabalho_03.Views.Posicoes;
@@ -40,7 +41,8 @@ namespace entra21_trabalho_03.Views
 
         private void buttonCompeticoes_Click(object sender, EventArgs e)
         {
-
+            var competicoes = new CompeticoesListagemForm();
+            competicoes.ShowDialog();
         }
 
         private void buttonTecnicos_Click(object sender, EventArgs e)
