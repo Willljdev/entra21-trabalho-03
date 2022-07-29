@@ -34,7 +34,7 @@
             this.ColumnDataFundacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCidadeSede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonApagar = new System.Windows.Forms.Button();
+            this.buttonCadastrar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaClubes)).BeginInit();
             this.SuspendLayout();
@@ -99,15 +99,15 @@
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
-            // buttonApagar
+            // buttonCadastrar
             // 
-            this.buttonApagar.Location = new System.Drawing.Point(480, 330);
-            this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(94, 29);
-            this.buttonApagar.TabIndex = 2;
-            this.buttonApagar.Text = "Apagar";
-            this.buttonApagar.UseVisualStyleBackColor = true;
-            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
+            this.buttonCadastrar.Location = new System.Drawing.Point(480, 330);
+            this.buttonCadastrar.Name = "buttonCadastrar";
+            this.buttonCadastrar.Size = new System.Drawing.Size(94, 29);
+            this.buttonCadastrar.TabIndex = 2;
+            this.buttonCadastrar.Text = "Cadastrar";
+            this.buttonCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // buttonMenu
             // 
@@ -124,7 +124,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 365);
             this.Controls.Add(this.buttonMenu);
-            this.Controls.Add(this.buttonApagar);
+            this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.dataGridViewListaClubes);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -144,7 +144,7 @@
         private DataGridViewTextBoxColumn ColumnDataFundacao;
         private DataGridViewTextBoxColumn ColumnCidadeSede;
         private Button buttonEditar;
-        private Button buttonApagar;
+        private Button buttonCadastrar;
         private Button buttonMenu;
     }
 }
