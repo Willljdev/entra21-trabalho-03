@@ -1,6 +1,6 @@
 ﻿namespace entra21_trabalho_03.Models
 {
-    internal class Tecnico
+    public class Tecnico
     {
         public int Id { get; set; }
         public string Nome { get; set; }

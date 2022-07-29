@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewListaTecnicos = new System.Windows.Forms.DataGridView();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnClubeAtual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonSalvar = new System.Windows.Forms.Button();
+            this.buttonCadastrar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.buttonApagar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaTecnicos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewListaTecnicos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewListaTecnicos.AllowUserToAddRows = false;
+            this.dataGridViewListaTecnicos.AllowUserToDeleteRows = false;
+            this.dataGridViewListaTecnicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaTecnicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
             this.ColumnNome,
             this.ColumnCpf,
             this.ColumnClubeAtual});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 27);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(477, 302);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewListaTecnicos.Location = new System.Drawing.Point(11, 36);
+            this.dataGridViewListaTecnicos.Name = "dataGridViewListaTecnicos";
+            this.dataGridViewListaTecnicos.ReadOnly = true;
+            this.dataGridViewListaTecnicos.RowHeadersWidth = 51;
+            this.dataGridViewListaTecnicos.RowTemplate.Height = 29;
+            this.dataGridViewListaTecnicos.Size = new System.Drawing.Size(545, 403);
+            this.dataGridViewListaTecnicos.TabIndex = 0;
             // 
             // ColumnID
             // 
@@ -90,63 +90,74 @@
             this.ColumnClubeAtual.ReadOnly = true;
             this.ColumnClubeAtual.Width = 125;
             // 
-            // buttonSalvar
+            // buttonCadastrar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(297, 384);
-            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(82, 22);
-            this.buttonSalvar.TabIndex = 1;
-            this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Location = new System.Drawing.Point(339, 512);
+            this.buttonCadastrar.Name = "buttonCadastrar";
+            this.buttonCadastrar.Size = new System.Drawing.Size(94, 29);
+            this.buttonCadastrar.TabIndex = 1;
+            this.buttonCadastrar.Text = "Cadastrar";
+            this.buttonCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(209, 384);
-            this.buttonEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonEditar.Location = new System.Drawing.Point(239, 512);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(82, 22);
+            this.buttonEditar.Size = new System.Drawing.Size(94, 29);
             this.buttonEditar.TabIndex = 2;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(122, 384);
-            this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonMenu.Location = new System.Drawing.Point(139, 512);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(82, 22);
+            this.buttonMenu.Size = new System.Drawing.Size(94, 29);
             this.buttonMenu.TabIndex = 3;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
+            // buttonApagar
+            // 
+            this.buttonApagar.Location = new System.Drawing.Point(39, 512);
+            this.buttonApagar.Name = "buttonApagar";
+            this.buttonApagar.Size = new System.Drawing.Size(94, 29);
+            this.buttonApagar.TabIndex = 4;
+            this.buttonApagar.Text = "Apagar";
+            this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // TecnicoListagemForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 414);
+            this.ClientSize = new System.Drawing.Size(569, 552);
+            this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Controls.Add(this.buttonCadastrar);
+            this.Controls.Add(this.dataGridViewListaTecnicos);
             this.Name = "TecnicoListagemForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Técnicos cadastrados";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaTecnicos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Button buttonSalvar;
+        private DataGridView dataGridViewListaTecnicos;
+        private Button buttonCadastrar;
         private Button buttonEditar;
         private DataGridViewTextBoxColumn ColumnID;
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnCpf;
         private DataGridViewTextBoxColumn ColumnClubeAtual;
         private Button buttonMenu;
+        private Button buttonApagar;
     }
 }
