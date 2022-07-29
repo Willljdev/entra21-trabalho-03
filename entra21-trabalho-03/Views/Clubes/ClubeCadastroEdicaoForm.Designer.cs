@@ -117,6 +117,7 @@
             this.buttonMenu.TabIndex = 10;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // ClubeCadastroEdicaoForm
             // 
