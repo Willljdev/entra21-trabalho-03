@@ -49,13 +49,13 @@ namespace entra21_trabalho_03.Services
             conexao.Close();
         }
 
-        public Pais ObterPorId(int id)
+        public Competicao ObterPorId(int id)
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT nome, data_inicio, data_termino FROM competicoes WHERE id = @ID";
-            comando.Parameters.AddWithValue("@id", id);
+            comando.CommandText = "SELECT id, nome, data_inicio, data_termino FROM competicoes WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
 
             var tabelaemmemoria = new DataTable();
             tabelaemmemoria.Load(comando.ExecuteReader());
@@ -70,7 +70,7 @@ namespace entra21_trabalho_03.Services
             competicoes.Data_inicio = Convert.ToDateTime(registro["data_inicio"]);
             competicoes.Data_termino = Convert.ToDateTime(registro["data_termino"]);
 
-
+            
             comando.Connection.Close();
 
             return competicoes;

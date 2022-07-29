@@ -1,6 +1,6 @@
-﻿namespace entra21_trabalho_03.Views.Paises
+﻿namespace entra21_trabalho_03.Views.Competicoes
 {
-    partial class PaisListagemForm
+    partial class CompeticoesListagemForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,9 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonApagar = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonCadastrar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnContinente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,21 +41,16 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnId,
-            this.ColumnPais,
-            this.ColumnContinente,
-            this.ColumnSigla});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 115);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 120);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 323);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 318);
             this.dataGridView1.TabIndex = 0;
             // 
             // buttonApagar
             // 
-            this.buttonApagar.Location = new System.Drawing.Point(12, 64);
+            this.buttonApagar.Location = new System.Drawing.Point(632, 63);
             this.buttonApagar.Name = "buttonApagar";
             this.buttonApagar.Size = new System.Drawing.Size(75, 23);
             this.buttonApagar.TabIndex = 1;
@@ -67,29 +58,29 @@
             this.buttonApagar.UseVisualStyleBackColor = true;
             this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(713, 63);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvar.TabIndex = 2;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(93, 64);
+            this.buttonEditar.Location = new System.Drawing.Point(551, 63);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditar.TabIndex = 2;
+            this.buttonEditar.TabIndex = 3;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
-            // buttonCadastrar
-            // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(255, 64);
-            this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrar.TabIndex = 3;
-            this.buttonCadastrar.Text = "Cadastrar";
-            this.buttonCadastrar.UseVisualStyleBackColor = true;
-            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
-            // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(174, 64);
+            this.buttonMenu.Location = new System.Drawing.Point(470, 63);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(75, 23);
             this.buttonMenu.TabIndex = 4;
@@ -97,42 +88,19 @@
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
-            // ColumnId
-            // 
-            this.ColumnId.HeaderText = "Código";
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            // 
-            // ColumnPais
-            // 
-            this.ColumnPais.HeaderText = "País";
-            this.ColumnPais.Name = "ColumnPais";
-            this.ColumnPais.ReadOnly = true;
-            // 
-            // ColumnContinente
-            // 
-            this.ColumnContinente.HeaderText = "Continente";
-            this.ColumnContinente.Name = "ColumnContinente";
-            this.ColumnContinente.ReadOnly = true;
-            // 
-            // ColumnSigla
-            // 
-            this.ColumnSigla.HeaderText = "Sigla";
-            this.ColumnSigla.Name = "ColumnSigla";
-            this.ColumnSigla.ReadOnly = true;
-            // 
-            // PaisListagemForm
+            // CompeticoesListagemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonMenu);
-            this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.buttonEditar);
+            this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "PaisListagemForm";
-            this.Text = "Listagem de paises";
+            this.Name = "CompeticoesListagemForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Listagem de competições";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -141,13 +109,12 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private Button button1;
+        private Button buttonSalvar;
+        private Button button3;
+        private Button button4;
         private Button buttonApagar;
         private Button buttonEditar;
-        private Button buttonCadastrar;
         private Button buttonMenu;
-        private DataGridViewTextBoxColumn ColumnId;
-        private DataGridViewTextBoxColumn ColumnPais;
-        private DataGridViewTextBoxColumn ColumnContinente;
-        private DataGridViewTextBoxColumn ColumnSigla;
     }
 }

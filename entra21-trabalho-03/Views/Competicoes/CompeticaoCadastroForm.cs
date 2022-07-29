@@ -1,10 +1,29 @@
-﻿namespace entra21_trabalho_03.Views.Competicoes
+﻿using entra21_trabalho_03.PaisesCompeticoes.Models;
+using entra21_trabalho_03.Services;
+
+namespace entra21_trabalho_03.Views.Competicoes
 {
     public partial class CompeticaoCadastroForm : Form
     {
+        private readonly CompeticaoService _competicaoService;
+        private readonly int _idEditar;
         public CompeticaoCadastroForm()
         {
             InitializeComponent();
+
+            _competicaoService = new CompeticaoService();
+
+            _idEditar = -1;
+        }
+
+        public CompeticaoCadastroForm(Competicao competicao) :this()
+        {
+            _idEditar = competicao.Id;
+            textBoxNome.Text = competicao.Nome;
+            dateTimePickerDataInicio.Value = competicao.Data_inicio;
+            dateTimePickerDataTermino.Value = competicao.Data_termino;
+
+            
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)

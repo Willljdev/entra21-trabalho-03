@@ -10,7 +10,7 @@ namespace entra21_trabalho_03.Services
 
          void Editar(Competicao competicao);
 
-         Pais ObterPorId(int id);
+         Competicao ObterPorId(int id);
 
          List<Competicao> ObterTodos();
 

@@ -57,7 +57,7 @@ namespace entra21_trabalho_03.Views.Clubes
                         clube.Id,
                         clube.Nome,
                         clube.CidadeSede,
-                        clube.AnoFundacao.ToString("dd/MM/yyyy")
+                        //clube.AnoFundacao.ToString("dd/MM/yyyy")
                     });
             }
         }
@@ -79,9 +79,9 @@ namespace entra21_trabalho_03.Views.Clubes
             var linha = dataGridViewListaClubes.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
 
-            var clube = _clubeService.ObterPorId(id);
-            var clubeForm = new ClubeCadastroEdicaoForm(clube);
-            clubeForm.ShowDialog();
+            //var clube = _clubeService.ObterPorId(id);
+            //var clubeForm = new ClubeCadastroEdicaoForm(clube);
+            //clubeForm.ShowDialog();
 
             PreencherDataGridView();
         }
