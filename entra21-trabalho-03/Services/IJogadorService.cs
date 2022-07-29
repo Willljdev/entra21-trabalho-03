@@ -4,10 +4,10 @@ namespace entra21_trabalho_03.Services
 {
     internal interface IJogadorService
     {
-        void Cadastrar(Pais jogador);
-        void Editar(Pais jogador);
+        void Cadastrar(Jogador jogador);
+        void Editar(Jogador jogador);
         void Apagar(int id);
-        Pais ObterPorId(int id);
-        List<Pais> ObterTodos();
+        Jogador ObterPorId(int id);
+        List<Jogador> ObterTodos();
     }
 }

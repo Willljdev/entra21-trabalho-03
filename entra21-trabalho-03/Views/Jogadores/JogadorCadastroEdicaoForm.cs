@@ -21,7 +21,7 @@ namespace entra21_trabalho_03.Views.Jogadores
             _idEditar = -1;
         }
 
-        public JogadorCadastroEdicaoForm(Pais jogador) : this()
+        public JogadorCadastroEdicaoForm(Jogador jogador) : this()
         {
             _idEditar = jogador.Id;
             textBoxNome.Text = jogador.Nome;
@@ -86,7 +86,7 @@ namespace entra21_trabalho_03.Views.Jogadores
             if (ValidarDados() == false)
                 return;
 
-            var jogador = new Pais();
+            var jogador = new Jogador();
             jogador.Nome = nome;
             jogador.Posicao = posicao;
             jogador.Clube = clube;
@@ -145,6 +145,11 @@ namespace entra21_trabalho_03.Views.Jogadores
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void JogadorCadastroEdicaoForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
