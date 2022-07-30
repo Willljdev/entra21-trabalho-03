@@ -26,7 +26,8 @@ namespace entra21_trabalho_03.Services
 
             SqlCommand comando = conexao.CreateCommand();
 
-            comando.CommandText = "INSERT INTO clubes (clube) VALUES (@CLUBE)";
+            comando.CommandText = @"INSERT INTO clubes (nome, cidade_sede, ano_fundacao)
+                VALUES(@NOME, @CIDADE_SEDE, @ANO_FUNDACAO);";
             comando.Parameters.AddWithValue("@CLUBE", clube.Nome);
 
             comando.ExecuteNonQuery();
@@ -39,8 +40,11 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
 
             var comando = conexao.CreateCommand();
-            comando.CommandText = "UPDATE clubes SET clube = @CLUBE WHERE id= @ID";
-            comando.Parameters.AddWithValue("@CLUBE", clube.Nome);
+            comando.CommandText =
+                @"UPDATE clubes SET nome = @NOME, cidade_sede = @CIDADE_SEDE, ano_fundacao = @ANO_FUNDACAO WHERE id = @ID";
+            comando.Parameters.AddWithValue("@NOME", clube.Nome);
+            comando.Parameters.AddWithValue("@CIDADE_SEDE", clube.CidadeSede);
+            comando.Parameters.AddWithValue("@ANO_FUNDACAO", clube.AnoFundacao);
             comando.Parameters.AddWithValue("@ID", clube.Id);
 
             comando.ExecuteNonQuery();
@@ -52,7 +56,7 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
 
             var comando = conexao.CreateCommand();
-            comando.CommandText = "SELECT id, nome, cidade_sede FROM clubes WHERE id= @ID";
+            comando.CommandText = @"SELECT id, nome, cidade_sede, ano_fundacao FROM clubes WHERE id= @ID";
             comando.Parameters.AddWithValue("@ID", id);
 
             var tabelaEmMemoria = new DataTable();
@@ -68,6 +72,7 @@ namespace entra21_trabalho_03.Services
             clube.Id = Convert.ToInt32(primeiroRegistro["id"]);
             clube.Nome = primeiroRegistro["nome"].ToString();
             clube.CidadeSede = primeiroRegistro["cidade_sede"].ToString();
+            clube.AnoFundacao = Convert.ToDateTime(primeiroRegistro["ano_fundacao"]);
 
             comando.Connection.Close();
 
@@ -79,7 +84,7 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT id, nome, cidade_sede FROM clubes";
+            comando.CommandText = "SELECT id, nome, cidade_sede, ano_fundacao FROM clubes";
 
             var tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
@@ -93,6 +98,7 @@ namespace entra21_trabalho_03.Services
                 clube.Id = Convert.ToInt32(linha["id"].ToString());
                 clube.Nome = linha["nome"].ToString();
                 clube.CidadeSede = linha["cidade_sede"].ToString();
+                clube.AnoFundacao = Convert.ToDateTime(linha["ano_fundacao"]);
 
                 clubes.Add(clube);
             }
