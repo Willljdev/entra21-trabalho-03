@@ -67,5 +67,25 @@ namespace entra21_trabalho_03.Views.Paises
         {
             this.Close();
         }
+
+        private bool ValidacaoDados()
+        {
+            if(textBoxNome.Text.Length < 2 || textBoxNome.Text.Length > 50)
+            {
+                MessageBox.Show("O nome deve conter no mínimo 3 caracteres e no máximo 50");
+                textBoxNome.ResetText();
+                textBoxNome.Focus();
+                return false;
+            }
+
+            if (textBoxContinente.Text.Length < 2 || textBoxContinente.Text.Length > 50)
+            {
+                MessageBox.Show("O nome do continente deve conter mais de 2 carácteres e no máximo 50");
+                textBoxContinente.ResetText();
+                textBoxContinente.Focus();
+                return false;
+            }
+            return true;
+        }
     }
 }
