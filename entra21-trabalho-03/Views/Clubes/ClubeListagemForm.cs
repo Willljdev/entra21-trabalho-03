@@ -23,25 +23,7 @@ namespace entra21_trabalho_03.Views.Clubes
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            if(dataGridViewListaClubes.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione um clube para remover do sistema!");
-                return;
-            }
 
-            if (dataGridViewListaClubes.Rows.Count == 0)
-            {
-                MessageBox.Show("Não há nem um clube cadastrado no sistema!");
-                return;
-            }
-
-            var linha = dataGridViewListaClubes.SelectedRows[0];
-            var id = Convert.ToInt32(linha.Cells[0].Value);
-
-            _clubeService.Apagar(id);
-
-            PreencherDataGridView();
-            MessageBox.Show("Clube apagado do sistema!");
         }
 
         private void PreencherDataGridView()
@@ -57,7 +39,7 @@ namespace entra21_trabalho_03.Views.Clubes
                         clube.Id,
                         clube.Nome,
                         clube.CidadeSede,
-                        //clube.AnoFundacao.ToString("dd/MM/yyyy")
+                        clube.AnoFundacao.ToString("dd/MM/yyyy")
                     });
             }
         }
@@ -79,11 +61,45 @@ namespace entra21_trabalho_03.Views.Clubes
             var linha = dataGridViewListaClubes.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
 
-            //var clube = _clubeService.ObterPorId(id);
-            //var clubeForm = new ClubeCadastroEdicaoForm(clube);
-            //clubeForm.ShowDialog();
+            var clube = _clubeService.ObterPorId(id);
+            var clubeForm = new ClubeCadastroEdicaoForm(clube);
+            clubeForm.ShowDialog();
 
             PreencherDataGridView();
+        }
+
+        private void buttonCadastrar_Click(object sender, EventArgs e)
+        {
+            var clubeForm = new ClubeCadastroEdicaoForm();
+            clubeForm.ShowDialog();
+            PreencherDataGridView();
+        }
+
+        private void buttonApagar_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridViewListaClubes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um clube para apagar!");
+                return;
+            }
+
+            if (dataGridViewListaClubes.Rows.Count == 0)
+            {
+                MessageBox.Show("Não há nem um clube cadastrado sistema!");
+                return;
+            }
+
+            var linha = dataGridViewListaClubes.SelectedRows[0];
+            var id = Convert.ToInt32(linha.Cells[0].Value);
+
+            _clubeService.Apagar(id);
+            PreencherDataGridView();
+            MessageBox.Show("Clube apagado do sistema!");
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

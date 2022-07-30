@@ -13,6 +13,7 @@ CREATE TABLE clubes(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(72),
 	cidade_sede VARCHAR(60),
+	ano_fundacao DATETIME2
 );
 
 CREATE TABLE jogadores(

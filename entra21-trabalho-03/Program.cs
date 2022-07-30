@@ -14,7 +14,7 @@ namespace entra21_trabalho_03
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new JogadorCadastroEdicaoForm());
+            Application.Run(new MenuPrincipalForm());
         }
     }
 }

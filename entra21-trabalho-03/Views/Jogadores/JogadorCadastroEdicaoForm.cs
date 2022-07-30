@@ -6,16 +6,16 @@ namespace entra21_trabalho_03.Views.Jogadores
     public partial class JogadorCadastroEdicaoForm : Form
     {
         private readonly PosicaoService _posicaoService;
-        //private readonly ClubeService _clubeService;
+        private readonly ClubeService _clubeService;
         private readonly int _idEditar;
         public JogadorCadastroEdicaoForm()
         {
             InitializeComponent();
 
             _posicaoService = new PosicaoService();
-            //_clubeService = new ClubeService();
+            _clubeService = new ClubeService();
 
-            //PreencherComboBoxClube();
+            PreencherComboBoxClube();
             PreencherComboBoxPosicao();
 
             _idEditar = -1;
@@ -48,16 +48,16 @@ namespace entra21_trabalho_03.Views.Jogadores
             }
         }
 
-        //private void PreencherComboBoxClube()
-        //{
-        //    var clubes = _clubeService.ObterTodos();
+        private void PreencherComboBoxClube()
+        {
+            var clubes = _clubeService.ObterTodos();
 
-        //    for (var i = 0; i < clubes.Count; i++)
-        //    {
-        //        var clube = clubes[i];
-        //        comboBoxClube.Items.Add(clube);
-        //    }
-        //}
+            for (var i = 0; i < clubes.Count; i++)
+            {
+                var clube = clubes[i];
+                comboBoxClube.Items.Add(clube);
+            }
+        }
 
         private void PreencherComboBoxPosicao()
         {
@@ -76,22 +76,19 @@ namespace entra21_trabalho_03.Views.Jogadores
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
-        {
-            var nome = textBoxNome.Text.Trim();
-            var clube = comboBoxClube.SelectedItem as Clube;
+        { 
             var posicao = comboBoxPosicao.SelectedItem as Posicao;
-            var cpf = maskedTextBoxCpf.Text.Trim();
-            var dataNascimento = Convert.ToDateTime(dateTimePickerDataNascimento.Text);
-
+            var clube = comboBoxClube.SelectedItem as Clube;
             if (ValidarDados() == false)
                 return;
 
             var jogador = new Jogador();
-            jogador.Nome = nome;
+            jogador.Nome = textBoxNome.Text.Trim();
             jogador.Posicao = posicao;
             jogador.Clube = clube;
-            jogador.Cpf = cpf;
-            jogador.DataNascimento = dataNascimento;
+            jogador.Cpf = maskedTextBoxCpf.Text.Trim();
+            jogador.DataNascimento = Convert.ToDateTime(dateTimePickerDataNascimento.Value.Date.ToString("dd/MM/yyyy") +
+                " " + dateTimePickerHoraNascimento.Value.TimeOfDay);
 
             var jogadorService = new JogadorService();
 
@@ -131,13 +128,6 @@ namespace entra21_trabalho_03.Views.Jogadores
                 MessageBox.Show("Selecione uma posição para o jogador");
                 comboBoxPosicao.DroppedDown = true;
                 return false;
-            }
-
-            if (maskedTextBoxCpf.Text.Length != 11)
-            {
-                MessageBox.Show("Digite um CPF válido");
-                maskedTextBoxCpf.ResetText();
-                maskedTextBoxCpf.Focus();
             }
             return true;
         }

@@ -21,6 +21,13 @@ namespace entra21_trabalho_03.Views.Clubes
 
             _idEditar = -1;
         }
+        public ClubeCadastroEdicaoForm(Clube clube) : this()
+        {
+            _idEditar = clube.Id;
+            textBoxNomeClube.Text = clube.Nome;
+            textBoxCidadeSede.Text = clube.CidadeSede;
+            dateTimePickerAnoFundacao.Value = clube.AnoFundacao;
+        }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
@@ -74,6 +81,11 @@ namespace entra21_trabalho_03.Views.Clubes
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

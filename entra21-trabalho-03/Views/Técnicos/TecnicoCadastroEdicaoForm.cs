@@ -18,6 +18,28 @@ namespace entra21_trabalho_03.Views.Técnicos
         public TecnicoCadastroEdicaoForm()
         {
             InitializeComponent();
+
+            _idEditar = -1;
+        }
+
+        public TecnicoCadastroEdicaoForm(Tecnico tecnico) : this ()
+        {
+            _idEditar = tecnico.Id;
+            textBoxNomeTecnico.Text = tecnico.Nome;
+            maskedTextBoxCpf.Text = tecnico.Cpf;
+            dateTimePickerDataNascimento.Value = tecnico.DataNascimento;
+            textBoxCidadeNatal.Text = tecnico.CidadeNatal;
+
+            for (var i = 0; i < comboBoxClubeAtual.Items.Count; i++)
+            {
+                var clubePercorrer = comboBoxClubeAtual.Items[i] as Clube;
+
+                if(clubePercorrer.Id == tecnico.Clube.Id)
+                {
+                    comboBoxClubeAtual.SelectedItem = clubePercorrer;
+                    break;
+                }
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
