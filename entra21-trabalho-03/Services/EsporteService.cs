@@ -42,7 +42,7 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "UPDATE esportes SET nome, quantidade_jogadores_time, quantidades_atletas_clube, local_praticado, id_clube WHERE id = @ID";
+            comando.CommandText = "UPDATE esportes SET nome = @NOME, quantidade_jogadores_time = @QUANTIDADE_JOGADORES_TIME, quantidades_atletas_clube = @QUANTIDADE_ATLETAS_CLUBE, local_praticado = @LOCAL_PRATICADO, id_clube = @ID_CLUBE WHERE id = @ID";
             comando.Parameters.AddWithValue("@NOME", esportes.Nome);
             comando.Parameters.AddWithValue("@QUANTIDADE_JOGADORES_TIME", esportes.QuantidadesJogadoresTime);
             comando.Parameters.AddWithValue("@QUANTIDADE_ATLETAS_CLUBE", esportes.QuantidadesAtletasClube);
