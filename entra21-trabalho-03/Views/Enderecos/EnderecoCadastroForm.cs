@@ -6,12 +6,30 @@ namespace entra21_trabalho_03.Views.Enderecos
 {
     public partial class EnderecoCadastroForm : Form
     {
+        private JogadorService jogadorService;
+
         private readonly EnderecoCadastroService EnderecoCadastroService;
+        
         public EnderecoCadastroForm()
         {
             InitializeComponent();
 
             EnderecoCadastroService = new EnderecoCadastroService();
+            jogadorService = new JogadorService();
+
+            PreencherComboBoxNome();
+
+            PreencherDataGridViewComEnderecos();
+        }
+
+        private void PreencherComboBoxNome()
+        {
+            var jogadores = jogadorService.ObterTodos();
+            for(int i = 0; i < jogadores.Count; i++)
+            {
+                var jogador = jogadores[i];
+                comboBoxMorador.Items.Add(jogador);
+            }
 
         }
 
@@ -34,27 +52,23 @@ namespace entra21_trabalho_03.Views.Enderecos
         {
             var cep = maskedTextBoxCep.Text;
             var enderecoCompleto = textBoxEnderecoCompleto.Text;
-            var cidade = textBoxCidade.Text;
-            var estado = textBoxEstado.Text;
-            var bairro = textBoxBairro.Text;
-            var rua = textBoxRua.Text;
 
-            var dadosValidos = ValidarDados(cep, enderecoCompleto, cidade, bairro, estado, rua);
+            var dadosValidos = ValidarDados(cep, enderecoCompleto);
 
 
             if (dataGridView1.SelectedRows.Count == 0)
 
-                CadastrarEndereco(cep, enderecoCompleto, cidade, estado, bairro, rua);
+                CadastrarEndereco(cep, enderecoCompleto);
 
             else
-                EditarEndereco(cep, enderecoCompleto, cidade, estado, bairro, rua);
+                EditarEndereco(cep, enderecoCompleto);
 
             PreencherDataGridViewComEnderecos();
 
             LimparCampos();
         }
 
-        private object ValidarDados(string cep, string endereco, string cidade, string bairro, string estado, string rua)
+        private object ValidarDados(string cep, string endereco)
         {
             if (cep.Replace("-", "").Trim().Length != 8)
             {
@@ -79,12 +93,8 @@ namespace entra21_trabalho_03.Views.Enderecos
 
         private void LimparCampos()
         {
-            maskedTextBoxCep.Text = "";
-            textBoxEnderecoCompleto.Text = "";
-            textBoxBairro.Text = "";
-            textBoxCidade.Text = "";
-            textBoxEstado.Text = "";
-            textBoxRua.Text = "";
+            maskedTextBoxCep.ResetText();
+            textBoxEnderecoCompleto.ResetText();
 
             dataGridView1.ClearSelection();
         }
@@ -105,30 +115,24 @@ namespace entra21_trabalho_03.Views.Enderecos
                 {
                     endereco.Codigo,
                     endereco.Cep,
-                    endereco.Estado,
-                    endereco.Cidade,
-                    endereco.Bairro,
-                    endereco.Rua,
-                });
+                    endereco.EnderecoCompleto,
+                    endereco.Morador
+                }) ;
             }
         }
 
 
-        private void CadastrarEndereco(string cep, string enderecoCompleto, string cidade, string estado, string bairro, string rua)
+        private void CadastrarEndereco(string cep, string enderecoCompleto)
         {
             var endereco = new Endereco();
             endereco.Codigo = EnderecoCadastroService.ObterUltimoCodigo() + 1;
             endereco.Cep = cep;
             endereco.EnderecoCompleto = enderecoCompleto;
-            endereco.Cidade = cidade;
-            endereco.Estado = estado;
-            endereco.Bairro = bairro;
-            endereco.Rua = rua;
 
             EnderecoCadastroService.Adicionar(endereco);
         }
 
-        private void EditarEndereco(string cep, string enderecoCompleto, string cidade, string estado, string bairro, string rua)
+        private void EditarEndereco(string cep, string enderecoCompleto)
         {
             var linhaSelecionada = dataGridView1.SelectedRows[0];
             var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
@@ -137,10 +141,6 @@ namespace entra21_trabalho_03.Views.Enderecos
             endereco.Codigo = codigoSelecionado;
             endereco.EnderecoCompleto = enderecoCompleto;
             endereco.Cep = cep;
-            endereco.Cidade = cidade;
-            endereco.Estado = estado;
-            endereco.Bairro = bairro;
-            endereco.Rua = rua;
 
             EnderecoCadastroService.Editar(endereco);
         }
@@ -160,10 +160,6 @@ namespace entra21_trabalho_03.Views.Enderecos
 
             maskedTextBoxCep.Text = endereco.Cep;
             textBoxEnderecoCompleto.Text = endereco.EnderecoCompleto;
-            textBoxBairro.Text = endereco.Bairro;
-            textBoxCidade.Text = endereco.Cidade;
-            textBoxEstado.Text = endereco.Estado;
-            textBoxRua.Text = endereco.Rua;
         }
 
         private void EnderecosForm_Load(object sender, EventArgs e)
@@ -200,6 +196,13 @@ namespace entra21_trabalho_03.Views.Enderecos
 
                 return;
             }
+
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var endereco = EnderecoCadastroService.ObterPorCodigo(codigo);
+            EnderecoCadastroService.Apagar(endereco);
+
+            PreencherDataGridViewComEnderecos();
         }
 
         private void ObterDadosCep()
@@ -235,6 +238,29 @@ namespace entra21_trabalho_03.Views.Enderecos
         private void EnderecoCadastroFormPreencher(object sender, EventArgs e)
         {
             PreencherDataGridViewComEnderecos();
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            var cep = maskedTextBoxCep.Text;
+            var enderecoCompleto = textBoxEnderecoCompleto.Text;
+
+
+
+            if (dataGridView1.SelectedRows.Count == 0)
+                CadastrarEndereco(cep, enderecoCompleto) ;
+            else
+                EditarEndereco(cep,enderecoCompleto);
+
+            PreencherDataGridViewComEnderecos();
+
+            LimparCampos();
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
