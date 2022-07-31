@@ -274,7 +274,7 @@ namespace entra21_trabalho_03.Views.Enderecos
 
         }
 
-        public void ValidarDados(string cnpj, object endereco)
+        public bool ValidarDados(string cnpj, object endereco)
         {
             try
             {
@@ -292,6 +292,7 @@ namespace entra21_trabalho_03.Views.Enderecos
                 textBoxEnderecoCompleto.Focus();
                 return false;
             }
+            return true;
         }
     }
 }
