@@ -87,7 +87,7 @@ namespace entra21_trabalho_03.Services
             var tecnico = new Tecnico();
             tecnico.Id = Convert.ToInt32(primeiroRegistro["id"]);
             tecnico.Nome = primeiroRegistro["nome"].ToString();
-            tecnico.Cpf = primeiroRegistro["cpf"].ToString();
+            tecnico.Cpf = Convert.ToInt32(primeiroRegistro["cpf"]);
             tecnico.DataNascimento = Convert.ToDateTime(primeiroRegistro["data_nascimento"]);
             tecnico.CidadeNatal = primeiroRegistro["cidade_natal"].ToString();
 

@@ -1,6 +1,6 @@
-﻿using entra21_trabalho_03.DataBase;
+﻿using System.Data;
+using entra21_trabalho_03.DataBase;
 using entra21_trabalho_03.EsportesCompeticoes.Models;
-using System.Data;
 
 namespace entra21_trabalho_03.Services
 {
@@ -23,7 +23,7 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = 
+            comando.CommandText =
                 @"INSERT INTO competicoes (nome, data_inicio, data_termino, id_pais)
                 VALUES (@NOME, @DATA_INICIO, @DATA_TERMINO, @ID_PAIS);";
 
@@ -40,17 +40,17 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = 
+            comando.CommandText =
                 @"UPDATE competicoes SET nome = @NOME,
                                          data_inicio = @DATA_INICIO,
                                          data_termino = @DATA_TERMINO,
-                                         id_pais = @ID_PAIS WHERE id = @ID";
+                                         id_esporte = @ID_ESPORTE WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@ID", competicao.Id);
             comando.Parameters.AddWithValue("@NOME", competicao.Nome);
             comando.Parameters.AddWithValue("@DATA_INICIO", competicao.DataInicio);
             comando.Parameters.AddWithValue("@DATA_TERMINO", competicao.DataTermino);
-            comando.Parameters.AddWithValue("@ID_PAIS", competicao.Pais.Id);
+            comando.Parameters.AddWithValue("@ID_PAIS", competicao.Esporte.Id);
 
             comando.ExecuteNonQuery();
             conexao.Close();
@@ -61,7 +61,7 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = 
+            comando.CommandText =
                 "SELECT id, nome, data_inicio, data_termino, id_pais FROM competicoes WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@ID", id);
@@ -79,11 +79,11 @@ namespace entra21_trabalho_03.Services
             competicoes.DataInicio = Convert.ToDateTime(registro["data_inicio"]);
             competicoes.DataTermino = Convert.ToDateTime(registro["data_termino"]);
 
-            
+
             comando.Connection.Close();
 
             return competicoes;
-            
+
         }
 
         public List<Competicao> ObterTodos()
@@ -91,17 +91,30 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            
+
             comando.CommandText = @"SELECT 
 c.id AS 'id',
 c.nome AS 'nome',
 c.data_inicio AS 'data_inicio',
 c.data_termino AS 'data_termino',
-p.id AS 'id_pais',
-p.nome AS 'pais_nome',
-p.continente AS 'continente_pais'
-FROM clubes AS c
-INNER JOIN paises AS p ON(c.id_pais = p.id);";
+e.id AS 'id_esporte',
+e.nome AS 'nome_esporte',
+e.quantidade_jogadores_time AS 'jogadores_time',
+e.quantidade_atleta_time AS 'jogadores_clube',
+e.local_praticado AS 'local_praticado',
+cb.id AS 'id_clube',
+cb.nome AS 'nome_clube',
+cb.cidade_sede AS 'cidade_sede',
+cb.ano_fundacao AS 'ano_fundacao',
+t.id AS 'id_tecnico',
+t.nome AS 'nome_tecnico',
+t.cpf AS 'cpf_tecnico',
+t.data_nascimento AS 'nascimento_tecnico',
+t.cidade_natal AS 'cidade_natal_tecnico'
+FROM competicoes AS c
+INNER JOIN esportes AS e ON(c.id_esportes = e.id)
+INNER JOIN clubes AS cb ON(e.id_clube = cb.id)
+INNER JOIN tecnicos AS t ON(cb.id_tecnico = t.id);";
 
             var tabelaMemoria = new DataTable();
             tabelaMemoria.Load(comando.ExecuteReader());
@@ -117,9 +130,22 @@ INNER JOIN paises AS p ON(c.id_pais = p.id);";
                 competicao.DataInicio = Convert.ToDateTime(registro["data_inicio"]);
                 competicao.DataTermino = Convert.ToDateTime(registro["data_termino"]);
 
-                competicao.Pais.Id = Convert.ToInt32(registro["id_pais"]);
-                competicao.Pais.Nome = registro["pais_nome"].ToString();
-                competicao.Pais.Continente = registro["continente_pais"].ToString();
+                competicao.Esporte.Id = Convert.ToInt32(registro["id_pais"]);
+                competicao.Esporte.Nome = registro["pais_nome"].ToString();
+                competicao.Esporte.QuantidadesJogadoresTime = Convert.ToInt32(registro["jogadores_time"]);
+                competicao.Esporte.QuantidadesAtletasClube = Convert.ToInt32(registro["jogadores_clube"]);
+                competicao.Esporte.LocalPraticado = registro["local_praticado"].ToString();
+
+                competicao.Esporte.Clube.Id = Convert.ToInt32(registro["id_clube"]);
+                competicao.Esporte.Clube.Nome = registro["nome_clube"].ToString();
+                competicao.Esporte.Clube.CidadeSede = registro["cidade_sede"].ToString();
+                competicao.Esporte.Clube.AnoFundacao = Convert.ToDateTime(registro["ano_fundacao"]);
+
+                competicao.Esporte.Clube.Tecnico.Id = Convert.ToInt32(registro["id_tecnico"]);
+                competicao.Esporte.Clube.Tecnico.Nome = registro["nome_tecnico"].ToString();
+                competicao.Esporte.Clube.Tecnico.Cpf = registro["cpf_tecnico"].ToString();
+                competicao.Esporte.Clube.Tecnico.DataNascimento = Convert.ToDateTime(registro["nascimento_tecnico"]);
+                competicao.Esporte.Clube.Tecnico.CidadeNatal = registro["cidade_natal_tecnico"].ToString();
 
                 competicoes.Add(competicao);
             }

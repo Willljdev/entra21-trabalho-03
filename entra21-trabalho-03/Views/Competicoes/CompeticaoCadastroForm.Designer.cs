@@ -39,12 +39,14 @@
             this.dateTimePickerDateInicio = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDateTermino = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerHoraTermino = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxEsportes = new System.Windows.Forms.ComboBox();
+            this.labelEsportes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonCadastrar
             // 
             this.buttonCadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCadastrar.Location = new System.Drawing.Point(174, 186);
+            this.buttonCadastrar.Location = new System.Drawing.Point(174, 256);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 34);
             this.buttonCadastrar.TabIndex = 0;
@@ -55,7 +57,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancelar.Location = new System.Drawing.Point(12, 186);
+            this.buttonCancelar.Location = new System.Drawing.Point(12, 256);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 34);
             this.buttonCancelar.TabIndex = 1;
@@ -66,7 +68,7 @@
             // buttonMenu
             // 
             this.buttonMenu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(93, 186);
+            this.buttonMenu.Location = new System.Drawing.Point(93, 256);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(75, 34);
             this.buttonMenu.TabIndex = 2;
@@ -150,26 +152,30 @@
             // 
             // comboBoxEsportes
             // 
+            this.comboBoxEsportes.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxEsportes.FormattingEnabled = true;
-            this.comboBoxEsportes.Location = new System.Drawing.Point(13, 81);
+            this.comboBoxEsportes.Location = new System.Drawing.Point(12, 210);
             this.comboBoxEsportes.Name = "comboBoxEsportes";
-            this.comboBoxEsportes.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxEsportes.TabIndex = 9;
+            this.comboBoxEsportes.Size = new System.Drawing.Size(175, 26);
+            this.comboBoxEsportes.TabIndex = 11;
             // 
             // labelEsportes
             // 
             this.labelEsportes.AutoSize = true;
-            this.labelEsportes.Location = new System.Drawing.Point(13, 63);
+            this.labelEsportes.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEsportes.Location = new System.Drawing.Point(12, 189);
             this.labelEsportes.Name = "labelEsportes";
-            this.labelEsportes.Size = new System.Drawing.Size(51, 15);
-            this.labelEsportes.TabIndex = 10;
-            this.labelEsportes.Text = "Esportes";
+            this.labelEsportes.Size = new System.Drawing.Size(177, 18);
+            this.labelEsportes.TabIndex = 12;
+            this.labelEsportes.Text = "Esporte da competição";
             // 
             // CompeticaoCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 232);
+            this.ClientSize = new System.Drawing.Size(258, 302);
+            this.Controls.Add(this.labelEsportes);
+            this.Controls.Add(this.comboBoxEsportes);
             this.Controls.Add(this.dateTimePickerHoraTermino);
             this.Controls.Add(this.dateTimePickerDateTermino);
             this.Controls.Add(this.dateTimePickerDateInicio);
@@ -202,5 +208,7 @@
         private DateTimePicker dateTimePickerDateInicio;
         private DateTimePicker dateTimePickerDateTermino;
         private DateTimePicker dateTimePickerHoraTermino;
+        private ComboBox comboBoxEsportes;
+        private Label labelEsportes;
     }
 }

@@ -13,6 +13,9 @@ namespace entra21_trabalho_03.Views.Competicoes
 
             _competicaoService = new CompeticaoService();
 
+            PreencherComboBoxEsporte();
+
+
             _idEditar = -1;
         }
 
@@ -21,8 +24,30 @@ namespace entra21_trabalho_03.Views.Competicoes
             _idEditar = competicao.Id;
             textBoxNome.Text = competicao.Nome;
             dateTimePickerDateInicio.Value = Convert.ToDateTime(competicao.DataInicio.ToString("dd/MM/yyyy"));
-            dateTimePickerDateInicio.Value = Convert.ToDateTime(competicao.DataInicio.ToString("HH:mm:ss"));
-            
+            dateTimePickerHoraInicio.Value = Convert.ToDateTime(competicao.DataInicio.ToString("HH:mm:ss"));
+            dateTimePickerDateTermino.Value = Convert.ToDateTime(competicao.DataTermino.ToString("dd/MM/yyyy"));
+            dateTimePickerHoraTermino.Value = Convert.ToDateTime(competicao.DataTermino.ToString("HH:mm:ss"));
+
+            for (var i = 0; i < comboBoxEsportes.Items.Count; i++)
+            {
+                var esportePercorrido = comboBoxEsportes.Items[i] as Esporte;
+                if (esportePercorrido.Id == competicao.Esporte.Id)
+                {
+                    comboBoxEsportes.SelectedItem = esportePercorrido;
+                    break;
+                }
+            }
+        }
+
+        private void PreencherComboBoxEsporte()
+        {
+            var esportes = _competicaoService.ObterTodos();
+
+            for (var i = 0; i < esportes.Count; i++)
+            {
+                var esporte = esportes[i];
+                comboBoxEsportes.Items.Add(esporte);
+            }
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)

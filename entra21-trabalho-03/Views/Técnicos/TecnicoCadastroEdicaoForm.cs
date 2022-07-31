@@ -50,7 +50,7 @@ namespace entra21_trabalho_03.Views.Técnicos
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             var nome = textBoxNomeTecnico.Text.Trim();
-            var cpf = maskedTextBoxCpf.Text.Trim();
+            var cpf = maskedTextBoxCpf
             var cidadeNatal = textBoxCidadeNatal.Text.Trim();
             var dataNascimento = Convert.ToDateTime(dateTimePickerDataNascimento.Text);
             var clubeAtual = comboBoxClubeAtual.SelectedItem as Clube;

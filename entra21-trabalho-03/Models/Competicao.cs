@@ -6,5 +6,6 @@
         public string Nome { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataTermino { get; set; }
+        public Esporte Esporte { get; set; }
     }
 }
