@@ -1,4 +1,4 @@
-﻿namespace entra21_trabalho_03.PaisesCompeticoes.Models
+﻿namespace entra21_trabalho_03.EsportesCompeticoes.Models
 {
     public class Competicao
     {
@@ -6,6 +6,6 @@
         public string Nome { get; set; }
         public DateTime Data_inicio { get; set; }
         public DateTime Data_termino { get; set; }
-        public Pais pais { get; set; }
+        public Esporte Esportes { get; set; }
     }
 }

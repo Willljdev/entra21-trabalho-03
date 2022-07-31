@@ -1,4 +1,4 @@
-﻿using entra21_trabalho_03.PaisesCompeticoes.Models;
+﻿using entra21_trabalho_03.EsportesCompeticoes.Models;
 
 namespace entra21_trabalho_03.Services
 {
