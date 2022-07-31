@@ -95,15 +95,10 @@ namespace entra21_trabalho_03.Services
             comando.CommandText = @"SELECT 
 c.id AS 'id',
 c.nome AS 'nome',
-c.data_inicio AS 'inicio',
-c.data_termino AS 'termino',
 e.id AS 'id_esporte',
-cb.id AS 'id_clube',
-t.id AS 'id_tecnico'
+e.nome AS 'nome_esporte'
 FROM competicoes AS c
-INNER JOIN esportes AS e ON(c.id_esportes = e.id)
-INNER JOIN clubes AS cb ON(e.id_clube = cb.id)
-INNER JOIN tecnicos AS t ON(cb.id_tecnico = t.id);";
+INNER JOIN esportes AS e ON(c.id_esportes = e.id);";
 
             var tabelaMemoria = new DataTable();
             tabelaMemoria.Load(comando.ExecuteReader());
@@ -116,19 +111,9 @@ INNER JOIN tecnicos AS t ON(cb.id_tecnico = t.id);";
 
                 competicao.Id = Convert.ToInt32(registro["id"]);
                 competicao.Nome = registro["nome"].ToString();
-                competicao.DataInicio = Convert.ToDateTime(registro["inicio"]);
-                competicao.DataTermino = Convert.ToDateTime(registro["termino"]);
 
                 competicao.Esporte.Id = Convert.ToInt32(registro["id_esporte"]);
                 competicao.Esporte.Nome = registro["nome_esporte"].ToString();
-                competicao.Esporte.QuantidadesJogadoresTime = Convert.ToInt32(registro["jogadores_time"]);
-                competicao.Esporte.QuantidadesAtletasClube = Convert.ToInt32(registro["jogadores_clube"]);
-                competicao.Esporte.LocalPraticado = registro["local_praticado"].ToString();
-
-                competicao.Esporte.Clube.Id = Convert.ToInt32(registro["id_clube"]);
-                competicao.Esporte.Clube.Nome = registro["nome_clube"].ToString();
-                competicao.Esporte.Clube.CidadeSede = registro["cidade_sede"].ToString();
-                competicao.Esporte.Clube.AnoFundacao = Convert.ToDateTime(registro["ano_fundacao"]);
 
                 competicoes.Add(competicao);
             }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCadastrar = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.labelNome = new System.Windows.Forms.Label();
@@ -43,23 +43,23 @@
             this.labelEsportes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // buttonCadastrar
+            // buttonSalvar
             // 
-            this.buttonCadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCadastrar.Location = new System.Drawing.Point(174, 256);
-            this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(75, 34);
-            this.buttonCadastrar.TabIndex = 0;
-            this.buttonCadastrar.Text = "Cadastrar";
-            this.buttonCadastrar.UseVisualStyleBackColor = true;
-            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
+            this.buttonSalvar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonSalvar.Location = new System.Drawing.Point(186, 256);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(63, 34);
+            this.buttonSalvar.TabIndex = 0;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancelar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonCancelar.Location = new System.Drawing.Point(12, 256);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 34);
+            this.buttonCancelar.Size = new System.Drawing.Size(87, 34);
             this.buttonCancelar.TabIndex = 1;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -67,8 +67,8 @@
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(93, 256);
+            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonMenu.Location = new System.Drawing.Point(105, 256);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(75, 34);
             this.buttonMenu.TabIndex = 2;
@@ -173,6 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(258, 302);
             this.Controls.Add(this.labelEsportes);
             this.Controls.Add(this.comboBoxEsportes);
@@ -186,7 +187,7 @@
             this.Controls.Add(this.labelNome);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonCadastrar);
+            this.Controls.Add(this.buttonSalvar);
             this.Name = "CompeticaoCadastroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de competições";
@@ -197,7 +198,7 @@
 
         #endregion
 
-        private Button buttonCadastrar;
+        private Button buttonSalvar;
         private Button buttonCancelar;
         private Button buttonMenu;
         private Label labelNome;

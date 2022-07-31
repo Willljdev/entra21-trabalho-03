@@ -10,6 +10,7 @@ namespace entra21_trabalho_03.Views.Competicoes
             InitializeComponent();
             _competicao = new CompeticaoService();
             PreencherDataGridView();
+            BotoesTransparentes();
         }
 
         private void PreencherDataGridView()
@@ -17,7 +18,7 @@ namespace entra21_trabalho_03.Views.Competicoes
             var competicoes = _competicao.ObterTodos();
             dataGridView1.Rows.Clear();
 
-            for(int i = 0; i < competicoes.Count; i++)
+            for (int i = 0; i < competicoes.Count; i++)
             {
                 var competicao = competicoes[i];
                 dataGridView1.Rows.Add(new object[]
@@ -41,13 +42,13 @@ namespace entra21_trabalho_03.Views.Competicoes
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count == 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecione uma competição pra apagar");
                 return;
             }
 
-            if(dataGridView1.Rows.Count == 0)
+            if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("Primeiro cadastre uma competição!!");
                 return;
@@ -64,13 +65,13 @@ namespace entra21_trabalho_03.Views.Competicoes
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count == 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecione uma competição pra Editar");
                 return;
             }
 
-            if(dataGridView1.Rows.Count == 0)
+            if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("Cadastre uma competição primeiro!!");
                 return;
@@ -84,13 +85,38 @@ namespace entra21_trabalho_03.Views.Competicoes
             competicaoForm.ShowDialog();
 
             PreencherDataGridView();
-
-            
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BotoesTransparentes()
+        {
+            buttonApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonApagar.FlatAppearance.BorderSize = 0;
+            buttonApagar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonApagar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonApagar.BackColor = Color.Transparent;
+
+            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonMenu.BackColor = Color.Transparent;
+
+            buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonEditar.FlatAppearance.BorderSize = 0;
+            buttonEditar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonEditar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonEditar.BackColor = Color.Transparent;
+
+            buttonCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonCadastrar.FlatAppearance.BorderSize = 0;
+            buttonCadastrar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonCadastrar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonCadastrar.BackColor = Color.Transparent;
         }
     }
 }

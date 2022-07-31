@@ -14,6 +14,7 @@ namespace entra21_trabalho_03.Views.Paises
             InitializeComponent();
             _clubeService = new ClubeService();
             PreencherComboBoxClube();
+            BotoesTransparentes();
             _idEditar = -1;
         }
 
@@ -118,5 +119,25 @@ namespace entra21_trabalho_03.Views.Paises
             this.Close();
         }
 
+        private void BotoesTransparentes()
+        {
+            buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonSalvar.FlatAppearance.BorderSize = 0;
+            buttonSalvar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonSalvar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonSalvar.BackColor = Color.Transparent;
+
+            buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonCancelar.FlatAppearance.BorderSize = 0;
+            buttonCancelar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonCancelar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonCancelar.BackColor = Color.Transparent;
+
+            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonMenu.BackColor = Color.Transparent;
+        }
     }
 }

@@ -57,6 +57,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.BackColor = System.Drawing.Color.Azure;
+            this.buttonSalvar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonSalvar.Location = new System.Drawing.Point(178, 60);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 34);
@@ -68,10 +69,11 @@
             // buttonCancelar
             // 
             this.buttonCancelar.BackColor = System.Drawing.Color.Azure;
+            this.buttonCancelar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonCancelar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonCancelar.Location = new System.Drawing.Point(12, 60);
+            this.buttonCancelar.Location = new System.Drawing.Point(2, 60);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 34);
+            this.buttonCancelar.Size = new System.Drawing.Size(89, 34);
             this.buttonCancelar.TabIndex = 3;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
@@ -80,6 +82,7 @@
             // buttonMenu
             // 
             this.buttonMenu.BackColor = System.Drawing.Color.Azure;
+            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonMenu.Location = new System.Drawing.Point(97, 60);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(75, 34);

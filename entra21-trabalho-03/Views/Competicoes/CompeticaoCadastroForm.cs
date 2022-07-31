@@ -14,12 +14,12 @@ namespace entra21_trabalho_03.Views.Competicoes
             _competicaoService = new CompeticaoService();
 
             PreencherComboBoxEsporte();
-
+            BotoesTransparentes();
 
             _idEditar = -1;
         }
 
-        public CompeticaoCadastroForm(Competicao competicao) :this()
+        public CompeticaoCadastroForm(Competicao competicao) : this()
         {
             _idEditar = competicao.Id;
             textBoxNome.Text = competicao.Nome;
@@ -73,6 +73,27 @@ namespace entra21_trabalho_03.Views.Competicoes
                 textBoxNome.Focus();
                 return;
             }
+        }
+
+        private void BotoesTransparentes()
+        {
+            buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonCancelar.FlatAppearance.BorderSize = 0;
+            buttonCancelar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonCancelar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonCancelar.BackColor = Color.Transparent;
+
+            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonMenu.BackColor = Color.Transparent;
+
+            buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonSalvar.FlatAppearance.BorderSize = 0;
+            buttonSalvar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonSalvar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonSalvar.BackColor = Color.Transparent;
         }
     }
 }

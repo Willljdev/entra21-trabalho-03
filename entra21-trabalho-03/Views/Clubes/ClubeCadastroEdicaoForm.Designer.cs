@@ -96,6 +96,7 @@
             // 
             // buttonCancelar
             // 
+            this.buttonCancelar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonCancelar.Location = new System.Drawing.Point(12, 176);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelar.Name = "buttonCancelar";
@@ -107,6 +108,7 @@
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonSalvar.Location = new System.Drawing.Point(188, 176);
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvar.Name = "buttonSalvar";
@@ -118,6 +120,7 @@
             // 
             // buttonMenu
             // 
+            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonMenu.Location = new System.Drawing.Point(100, 176);
             this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMenu.Name = "buttonMenu";
@@ -148,6 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(277, 220);
             this.Controls.Add(this.labelHoraFundacao);
             this.Controls.Add(this.dateTimePickerHoraFundacao);
