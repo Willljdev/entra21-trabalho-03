@@ -37,8 +37,6 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
-            this.comboBoxTecnicoClube = new System.Windows.Forms.ComboBox();
-            this.labelTecnico = new System.Windows.Forms.Label();
             this.dateTimePickerHoraFundacao = new System.Windows.Forms.DateTimePicker();
             this.labelHoraFundacao = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -98,7 +96,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(12, 221);
+            this.buttonCancelar.Location = new System.Drawing.Point(12, 176);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(82, 30);
@@ -109,7 +107,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(188, 221);
+            this.buttonSalvar.Location = new System.Drawing.Point(188, 176);
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(82, 30);
@@ -120,7 +118,7 @@
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(100, 221);
+            this.buttonMenu.Location = new System.Drawing.Point(100, 176);
             this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(82, 30);
@@ -128,26 +126,6 @@
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
-            // 
-            // comboBoxTecnicoClube
-            // 
-            this.comboBoxTecnicoClube.BackColor = System.Drawing.Color.Azure;
-            this.comboBoxTecnicoClube.DisplayMember = "nome";
-            this.comboBoxTecnicoClube.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.comboBoxTecnicoClube.FormattingEnabled = true;
-            this.comboBoxTecnicoClube.Location = new System.Drawing.Point(12, 192);
-            this.comboBoxTecnicoClube.Name = "comboBoxTecnicoClube";
-            this.comboBoxTecnicoClube.Size = new System.Drawing.Size(196, 24);
-            this.comboBoxTecnicoClube.TabIndex = 12;
-            // 
-            // labelTecnico
-            // 
-            this.labelTecnico.AutoSize = true;
-            this.labelTecnico.Location = new System.Drawing.Point(12, 174);
-            this.labelTecnico.Name = "labelTecnico";
-            this.labelTecnico.Size = new System.Drawing.Size(96, 15);
-            this.labelTecnico.TabIndex = 13;
-            this.labelTecnico.Text = "Técnico do clube";
             // 
             // dateTimePickerHoraFundacao
             // 
@@ -170,11 +148,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(277, 255);
+            this.ClientSize = new System.Drawing.Size(277, 220);
             this.Controls.Add(this.labelHoraFundacao);
             this.Controls.Add(this.dateTimePickerHoraFundacao);
-            this.Controls.Add(this.labelTecnico);
-            this.Controls.Add(this.comboBoxTecnicoClube);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
@@ -204,8 +180,6 @@
         private Button buttonCancelar;
         private Button buttonSalvar;
         private Button buttonMenu;
-        private ComboBox comboBoxTecnicoClube;
-        private Label labelTecnico;
         private DateTimePicker dateTimePickerHoraFundacao;
         private Label labelHoraFundacao;
     }

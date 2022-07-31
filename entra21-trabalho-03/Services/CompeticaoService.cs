@@ -98,19 +98,8 @@ c.nome AS 'nome',
 c.data_inicio AS 'inicio',
 c.data_termino AS 'termino',
 e.id AS 'id_esporte',
-e.nome AS 'nome_esporte',
-e.quantidade_jogadores_time AS 'jogadores_time',
-e.quantidade_atletas_clube AS 'jogadores_clube',
-e.local_praticado AS 'local_praticado',
 cb.id AS 'id_clube',
-cb.nome AS 'nome_clube',
-cb.cidade_sede AS 'cidade_sede',
-cb.ano_fundacao AS 'ano_fundacao',
-t.id AS 'id_tecnico',
-t.nome AS 'nome_tecnico',
-t.cpf AS 'cpf_tecnico',
-t.data_nascimento AS 'nascimento_tecnico',
-t.cidade_natal AS 'cidade_natal_tecnico'
+t.id AS 'id_tecnico'
 FROM competicoes AS c
 INNER JOIN esportes AS e ON(c.id_esportes = e.id)
 INNER JOIN clubes AS cb ON(e.id_clube = cb.id)
@@ -140,12 +129,6 @@ INNER JOIN tecnicos AS t ON(cb.id_tecnico = t.id);";
                 competicao.Esporte.Clube.Nome = registro["nome_clube"].ToString();
                 competicao.Esporte.Clube.CidadeSede = registro["cidade_sede"].ToString();
                 competicao.Esporte.Clube.AnoFundacao = Convert.ToDateTime(registro["ano_fundacao"]);
-
-                competicao.Esporte.Clube.Tecnico.Id = Convert.ToInt32(registro["id_tecnico"]);
-                competicao.Esporte.Clube.Tecnico.Nome = registro["nome_tecnico"].ToString();
-                competicao.Esporte.Clube.Tecnico.Cpf = registro["cpf_tecnico"].ToString();
-                competicao.Esporte.Clube.Tecnico.DataNascimento = Convert.ToDateTime(registro["nascimento_tecnico"]);
-                competicao.Esporte.Clube.Tecnico.CidadeNatal = registro["cidade_natal_tecnico"].ToString();
 
                 competicoes.Add(competicao);
             }

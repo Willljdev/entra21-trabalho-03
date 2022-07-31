@@ -10,6 +10,7 @@ namespace entra21_trabalho_03.Views.Clubes
             InitializeComponent();
             _clubeService = new ClubeService();
             PreencherDataGridView();
+            BotoesTransparentes();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
@@ -37,9 +38,8 @@ namespace entra21_trabalho_03.Views.Clubes
                 {
                         clube.Id,
                         clube.Nome,
-                        clube.Tecnico.Nome,
+                        clube.CidadeSede,
                         clube.AnoFundacao.ToString("dd/MM/yyyy"),
-                        clube.CidadeSede
                 });
             }
         }
@@ -123,6 +123,33 @@ namespace entra21_trabalho_03.Views.Clubes
             _clubeService.Apagar(id);
             PreencherDataGridView();
             MessageBox.Show("Clube apagado do sistema!");
+        }
+
+        private void BotoesTransparentes()
+        {
+            buttonApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonApagar.FlatAppearance.BorderSize = 0;
+            buttonApagar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonApagar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonApagar.BackColor = Color.Transparent;
+
+            buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonEditar.FlatAppearance.BorderSize = 0;
+            buttonEditar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonEditar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonEditar.BackColor = Color.Transparent;
+
+            buttonCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonCadastrar.FlatAppearance.BorderSize = 0;
+            buttonCadastrar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonCadastrar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonCadastrar.BackColor = Color.Transparent;
+
+            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonMenu.BackColor = Color.Transparent;
         }
     }
 }

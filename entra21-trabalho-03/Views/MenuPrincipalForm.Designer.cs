@@ -35,14 +35,15 @@
             this.buttonJogadores = new System.Windows.Forms.Button();
             this.buttonCompeticoes = new System.Windows.Forms.Button();
             this.buttonTecnicos = new System.Windows.Forms.Button();
+            this.buttonEnderecos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonPosicoes
             // 
             this.buttonPosicoes.BackColor = System.Drawing.SystemColors.Window;
-            this.buttonPosicoes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonPosicoes.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonPosicoes.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonPosicoes.Location = new System.Drawing.Point(302, 12);
+            this.buttonPosicoes.Location = new System.Drawing.Point(155, 180);
             this.buttonPosicoes.Name = "buttonPosicoes";
             this.buttonPosicoes.Size = new System.Drawing.Size(93, 73);
             this.buttonPosicoes.TabIndex = 0;
@@ -52,19 +53,19 @@
             // 
             // buttonPaises
             // 
-            this.buttonPaises.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonPaises.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonPaises.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.buttonPaises.Location = new System.Drawing.Point(12, 91);
             this.buttonPaises.Name = "buttonPaises";
             this.buttonPaises.Size = new System.Drawing.Size(93, 73);
             this.buttonPaises.TabIndex = 1;
-            this.buttonPaises.Text = "Países";
+            this.buttonPaises.Text = "Esportes";
             this.buttonPaises.UseVisualStyleBackColor = true;
             this.buttonPaises.Click += new System.EventHandler(this.buttonPaises_Click);
             // 
             // buttonClubes
             // 
-            this.buttonClubes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonClubes.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonClubes.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.buttonClubes.Location = new System.Drawing.Point(12, 180);
             this.buttonClubes.Name = "buttonClubes";
@@ -76,7 +77,7 @@
             // 
             // buttonJogadores
             // 
-            this.buttonJogadores.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonJogadores.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonJogadores.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.buttonJogadores.Location = new System.Drawing.Point(12, 12);
             this.buttonJogadores.Name = "buttonJogadores";
@@ -101,15 +102,27 @@
             // buttonTecnicos
             // 
             this.buttonTecnicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTecnicos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonTecnicos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonTecnicos.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonTecnicos.Location = new System.Drawing.Point(302, 174);
+            this.buttonTecnicos.Location = new System.Drawing.Point(302, 180);
             this.buttonTecnicos.Name = "buttonTecnicos";
             this.buttonTecnicos.Size = new System.Drawing.Size(93, 73);
             this.buttonTecnicos.TabIndex = 5;
             this.buttonTecnicos.Text = "Técnicos";
             this.buttonTecnicos.UseVisualStyleBackColor = true;
             this.buttonTecnicos.Click += new System.EventHandler(this.buttonTecnicos_Click);
+            // 
+            // buttonEnderecos
+            // 
+            this.buttonEnderecos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonEnderecos.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonEnderecos.Location = new System.Drawing.Point(302, 12);
+            this.buttonEnderecos.Name = "buttonEnderecos";
+            this.buttonEnderecos.Size = new System.Drawing.Size(93, 73);
+            this.buttonEnderecos.TabIndex = 6;
+            this.buttonEnderecos.Text = "Endereços";
+            this.buttonEnderecos.UseVisualStyleBackColor = true;
+            this.buttonEnderecos.Click += new System.EventHandler(this.buttonEnderecos_Click);
             // 
             // MenuPrincipalForm
             // 
@@ -118,6 +131,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(407, 259);
+            this.Controls.Add(this.buttonEnderecos);
             this.Controls.Add(this.buttonTecnicos);
             this.Controls.Add(this.buttonCompeticoes);
             this.Controls.Add(this.buttonJogadores);
@@ -139,5 +153,6 @@
         private Button buttonJogadores;
         private Button buttonCompeticoes;
         private Button buttonTecnicos;
+        private Button buttonEnderecos;
     }
 }
