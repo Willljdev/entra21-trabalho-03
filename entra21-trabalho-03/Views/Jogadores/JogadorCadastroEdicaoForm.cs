@@ -26,7 +26,8 @@ namespace entra21_trabalho_03.Views.Jogadores
             _idEditar = jogador.Id;
             textBoxNome.Text = jogador.Nome;
             maskedTextBoxCpf.Text = jogador.Cpf;
-            dateTimePickerDataNascimento.Value = jogador.DataNascimento;
+            dateTimePickerDataNascimento.Value = Convert.ToDateTime(jogador.DataNascimento.ToString("dd/MM/yy"));
+            dateTimePickerHoraNascimento.Value = Convert.ToDateTime(jogador.DataNascimento.ToString("HH:mm:ss"));
 
             for (var i = 0; i < comboBoxClube.Items.Count; i++)
             {
@@ -79,6 +80,7 @@ namespace entra21_trabalho_03.Views.Jogadores
         { 
             var posicao = comboBoxPosicao.SelectedItem as Posicao;
             var clube = comboBoxClube.SelectedItem as Clube;
+            
             if (ValidarDados() == false)
                 return;
 
@@ -87,8 +89,10 @@ namespace entra21_trabalho_03.Views.Jogadores
             jogador.Posicao = posicao;
             jogador.Clube = clube;
             jogador.Cpf = maskedTextBoxCpf.Text.Trim();
-            jogador.DataNascimento = Convert.ToDateTime(dateTimePickerDataNascimento.Value.Date.ToString("dd/MM/yyyy") +
-                " " + dateTimePickerHoraNascimento.Value.TimeOfDay);
+            jogador.DataNascimento = Convert.ToDateTime(dateTimePickerDataNascimento.Value.Date.ToString("dd/MM/yyyy") + " " +
+                dateTimePickerHoraNascimento.Value.TimeOfDay);
+
+
 
             var jogadorService = new JogadorService();
 
@@ -134,7 +138,7 @@ namespace entra21_trabalho_03.Views.Jogadores
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void JogadorCadastroEdicaoForm_Load(object sender, EventArgs e)

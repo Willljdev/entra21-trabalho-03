@@ -42,7 +42,7 @@
             this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.dateTimePickerHoraNascimento = new System.Windows.Forms.DateTimePicker();
-            this.labelHoraNascimento = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -79,7 +79,7 @@
             // 
             this.labelCpf.AutoSize = true;
             this.labelCpf.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCpf.Location = new System.Drawing.Point(12, 141);
+            this.labelCpf.Location = new System.Drawing.Point(12, 142);
             this.labelCpf.Name = "labelCpf";
             this.labelCpf.Size = new System.Drawing.Size(36, 18);
             this.labelCpf.TabIndex = 6;
@@ -88,10 +88,10 @@
             // labelDataNascimento
             // 
             this.labelDataNascimento.AutoSize = true;
-            this.labelDataNascimento.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelDataNascimento.Location = new System.Drawing.Point(12, 185);
+            this.labelDataNascimento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelDataNascimento.Location = new System.Drawing.Point(12, 187);
             this.labelDataNascimento.Name = "labelDataNascimento";
-            this.labelDataNascimento.Size = new System.Drawing.Size(111, 16);
+            this.labelDataNascimento.Size = new System.Drawing.Size(133, 16);
             this.labelDataNascimento.TabIndex = 8;
             this.labelDataNascimento.Text = "Data de nascimento";
             // 
@@ -101,7 +101,7 @@
             this.textBoxNome.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxNome.Location = new System.Drawing.Point(12, 27);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(230, 22);
+            this.textBoxNome.Size = new System.Drawing.Size(246, 22);
             this.textBoxNome.TabIndex = 9;
             // 
             // comboBoxPosicao
@@ -112,7 +112,7 @@
             this.comboBoxPosicao.FormattingEnabled = true;
             this.comboBoxPosicao.Location = new System.Drawing.Point(12, 71);
             this.comboBoxPosicao.Name = "comboBoxPosicao";
-            this.comboBoxPosicao.Size = new System.Drawing.Size(230, 24);
+            this.comboBoxPosicao.Size = new System.Drawing.Size(246, 24);
             this.comboBoxPosicao.TabIndex = 10;
             // 
             // comboBoxClube
@@ -123,7 +123,7 @@
             this.comboBoxClube.FormattingEnabled = true;
             this.comboBoxClube.Location = new System.Drawing.Point(12, 115);
             this.comboBoxClube.Name = "comboBoxClube";
-            this.comboBoxClube.Size = new System.Drawing.Size(230, 24);
+            this.comboBoxClube.Size = new System.Drawing.Size(246, 24);
             this.comboBoxClube.TabIndex = 11;
             // 
             // dateTimePickerDataNascimento
@@ -132,12 +132,16 @@
             this.dateTimePickerDataNascimento.CalendarMonthBackground = System.Drawing.Color.SkyBlue;
             this.dateTimePickerDataNascimento.CalendarTitleBackColor = System.Drawing.Color.SkyBlue;
             this.dateTimePickerDataNascimento.CalendarTrailingForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dateTimePickerDataNascimento.CustomFormat = "";
             this.dateTimePickerDataNascimento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(12, 203);
+            this.dateTimePickerDataNascimento.MaxDate = new System.DateTime(2022, 1, 8, 23, 59, 0, 0);
+            this.dateTimePickerDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
-            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(121, 26);
+            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(128, 26);
             this.dateTimePickerDataNascimento.TabIndex = 13;
+            this.dateTimePickerDataNascimento.Value = new System.DateTime(2022, 1, 8, 23, 59, 0, 0);
             // 
             // buttonCancelar
             // 
@@ -169,7 +173,7 @@
             this.maskedTextBoxCpf.Location = new System.Drawing.Point(12, 162);
             this.maskedTextBoxCpf.Mask = "000.000.000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
-            this.maskedTextBoxCpf.Size = new System.Drawing.Size(230, 22);
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(246, 22);
             this.maskedTextBoxCpf.TabIndex = 16;
             // 
             // buttonMenu
@@ -186,29 +190,30 @@
             // 
             // dateTimePickerHoraNascimento
             // 
+            this.dateTimePickerHoraNascimento.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerHoraNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePickerHoraNascimento.Location = new System.Drawing.Point(139, 203);
+            this.dateTimePickerHoraNascimento.Location = new System.Drawing.Point(154, 204);
             this.dateTimePickerHoraNascimento.Name = "dateTimePickerHoraNascimento";
-            this.dateTimePickerHoraNascimento.Size = new System.Drawing.Size(121, 23);
+            this.dateTimePickerHoraNascimento.Size = new System.Drawing.Size(128, 26);
             this.dateTimePickerHoraNascimento.TabIndex = 18;
             // 
-            // labelHoraNascimento
+            // label2
             // 
-            this.labelHoraNascimento.AutoSize = true;
-            this.labelHoraNascimento.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelHoraNascimento.Location = new System.Drawing.Point(139, 187);
-            this.labelHoraNascimento.Name = "labelHoraNascimento";
-            this.labelHoraNascimento.Size = new System.Drawing.Size(113, 16);
-            this.labelHoraNascimento.TabIndex = 19;
-            this.labelHoraNascimento.Text = "Hora de Nascimento";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(154, 188);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 16);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Hora de nascimento";
             // 
             // JogadorCadastroEdicaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(289, 268);
-            this.Controls.Add(this.labelHoraNascimento);
+            this.ClientSize = new System.Drawing.Size(294, 268);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePickerHoraNascimento);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.maskedTextBoxCpf);
@@ -224,6 +229,7 @@
             this.Controls.Add(this.labelPosicao);
             this.Controls.Add(this.label1);
             this.Name = "JogadorCadastroEdicaoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de jogadores";
             this.Load += new System.EventHandler(this.JogadorCadastroEdicaoForm_Load);
             this.ResumeLayout(false);
@@ -247,6 +253,6 @@
         private MaskedTextBox maskedTextBoxCpf;
         private Button buttonMenu;
         private DateTimePicker dateTimePickerHoraNascimento;
-        private Label labelHoraNascimento;
+        private Label label2;
     }
 }

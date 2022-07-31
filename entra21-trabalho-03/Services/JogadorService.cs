@@ -47,12 +47,12 @@ namespace entra21_trabalho_03.Services
                 id_clube = @ID_CLUBE, nome = @NOME, cpf = @CPF,
                 data_nascimento = @DATA_NASCIMENTO WHERE id = @ID";
 
+            comando.Parameters.AddWithValue("@ID", jogador.Id);
             comando.Parameters.AddWithValue("@ID_POSICAO", jogador.Posicao.Id);
             comando.Parameters.AddWithValue("@ID_CLUBE", jogador.Clube.Id);
             comando.Parameters.AddWithValue("@NOME", jogador.Nome);
             comando.Parameters.AddWithValue("@CPF", jogador.Cpf);
             comando.Parameters.AddWithValue("@DATA_NASCIMENTO", jogador.DataNascimento);
-            comando.Parameters.AddWithValue("@ID", jogador.Id);
 
             comando.ExecuteNonQuery();
             conexao.Close();

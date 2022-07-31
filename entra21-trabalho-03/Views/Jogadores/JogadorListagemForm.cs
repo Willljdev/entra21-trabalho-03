@@ -27,7 +27,7 @@ namespace entra21_trabalho_03.Views.Jogadores
                     jogador.Posicao.Nome,
                     jogador.Clube.Nome,
                     jogador.Cpf,
-                    jogador.DataNascimento.ToString("dd/MM/yy HH:mm:ss")
+                    jogador.DataNascimento.ToString("dd/MM/yyyy")
                 });
             }
         }

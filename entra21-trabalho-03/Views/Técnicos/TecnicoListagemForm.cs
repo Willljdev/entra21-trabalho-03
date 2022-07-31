@@ -1,13 +1,4 @@
 ﻿using entra21_trabalho_03.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace entra21_trabalho_03.Views.Técnicos
 {
@@ -17,6 +8,8 @@ namespace entra21_trabalho_03.Views.Técnicos
         public TecnicoListagemForm()
         {
             InitializeComponent();
+            _tecnicoService = new TecnicoService();
+            PreencherDataGridView();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
@@ -27,7 +20,7 @@ namespace entra21_trabalho_03.Views.Técnicos
                 return;
             }
 
-            if(dataGridViewListaTecnicos.Rows.Count == 0)
+            if (dataGridViewListaTecnicos.Rows.Count == 0)
             {
                 MessageBox.Show("Não nem um técnico cadastrado");
                 return;

@@ -8,6 +8,7 @@ namespace entra21_trabalho_03.Views.Competicoes
         public CompeticoesListagemForm()
         {
             InitializeComponent();
+            _competicao = new CompeticaoService();
             PreencherDataGridView();
         }
 
