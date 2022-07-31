@@ -17,9 +17,11 @@ namespace entra21_trabalho_03.Views.Jogadores
 
             PreencherComboBoxClube();
             PreencherComboBoxPosicao();
+            BotoesTransparentes();
 
             _idEditar = -1;
         }
+
 
         public JogadorCadastroEdicaoForm(Jogador jogador) : this()
         {
@@ -137,6 +139,26 @@ namespace entra21_trabalho_03.Views.Jogadores
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void BotoesTransparentes()
+        {
+            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonMenu.BackColor = Color.Transparent;
+
+            buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonCancelar.FlatAppearance.BorderSize = 0;
+            buttonCancelar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonCancelar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonCancelar.BackColor = Color.Transparent;
+
+            buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonSalvar.FlatAppearance.BorderSize = 0;
+            buttonSalvar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonSalvar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonSalvar.BackColor = Color.Transparent;
         }
     }
 }

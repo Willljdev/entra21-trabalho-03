@@ -30,7 +30,7 @@
         {
             this.buttonApagar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
-            this.Cadastrar = new System.Windows.Forms.Button();
+            this.buttonCadastrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPosicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,18 +67,18 @@
             this.buttonEditar.UseVisualStyleBackColor = false;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
-            // Cadastrar
+            // buttonCadastrar
             // 
-            this.Cadastrar.BackColor = System.Drawing.Color.Azure;
-            this.Cadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Cadastrar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.Cadastrar.Location = new System.Drawing.Point(210, 12);
-            this.Cadastrar.Name = "Cadastrar";
-            this.Cadastrar.Size = new System.Drawing.Size(75, 34);
-            this.Cadastrar.TabIndex = 2;
-            this.Cadastrar.Text = "Cadastrar";
-            this.Cadastrar.UseVisualStyleBackColor = false;
-            this.Cadastrar.Click += new System.EventHandler(this.Cadastrar_Click);
+            this.buttonCadastrar.BackColor = System.Drawing.Color.Azure;
+            this.buttonCadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCadastrar.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.buttonCadastrar.Location = new System.Drawing.Point(210, 12);
+            this.buttonCadastrar.Name = "buttonCadastrar";
+            this.buttonCadastrar.Size = new System.Drawing.Size(75, 34);
+            this.buttonCadastrar.TabIndex = 2;
+            this.buttonCadastrar.Text = "Cadastrar";
+            this.buttonCadastrar.UseVisualStyleBackColor = false;
+            this.buttonCadastrar.Click += new System.EventHandler(this.Cadastrar_Click);
             // 
             // dataGridView1
             // 
@@ -126,11 +126,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(295, 360);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Cadastrar);
+            this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonApagar);
             this.Name = "PosicaoListagemForm";
@@ -145,7 +145,7 @@
 
         private Button buttonApagar;
         private Button buttonEditar;
-        private Button Cadastrar;
+        private Button buttonCadastrar;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn ColumnId;
         private DataGridViewTextBoxColumn ColumnPosicao;
