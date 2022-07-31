@@ -148,6 +148,23 @@
             this.dateTimePickerHoraTermino.Size = new System.Drawing.Size(94, 23);
             this.dateTimePickerHoraTermino.TabIndex = 10;
             // 
+            // comboBoxEsportes
+            // 
+            this.comboBoxEsportes.FormattingEnabled = true;
+            this.comboBoxEsportes.Location = new System.Drawing.Point(13, 81);
+            this.comboBoxEsportes.Name = "comboBoxEsportes";
+            this.comboBoxEsportes.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxEsportes.TabIndex = 9;
+            // 
+            // labelEsportes
+            // 
+            this.labelEsportes.AutoSize = true;
+            this.labelEsportes.Location = new System.Drawing.Point(13, 63);
+            this.labelEsportes.Name = "labelEsportes";
+            this.labelEsportes.Size = new System.Drawing.Size(51, 15);
+            this.labelEsportes.TabIndex = 10;
+            this.labelEsportes.Text = "Esportes";
+            // 
             // CompeticaoCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

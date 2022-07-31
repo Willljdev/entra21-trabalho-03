@@ -23,7 +23,7 @@ namespace entra21_trabalho_03.Views
 
         private void buttonPaises_Click(object sender, EventArgs e)
         {
-            var paises = new PaisListagemForm();
+            var paises = new EsporteListagemForm();
             paises.ShowDialog();
         }
 

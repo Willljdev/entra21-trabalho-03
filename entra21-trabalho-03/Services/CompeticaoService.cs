@@ -1,5 +1,5 @@
 ﻿using entra21_trabalho_03.DataBase;
-using entra21_trabalho_03.PaisesCompeticoes.Models;
+using entra21_trabalho_03.EsportesCompeticoes.Models;
 using System.Data;
 
 namespace entra21_trabalho_03.Services

@@ -1,6 +1,4 @@
-﻿using entra21_trabalho_03.Models;
-
-namespace entra21_trabalho_03.PaisesCompeticoes.Models
+﻿namespace entra21_trabalho_03.EsportesCompeticoes.Models
 {
     public class Competicao
     {

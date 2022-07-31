@@ -1,14 +1,14 @@
-﻿using entra21_trabalho_03.PaisesCompeticoes.Services;
+﻿using entra21_trabalho_03.EsportesCompeticoes.Services;
 
 namespace entra21_trabalho_03.Views.Paises
 {
-    public partial class PaisListagemForm : Form
+    public partial class EsporteListagemForm : Form
     {
-        private readonly PaisService _paisService;
-        public PaisListagemForm()
+        private readonly EsporteService _paisService;
+        public EsporteListagemForm()
         {
             InitializeComponent();
-            _paisService = new PaisService();
+            _paisService = new EsporteService();
             PreencherDataGridView();
         }
 
@@ -29,7 +29,7 @@ namespace entra21_trabalho_03.Views.Paises
                 {
                     paises.Id,
                     paises.Nome,
-                    paises.Continente
+                    paises.QuantidadesJogadoresTime
                 });
             }
         }
@@ -76,7 +76,7 @@ namespace entra21_trabalho_03.Views.Paises
             var id = Convert.ToInt32(linha.Cells[0].Value);
 
             var paises = _paisService.ObeterPorId(id);
-            var paisForm = new PaisCadastroForm(paises);
+            var paisForm = new EsporteCadastroForm(paises);
             paisForm.ShowDialog();
 
             PreencherDataGridView();
@@ -84,7 +84,7 @@ namespace entra21_trabalho_03.Views.Paises
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-            var paisesForm = new PaisCadastroForm();
+            var paisesForm = new EsporteCadastroForm();
             paisesForm.ShowDialog();
             PreencherDataGridView();
         }
