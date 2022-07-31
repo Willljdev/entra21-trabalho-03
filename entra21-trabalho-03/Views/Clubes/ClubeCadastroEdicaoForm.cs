@@ -24,10 +24,13 @@ namespace entra21_trabalho_03.Views.Clubes
 
             for (var i = 0; i < comboBoxTecnicoClube.Items.Count; i++)
             {
-                var posicaoPercorrida = comboBoxTecnicoClube.Items[i] as Posicao;
+                var tecnicoPercorrido = comboBoxTecnicoClube.Items[i] as Tecnico;
 
-                if (posicaoPercorrida.Id == clube.Tecnico.Id)
-                    comboBoxTecnicoClube.SelectedItem = posicaoPercorrida;
+                if (tecnicoPercorrido.Nome == clube.Tecnico.Nome)
+                {
+                    comboBoxTecnicoClube.SelectedItem = tecnicoPercorrido;
+                    break;
+                }
             }
         }
 
@@ -36,7 +39,8 @@ namespace entra21_trabalho_03.Views.Clubes
             var tecnico = comboBoxTecnicoClube.SelectedItem as Tecnico;
             var nome = textBoxNomeClube.Text.Trim();
             var cidadeSede = textBoxCidadeSede.Text.Trim();
-            var dataFundacao = Convert.ToDateTime(dateTimePickerAnoFundacao.Text);
+            var dataFundacao = Convert.ToDateTime(dateTimePickerAnoFundacao.Value.Date.ToString("dd/MM/yyyy") + " " +
+                dateTimePickerHoraFundacao.Value.TimeOfDay);
 
             if (ValidarDados() == false)
                 return;

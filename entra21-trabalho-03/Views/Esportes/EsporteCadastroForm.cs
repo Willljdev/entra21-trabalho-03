@@ -1,23 +1,28 @@
 ﻿using entra21_trabalho_03.EsportesCompeticoes.Models;
 using entra21_trabalho_03.EsportesCompeticoes.Services;
 using entra21_trabalho_03.Models;
+using entra21_trabalho_03.Services;
 
 namespace entra21_trabalho_03.Views.Paises
 {
     public partial class EsporteCadastroForm : Form
     {
-        private int id = -1;
+        private readonly int _idEditar;
+        private readonly ClubeService _clubeService;
         public EsporteCadastroForm()
         {
             InitializeComponent();
+            _clubeService = new ClubeService();
+            PreencherComboBoxClube();
+            _idEditar = -1;
         }
 
         public EsporteCadastroForm(Esporte esportes) : this()
         {
-            id = esportes.Id;
+            _idEditar = esportes.Id;
             textBoxNome.Text = esportes.Nome;
-            textBoxQuantidadesJogadoresTime.Text = esportes.QuantidadesJogadoresTime.ToString();
-            textBoxQuantidadeAtletaClube.Text = esportes.QuantidadesAtletasClube.ToString();
+            numericUpDownJogadores.Text = esportes.QuantidadesJogadoresTime.ToString();
+            numericUpDownClube.Text = esportes.QuantidadesAtletasClube.ToString();
             textBoxLocalPraticado.Text = esportes.LocalPraticado;
 
             for (var i = 0; i < comboBoxClube.Items.Count; i++)
@@ -31,49 +36,32 @@ namespace entra21_trabalho_03.Views.Paises
             }
         }
 
+        private void PreencherComboBoxClube()
+        {
+            var clubes = _clubeService.ObterTodos();
+
+            for (var i = 0; i < clubes.Count; i++)
+            {
+                var clube = clubes[i];
+                comboBoxClube.Items.Add(clube);
+            }
+        }
+
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            var nome = textBoxNome.Text.Trim();
-            var quantidadeJogadoresTime = textBoxQuantidadesJogadoresTime.Text.Trim();
-            var quantidadeAtletasClube = textBoxQuantidadeAtletaClube.Text.Trim();
-            var localPraticado = textBoxLocalPraticado.Text.Trim();
             var clube = comboBoxClube.SelectedItem as Clube;
 
-            if (nome.Length < 3 || nome.Length > 50)
-            {
-                MessageBox.Show("Digita um nome descente ai fio");
-                textBoxNome.ResetText();
-                textBoxNome.Focus();
+            if (ValidarDados() == false)
                 return;
-            }
 
-            if (quantidadeJogadoresTime.Length < 3 || quantidadeJogadoresTime.Length > 50)
-            {
-                MessageBox.Show("Digita um continente maior ai");
-                textBoxQuantidadesJogadoresTime.ResetText();
-                textBoxQuantidadesJogadoresTime.Focus();
-                return;
-            }
-            if (quantidadeAtletasClube.Length < 10 || quantidadeAtletasClube.Length > 150)
-            {
-                MessageBox.Show("Digita um numero de atleta valido ai!!");
-                textBoxQuantidadeAtletaClube.ResetText();
-                textBoxQuantidadeAtletaClube.Focus();
-            }
-            if(localPraticado.Length < 3 || localPraticado.Length > 50)
-            {
-                MessageBox.Show("Digite um local praticado valido fi");
-                textBoxLocalPraticado.ResetText();
-                textBoxLocalPraticado.Focus();
-            }
             var esportes = new Esporte();
-            esportes.Nome = nome;
-            esportes.QuantidadesJogadoresTime = Convert.ToInt32(quantidadeJogadoresTime);
-            esportes.QuantidadesAtletasClube = Convert.ToInt32(quantidadeAtletasClube);
-            esportes.LocalPraticado = localPraticado;
+            esportes.Nome = textBoxNome.Text.Trim();
+            esportes.QuantidadesJogadoresTime = Convert.ToInt32(numericUpDownJogadores.Value);
+            esportes.QuantidadesAtletasClube = Convert.ToInt32(numericUpDownClube.Value);
+            esportes.LocalPraticado = textBoxLocalPraticado.Text.Trim();
 
             var esporteService = new EsporteService();
-            if (id == -1)
+            if (_idEditar == -1)
             {
                 esporteService.Cadastrar(esportes);
                 MessageBox.Show("Cadastrados com sucessos!!");
@@ -81,10 +69,43 @@ namespace entra21_trabalho_03.Views.Paises
                 return;
             }
 
-            esportes.Id = id;
+            esportes.Id = _idEditar;
             esporteService.Editar(esportes);
             MessageBox.Show("Alterados!!");
             Close();
+        }
+
+        private bool ValidarDados()
+        {
+            if (textBoxNome.Text.Length < 3 || textBoxLocalPraticado.Text.Length > 50)
+            {
+                MessageBox.Show("Digita um nome descente ai fio");
+                textBoxNome.ResetText();
+                textBoxNome.Focus();
+                return false;
+            }
+
+            if (numericUpDownJogadores.Value < 3 || numericUpDownJogadores.Value > 50)
+            {
+                MessageBox.Show("Digita um continente maior ai");
+                numericUpDownJogadores.ResetText();
+                numericUpDownJogadores.Focus();
+                return false;
+            }
+            if (numericUpDownClube.Value < 10 || numericUpDownClube.Value > 200)
+            {
+                MessageBox.Show("Digita um numero de atleta valido ai!!");
+                numericUpDownClube.ResetText();
+                numericUpDownClube.Focus();
+            }
+            if (textBoxLocalPraticado.Text.Length < 3 || textBoxLocalPraticado.Text.Length > 50)
+            {
+                MessageBox.Show("Digite um local praticado valido fi");
+                textBoxLocalPraticado.ResetText();
+                textBoxLocalPraticado.Focus();
+                return false;
+            }
+            return true;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)

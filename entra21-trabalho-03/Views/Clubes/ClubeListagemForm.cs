@@ -37,8 +37,9 @@ namespace entra21_trabalho_03.Views.Clubes
                 {
                         clube.Id,
                         clube.Nome,
-                        clube.CidadeSede,
-                        clube.AnoFundacao.ToString("dd/MM/yyyy")
+                        clube.Tecnico.Nome,
+                        clube.AnoFundacao.ToString("dd/MM/yyyy"),
+                        clube.CidadeSede
                 });
             }
         }

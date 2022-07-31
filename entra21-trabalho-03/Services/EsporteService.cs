@@ -1,8 +1,8 @@
-﻿using entra21_trabalho_03.DataBase;
+﻿using System.Data;
+using entra21_trabalho_03.DataBase;
 using entra21_trabalho_03.EsportesCompeticoes.Models;
 using entra21_trabalho_03.Models;
 using entra21_trabalho_03.Services;
-using System.Data;
 
 namespace entra21_trabalho_03.EsportesCompeticoes.Services
 {
@@ -25,8 +25,10 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "INSERT INTO esportes (nome, quantidade_jogadores_time, quantidade_atletas_clube, local_praticado, id_clube) VALUES (@NOME, @QUANTIDADE_JOGADORES_TIME," +
-                "@QUANTIDADE_ATLETAS_CLUBE, @LOCAL_PRATICADO, @ID_CLUBE)";
+            comando.CommandText =
+                @"INSERT INTO esportes (nome, quantidade_jogadores_time, quantidade_atletas_clube, local_praticado, id_clube)
+                VALUES (@NOME, @QUANTIDADE_JOGADORES_TIME, @QUANTIDADE_ATLETAS_CLUBE, @LOCAL_PRATICADO, @ID_CLUBE)";
+
             comando.Parameters.AddWithValue("@NOME", esportes.Nome);
             comando.Parameters.AddWithValue("@QUANTIDADE_JOGADORES_TIME", esportes.QuantidadesJogadoresTime);
             comando.Parameters.AddWithValue("@QUANTIDADE_ATLETAS_CLUBE", esportes.QuantidadesAtletasClube);
@@ -42,7 +44,12 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "UPDATE esportes SET nome = @NOME, quantidade_jogadores_time = @QUANTIDADE_JOGADORES_TIME, quantidades_atletas_clube = @QUANTIDADE_ATLETAS_CLUBE, local_praticado = @LOCAL_PRATICADO, id_clube = @ID_CLUBE WHERE id = @ID";
+            comando.CommandText =
+                @"UPDATE esportes SET nome = @NOME, quantidade_jogadores_time = @QUANTIDADE_JOGADORES_TIME,
+                quantidades_atletas_clube = @QUANTIDADE_ATLETAS_CLUBE, local_praticado = @LOCAL_PRATICADO,
+                id_clube = @ID_CLUBE WHERE id = @ID";
+
+            comando.Parameters.AddWithValue("@ID", esportes.Id);
             comando.Parameters.AddWithValue("@NOME", esportes.Nome);
             comando.Parameters.AddWithValue("@QUANTIDADE_JOGADORES_TIME", esportes.QuantidadesJogadoresTime);
             comando.Parameters.AddWithValue("@QUANTIDADE_ATLETAS_CLUBE", esportes.QuantidadesAtletasClube);
@@ -58,7 +65,9 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT id, nome, quantidade_jogadores_time, quantidades_atletas_clube, local_praticado, id_clube FROM esportes WHERE id = @ID";
+            comando.CommandText =
+                @"SELECT id, nome, quantidade_jogadores_time, quantidades_atletas_clube, local_praticado, id_clube FROM esportes WHERE id = @ID";
+
             comando.Parameters.AddWithValue("@ID", id);
 
             var tabelaEmMemoria = new DataTable();
@@ -73,7 +82,7 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
             esportes.Id = Convert.ToInt32(registro["id"]);
             esportes.Nome = registro["nome"].ToString();
             esportes.QuantidadesJogadoresTime = Convert.ToInt32(registro["quantidade_jogadores_time"]);
-            esportes.QuantidadesAtletasClube= Convert.ToInt32(registro["quantidade_atletas_clube"]);
+            esportes.QuantidadesAtletasClube = Convert.ToInt32(registro["quantidade_atletas_clube"]);
             esportes.LocalPraticado = registro["local_praticado"].ToString();
 
             esportes.Clube = new Clube();
@@ -81,7 +90,6 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
 
             conexao.Close();
             return esportes;
-
         }
 
         public List<Esporte> ObterTodos()
@@ -89,7 +97,7 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT id, nome, quantidade_jogadores_time, quantidade_atletas_clube, local_praticado FROM esportes";
+            comando.CommandText = "SELECT id, nome, quantidade_jogadores_time, quantidade_atletas_clube, local_praticado, id_clube FROM esportes";
 
             var tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
@@ -112,8 +120,6 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
                 paises.Add(esporte);
 
             }
-            conexao.Close();
-
             return paises;
         }
     }

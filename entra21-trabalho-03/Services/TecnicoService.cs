@@ -64,7 +64,8 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT id, nome, id_clube, cpf, data_nascimento, cidade_natal FROM tecnicos WHERE id= @ID";
+            comando.CommandText = 
+                @"SELECT id, nome, cpf, data_nascimento, cidade_natal FROM tecnicos WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
 
             var tabelaEmMemoria = new DataTable();

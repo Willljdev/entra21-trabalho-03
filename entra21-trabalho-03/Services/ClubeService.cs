@@ -86,7 +86,14 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT id, nome, cidade_sede, ano_fundacao FROM clubes";
+            comando.CommandText = @"SELECT
+c.id AS 'id',
+c.nome AS 'nome',
+c.ano_fundacao AS 'ano_fundacao',
+c.cidade_sede AS 'cidade_sede',
+t.id AS 'id_tecnico'
+FROM clubes AS c
+INNER JOIN tecnicos AS t ON(c.id_tecnico = t.id)";
 
             var tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
@@ -99,8 +106,10 @@ namespace entra21_trabalho_03.Services
                 var clube = new Clube();
                 clube.Id = Convert.ToInt32(linha["id"].ToString());
                 clube.Nome = linha["nome"].ToString();
-                clube.CidadeSede = linha["cidade_sede"].ToString();
                 clube.AnoFundacao = Convert.ToDateTime(linha["ano_fundacao"]);
+                clube.CidadeSede = linha["cidade_sede"].ToString();
+
+                clube.Tecnico.Id = Convert.ToInt32(linha["id_tecnico"]);
 
                 clubes.Add(clube);
             }
