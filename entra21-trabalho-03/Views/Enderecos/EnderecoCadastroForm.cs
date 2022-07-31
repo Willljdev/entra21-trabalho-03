@@ -7,6 +7,7 @@ namespace entra21_trabalho_03.Views.Enderecos
     public partial class EnderecoCadastroForm : Form
     {
         private readonly EnderecoCadastroService EnderecoCadastroService;
+        
         public EnderecoCadastroForm()
         {
             InitializeComponent();
@@ -79,12 +80,12 @@ namespace entra21_trabalho_03.Views.Enderecos
 
         private void LimparCampos()
         {
-            maskedTextBoxCep.Text = "";
-            textBoxEnderecoCompleto.Text = "";
-            textBoxBairro.Text = "";
-            textBoxCidade.Text = "";
-            textBoxEstado.Text = "";
-            textBoxRua.Text = "";
+            maskedTextBoxCep.ResetText();
+            textBoxEnderecoCompleto.ResetText();
+            textBoxBairro.ResetText();
+            textBoxCidade.ResetText();
+            textBoxEstado.ResetText();
+            textBoxRua.ResetText();
 
             dataGridView1.ClearSelection();
         }
@@ -200,6 +201,13 @@ namespace entra21_trabalho_03.Views.Enderecos
 
                 return;
             }
+
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var endereco = EnderecoCadastroService.ObterPorCodigo(codigo);
+            EnderecoCadastroService.Apagar(endereco);
+
+            PreencherDataGridViewComEnderecos();
         }
 
         private void ObterDadosCep()
@@ -235,6 +243,28 @@ namespace entra21_trabalho_03.Views.Enderecos
         private void EnderecoCadastroFormPreencher(object sender, EventArgs e)
         {
             PreencherDataGridViewComEnderecos();
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            var cep = maskedTextBoxCep.Text;
+            var estado = textBoxEstado.Text;
+            var cidade = textBoxCidade.Text;
+            var bairro = textBoxBairro.Text;
+            var enderecoCompleto = textBoxEnderecoCompleto.Text;
+            var rua = textBoxRua.Text;
+
+
+
+            if (dataGridView1.SelectedRows.Count == 0)
+                CadastrarEndereco(cep, estado, cidade, bairro, enderecoCompleto, rua);
+            else
+                EditarEndereco(cep, estado, cidade, bairro, enderecoCompleto, rua);
+
+            PreencherDataGridViewComEnderecos();
+
+            LimparCampos();
+
         }
     }
 }

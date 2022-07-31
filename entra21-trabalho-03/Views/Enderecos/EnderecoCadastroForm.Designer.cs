@@ -256,8 +256,9 @@
             this.buttonSalvar.TabIndex = 18;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // EnderecoCadastro
+            // EnderecoCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -280,7 +281,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxEstado);
             this.Controls.Add(this.maskedTextBoxCep);
-            this.Name = "EnderecoCadastro";
+            this.Name = "EnderecoCadastroForm";
             this.Text = "Cadastro de endereços";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

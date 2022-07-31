@@ -100,5 +100,19 @@ namespace entra21_trabalho_03.Services
             var enderecoCadastroEmJson = File.ReadAllText("enderecoCadastro.json");
             enderecos = JsonConvert.DeserializeObject<List<Endereco>>(enderecoCadastroEmJson);
         }
+
+        internal Endereco ObterPorLogradouro(string? enderecoLogradouro)
+        {
+            var localVirgula = enderecoLogradouro.IndexOf(",");
+            var logradouro = enderecoLogradouro.Substring(0, localVirgula).Trim();
+
+            for (var i = 0; i < enderecos.Count; i++)
+            {
+                var endereco = enderecos[i];
+                if (endereco.EnderecoCompleto == logradouro) 
+                    return endereco;
+            }
+            return null;
+        }
     }
 }
