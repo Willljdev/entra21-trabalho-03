@@ -57,10 +57,11 @@
             // 
             // maskedTextBoxCep
             // 
-            this.maskedTextBoxCep.Location = new System.Drawing.Point(21, 30);
+            this.maskedTextBoxCep.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.maskedTextBoxCep.Location = new System.Drawing.Point(21, 33);
             this.maskedTextBoxCep.Mask = "99999-999";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
-            this.maskedTextBoxCep.Size = new System.Drawing.Size(100, 23);
+            this.maskedTextBoxCep.Size = new System.Drawing.Size(100, 26);
             this.maskedTextBoxCep.TabIndex = 0;
             this.maskedTextBoxCep.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxCep_MaskInputRejected);
             this.maskedTextBoxCep.Leave += new System.EventHandler(this.maskedTextBoxCep_Leave);
@@ -68,17 +69,19 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(21, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 15);
+            this.label5.Size = new System.Drawing.Size(36, 18);
             this.label5.TabIndex = 9;
             this.label5.Text = "Cep";
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(33, 303);
+            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonMenu.Location = new System.Drawing.Point(12, 293);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(75, 23);
+            this.buttonMenu.Size = new System.Drawing.Size(75, 33);
             this.buttonMenu.TabIndex = 11;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
@@ -86,9 +89,10 @@
             // 
             // buttonCadastrar
             // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(114, 303);
+            this.buttonCadastrar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCadastrar.Location = new System.Drawing.Point(93, 293);
             this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCadastrar.Size = new System.Drawing.Size(89, 33);
             this.buttonCadastrar.TabIndex = 12;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
@@ -96,18 +100,20 @@
             // 
             // textBoxEnderecoCompleto
             // 
-            this.textBoxEnderecoCompleto.Location = new System.Drawing.Point(21, 274);
+            this.textBoxEnderecoCompleto.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxEnderecoCompleto.Location = new System.Drawing.Point(21, 264);
             this.textBoxEnderecoCompleto.Name = "textBoxEnderecoCompleto";
-            this.textBoxEnderecoCompleto.Size = new System.Drawing.Size(184, 23);
+            this.textBoxEnderecoCompleto.Size = new System.Drawing.Size(184, 26);
             this.textBoxEnderecoCompleto.TabIndex = 13;
             this.textBoxEnderecoCompleto.TextChanged += new System.EventHandler(this.textBoxEnderecoCompleto_TextChanged);
             // 
             // labelEnderecoCompleto
             // 
             this.labelEnderecoCompleto.AutoSize = true;
-            this.labelEnderecoCompleto.Location = new System.Drawing.Point(16, 256);
+            this.labelEnderecoCompleto.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEnderecoCompleto.Location = new System.Drawing.Point(21, 244);
             this.labelEnderecoCompleto.Name = "labelEnderecoCompleto";
-            this.labelEnderecoCompleto.Size = new System.Drawing.Size(110, 15);
+            this.labelEnderecoCompleto.Size = new System.Drawing.Size(149, 18);
             this.labelEnderecoCompleto.TabIndex = 14;
             this.labelEnderecoCompleto.Text = "Endereço completo";
             // 
@@ -123,12 +129,12 @@
             this.ColumnCidade,
             this.ColumnBairro,
             this.ColumnRua});
-            this.dataGridView1.Location = new System.Drawing.Point(235, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(211, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(643, 275);
+            this.dataGridView1.Size = new System.Drawing.Size(658, 275);
             this.dataGridView1.TabIndex = 15;
             // 
             // ColumnCódigo
@@ -169,9 +175,10 @@
             // 
             // buttonApagar
             // 
-            this.buttonApagar.Location = new System.Drawing.Point(517, 293);
+            this.buttonApagar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonApagar.Location = new System.Drawing.Point(504, 293);
             this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(75, 23);
+            this.buttonApagar.Size = new System.Drawing.Size(75, 33);
             this.buttonApagar.TabIndex = 16;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
@@ -179,9 +186,10 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(598, 293);
+            this.buttonEditar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditar.Location = new System.Drawing.Point(585, 293);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditar.Size = new System.Drawing.Size(75, 33);
             this.buttonEditar.TabIndex = 17;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
@@ -190,72 +198,82 @@
             // labelCidade
             // 
             this.labelCidade.AutoSize = true;
-            this.labelCidade.Location = new System.Drawing.Point(21, 113);
+            this.labelCidade.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCidade.Location = new System.Drawing.Point(21, 106);
             this.labelCidade.Name = "labelCidade";
-            this.labelCidade.Size = new System.Drawing.Size(44, 15);
+            this.labelCidade.Size = new System.Drawing.Size(58, 18);
             this.labelCidade.TabIndex = 18;
             this.labelCidade.Text = "Cidade";
             // 
             // textBoxCidade
             // 
-            this.textBoxCidade.Location = new System.Drawing.Point(21, 131);
+            this.textBoxCidade.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCidade.Location = new System.Drawing.Point(21, 127);
             this.textBoxCidade.Name = "textBoxCidade";
-            this.textBoxCidade.Size = new System.Drawing.Size(184, 23);
+            this.textBoxCidade.Size = new System.Drawing.Size(184, 26);
             this.textBoxCidade.TabIndex = 19;
             // 
             // textBoxSigla
             // 
-            this.textBoxSigla.Location = new System.Drawing.Point(21, 87);
+            this.textBoxSigla.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSigla.Location = new System.Drawing.Point(21, 80);
             this.textBoxSigla.Name = "textBoxSigla";
-            this.textBoxSigla.Size = new System.Drawing.Size(44, 23);
+            this.textBoxSigla.Size = new System.Drawing.Size(44, 26);
             this.textBoxSigla.TabIndex = 20;
+            this.textBoxSigla.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelSiglaEstado
             // 
             this.labelSiglaEstado.AutoSize = true;
-            this.labelSiglaEstado.Location = new System.Drawing.Point(21, 69);
+            this.labelSiglaEstado.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelSiglaEstado.Location = new System.Drawing.Point(21, 59);
             this.labelSiglaEstado.Name = "labelSiglaEstado";
-            this.labelSiglaEstado.Size = new System.Drawing.Size(87, 15);
+            this.labelSiglaEstado.Size = new System.Drawing.Size(119, 18);
             this.labelSiglaEstado.TabIndex = 21;
             this.labelSiglaEstado.Text = "Sigla do estado";
             // 
             // textBoxBairro
             // 
-            this.textBoxBairro.Location = new System.Drawing.Point(21, 186);
+            this.textBoxBairro.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxBairro.Location = new System.Drawing.Point(21, 174);
             this.textBoxBairro.Name = "textBoxBairro";
-            this.textBoxBairro.Size = new System.Drawing.Size(184, 23);
+            this.textBoxBairro.Size = new System.Drawing.Size(184, 26);
             this.textBoxBairro.TabIndex = 22;
             // 
             // labelBairro
             // 
             this.labelBairro.AutoSize = true;
-            this.labelBairro.Location = new System.Drawing.Point(21, 168);
+            this.labelBairro.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelBairro.Location = new System.Drawing.Point(21, 156);
             this.labelBairro.Name = "labelBairro";
-            this.labelBairro.Size = new System.Drawing.Size(38, 15);
+            this.labelBairro.Size = new System.Drawing.Size(53, 18);
             this.labelBairro.TabIndex = 23;
             this.labelBairro.Text = "Bairro";
             // 
             // textBoxRua
             // 
-            this.textBoxRua.Location = new System.Drawing.Point(21, 230);
+            this.textBoxRua.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxRua.Location = new System.Drawing.Point(21, 218);
             this.textBoxRua.Name = "textBoxRua";
-            this.textBoxRua.Size = new System.Drawing.Size(184, 23);
+            this.textBoxRua.Size = new System.Drawing.Size(184, 26);
             this.textBoxRua.TabIndex = 24;
             // 
             // labelRua
             // 
             this.labelRua.AutoSize = true;
-            this.labelRua.Location = new System.Drawing.Point(21, 212);
+            this.labelRua.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelRua.Location = new System.Drawing.Point(21, 200);
             this.labelRua.Name = "labelRua";
-            this.labelRua.Size = new System.Drawing.Size(27, 15);
+            this.labelRua.Size = new System.Drawing.Size(36, 18);
             this.labelRua.TabIndex = 25;
             this.labelRua.Text = "Rua";
             // 
             // buttonLimpar
             // 
-            this.buttonLimpar.Location = new System.Drawing.Point(195, 303);
+            this.buttonLimpar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonLimpar.Location = new System.Drawing.Point(188, 293);
             this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpar.Size = new System.Drawing.Size(75, 33);
             this.buttonLimpar.TabIndex = 26;
             this.buttonLimpar.Text = "Limpar";
             this.buttonLimpar.UseVisualStyleBackColor = true;
@@ -265,6 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(881, 330);
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.labelRua);

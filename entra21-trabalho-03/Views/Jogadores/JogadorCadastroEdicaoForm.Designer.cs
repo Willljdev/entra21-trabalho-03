@@ -40,7 +40,6 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
-            this.buttonMenu = new System.Windows.Forms.Button();
             this.dateTimePickerHoraNascimento = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -176,18 +175,6 @@
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(215, 22);
             this.maskedTextBoxCpf.TabIndex = 16;
             // 
-            // buttonMenu
-            // 
-            this.buttonMenu.BackColor = System.Drawing.Color.Azure;
-            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(106, 246);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(88, 31);
-            this.buttonMenu.TabIndex = 17;
-            this.buttonMenu.Text = "Menu";
-            this.buttonMenu.UseVisualStyleBackColor = false;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
-            // 
             // dateTimePickerHoraNascimento
             // 
             this.dateTimePickerHoraNascimento.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -215,7 +202,6 @@
             this.ClientSize = new System.Drawing.Size(298, 280);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePickerHoraNascimento);
-            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
@@ -250,7 +236,6 @@
         private Button buttonCancelar;
         private Button buttonSalvar;
         private MaskedTextBox maskedTextBoxCpf;
-        private Button buttonMenu;
         private DateTimePicker dateTimePickerHoraNascimento;
         private Label label2;
         private RadioButton radioButtonMasculino;

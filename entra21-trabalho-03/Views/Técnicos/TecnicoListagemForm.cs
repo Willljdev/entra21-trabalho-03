@@ -15,17 +15,8 @@ namespace entra21_trabalho_03.Views.Técnicos
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewListaTecnicos.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione um técnico para apagar!");
+            if (ValidarDados() == false)
                 return;
-            }
-
-            if (dataGridViewListaTecnicos.Rows.Count == 0)
-            {
-                MessageBox.Show("Não nem um técnico cadastrado");
-                return;
-            }
 
             var linha = dataGridViewListaTecnicos.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
@@ -65,17 +56,8 @@ namespace entra21_trabalho_03.Views.Técnicos
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewListaTecnicos.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione um técnico para editar!");
+            if (ValidarDados() == false)
                 return;
-            }
-
-            if (dataGridViewListaTecnicos.Rows.Count == 0)
-            {
-                MessageBox.Show("Não há nem um técnico cadastrado!");
-                return;
-            }
 
             var linha = dataGridViewListaTecnicos.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
@@ -85,6 +67,34 @@ namespace entra21_trabalho_03.Views.Técnicos
             tecnicoForm.ShowDialog();
 
             PreencherDataGridView();
+        }
+
+        private bool ValidarDados()
+        {
+            if (dataGridViewListaTecnicos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um técnico para editar!");
+                return false;
+            }
+
+            if (dataGridViewListaTecnicos.Rows.Count == 0)
+            {
+                MessageBox.Show("Não há nem um técnico cadastrado!");
+                return false;
+            }
+
+            if (dataGridViewListaTecnicos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um técnico para apagar!");
+                return false;
+            }
+
+            if (dataGridViewListaTecnicos.Rows.Count == 0)
+            {
+                MessageBox.Show("Cadastre um técnico primeiro!");
+                return false;
+            }
+            return true;
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)

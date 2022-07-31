@@ -79,7 +79,7 @@ namespace entra21_trabalho_03.Views.Clubes
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         private void BotoesTransparentes()
@@ -89,12 +89,6 @@ namespace entra21_trabalho_03.Views.Clubes
             buttonSalvar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             buttonSalvar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             buttonSalvar.BackColor = Color.Transparent;
-
-            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            buttonMenu.FlatAppearance.BorderSize = 0;
-            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            buttonMenu.BackColor = Color.Transparent;
 
             buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttonCancelar.FlatAppearance.BorderSize = 0;

@@ -83,12 +83,6 @@ namespace entra21_trabalho_03.Views.Competicoes
             buttonCancelar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             buttonCancelar.BackColor = Color.Transparent;
 
-            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            buttonMenu.FlatAppearance.BorderSize = 0;
-            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            buttonMenu.BackColor = Color.Transparent;
-
             buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttonSalvar.FlatAppearance.BorderSize = 0;
             buttonSalvar.FlatAppearance.MouseDownBackColor = Color.Transparent;

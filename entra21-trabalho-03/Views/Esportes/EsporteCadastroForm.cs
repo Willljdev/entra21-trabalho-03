@@ -116,7 +116,7 @@ namespace entra21_trabalho_03.Views.Paises
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         private void BotoesTransparentes()
@@ -132,12 +132,6 @@ namespace entra21_trabalho_03.Views.Paises
             buttonCancelar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             buttonCancelar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             buttonCancelar.BackColor = Color.Transparent;
-
-            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            buttonMenu.FlatAppearance.BorderSize = 0;
-            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            buttonMenu.BackColor = Color.Transparent;
         }
     }
 }

@@ -40,7 +40,6 @@ namespace entra21_trabalho_03.Views.Paises
             }
         }
 
-
         private void buttonApagar_Click(object sender, EventArgs e)
         {
             if (ValidarDados() == false)

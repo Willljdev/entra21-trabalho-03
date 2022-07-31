@@ -142,12 +142,6 @@ namespace entra21_trabalho_03.Views.Jogadores
         }
         private void BotoesTransparentes()
         {
-            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            buttonMenu.FlatAppearance.BorderSize = 0;
-            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            buttonMenu.BackColor = Color.Transparent;
-
             buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttonCancelar.FlatAppearance.BorderSize = 0;
             buttonCancelar.FlatAppearance.MouseDownBackColor = Color.Transparent;

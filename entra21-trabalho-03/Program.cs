@@ -1,5 +1,4 @@
 using entra21_trabalho_03.Views;
-using entra21_trabalho_03.Views.Jogadores;
 
 namespace entra21_trabalho_03
 {

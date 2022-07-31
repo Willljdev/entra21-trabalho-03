@@ -13,7 +13,7 @@ namespace entra21_trabalho_03.Views.Técnicos
             _idEditar = -1;
         }
 
-        public TecnicoCadastroEdicaoForm(Tecnico tecnico) : this ()
+        public TecnicoCadastroEdicaoForm(Tecnico tecnico) : this()
         {
             _idEditar = tecnico.Id;
             textBoxNomeTecnico.Text = tecnico.Nome;
@@ -35,7 +35,7 @@ namespace entra21_trabalho_03.Views.Técnicos
             var dataNascimento = Convert.ToDateTime(dateTimePickerDataNascimento.Text);
 
             if (ValidarDados() == false)
-              return;
+                return;
 
             var tecnico = new Tecnico();
             tecnico.Nome = nome;
@@ -45,7 +45,7 @@ namespace entra21_trabalho_03.Views.Técnicos
 
             var tecnicoService = new TecnicoService();
 
-            if(_idEditar == -1)
+            if (_idEditar == -1)
             {
                 tecnicoService.Cadastrar(tecnico);
                 MessageBox.Show("Técnico cadastrado com sucesso!");
@@ -59,7 +59,7 @@ namespace entra21_trabalho_03.Views.Técnicos
                 Close();
             }
 
-            
+
         }
         private bool ValidarDados()
         {
@@ -80,12 +80,6 @@ namespace entra21_trabalho_03.Views.Técnicos
 
         private void BotoesTransparentes()
         {
-            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            buttonMenu.FlatAppearance.BorderSize = 0;
-            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            buttonMenu.BackColor = Color.Transparent;
-
             buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttonCancelar.FlatAppearance.BorderSize = 0;
             buttonCancelar.FlatAppearance.MouseDownBackColor = Color.Transparent;

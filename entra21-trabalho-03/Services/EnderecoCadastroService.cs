@@ -109,7 +109,7 @@ namespace entra21_trabalho_03.Services
             for (var i = 0; i < enderecos.Count; i++)
             {
                 var endereco = enderecos[i];
-                if (endereco.EnderecoCompleto == logradouro) 
+                if (endereco.EnderecoCompleto == logradouro)
                     return endereco;
             }
             return null;

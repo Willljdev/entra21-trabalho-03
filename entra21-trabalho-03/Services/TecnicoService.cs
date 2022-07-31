@@ -64,7 +64,7 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = 
+            comando.CommandText =
                 @"SELECT id, nome, cpf, data_nascimento, cidade_natal FROM tecnicos WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
 
@@ -83,7 +83,6 @@ namespace entra21_trabalho_03.Services
             tecnico.DataNascimento = Convert.ToDateTime(primeiroRegistro["data_nascimento"]);
             tecnico.CidadeNatal = primeiroRegistro["cidade_natal"].ToString();
 
-           
             conexao.Close();
             return tecnico;
         }

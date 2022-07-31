@@ -36,7 +36,6 @@
             this.dateTimePickerAnoFundacao = new System.Windows.Forms.DateTimePicker();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
-            this.buttonMenu = new System.Windows.Forms.Button();
             this.dateTimePickerHoraFundacao = new System.Windows.Forms.DateTimePicker();
             this.labelHoraFundacao = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -118,18 +117,6 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // buttonMenu
-            // 
-            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(100, 176);
-            this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(82, 30);
-            this.buttonMenu.TabIndex = 10;
-            this.buttonMenu.Text = "Menu";
-            this.buttonMenu.UseVisualStyleBackColor = true;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
-            // 
             // dateTimePickerHoraFundacao
             // 
             this.dateTimePickerHoraFundacao.Format = System.Windows.Forms.DateTimePickerFormat.Time;
@@ -155,7 +142,6 @@
             this.ClientSize = new System.Drawing.Size(277, 220);
             this.Controls.Add(this.labelHoraFundacao);
             this.Controls.Add(this.dateTimePickerHoraFundacao);
-            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.dateTimePickerAnoFundacao);
@@ -183,7 +169,6 @@
         private DateTimePicker dateTimePickerAnoFundacao;
         private Button buttonCancelar;
         private Button buttonSalvar;
-        private Button buttonMenu;
         private DateTimePicker dateTimePickerHoraFundacao;
         private Label labelHoraFundacao;
     }

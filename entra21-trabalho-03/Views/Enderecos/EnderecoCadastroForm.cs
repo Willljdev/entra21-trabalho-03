@@ -16,8 +16,7 @@ namespace entra21_trabalho_03.Views.Enderecos
 
             EnderecoCadastroService = new EnderecoCadastroService();
             jogadorService = new JogadorService();
-
-            
+            BotoesTransparentes();
 
             EnderecosSelecionados();
         }
@@ -304,7 +303,7 @@ namespace entra21_trabalho_03.Views.Enderecos
 
 
             if (dataGridView1.SelectedRows.Count == 0)
-                CadastrarEndereco(cep, enderecoCompleto, cidade, estado, rua, bairro );
+                CadastrarEndereco(cep, enderecoCompleto, cidade, estado, rua, bairro);
             else
                 EditarEndereco(cep, enderecoCompleto, cidade, estado, rua, bairro);
 
@@ -358,6 +357,39 @@ namespace entra21_trabalho_03.Views.Enderecos
             textBoxBairro.ResetText();
             textBoxSigla.ResetText();
             textBoxRua.ResetText();
+        }
+
+        private void BotoesTransparentes()
+        {
+            buttonApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonApagar.FlatAppearance.BorderSize = 0;
+            buttonApagar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonApagar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonApagar.BackColor = Color.Transparent;
+
+            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonMenu.BackColor = Color.Transparent;
+
+            buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonEditar.FlatAppearance.BorderSize = 0;
+            buttonEditar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonEditar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonEditar.BackColor = Color.Transparent;
+
+            buttonCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonCadastrar.FlatAppearance.BorderSize = 0;
+            buttonCadastrar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonCadastrar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonCadastrar.BackColor = Color.Transparent;
+
+            buttonLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonLimpar.FlatAppearance.BorderSize = 0;
+            buttonLimpar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonLimpar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonLimpar.BackColor = Color.Transparent;
         }
     }
 }

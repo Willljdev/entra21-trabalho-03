@@ -36,7 +36,6 @@
             this.labelCidadeNatal = new System.Windows.Forms.Label();
             this.textBoxCidadeNatal = new System.Windows.Forms.TextBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
@@ -122,18 +121,6 @@
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
-            // buttonMenu
-            // 
-            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(97, 195);
-            this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(82, 32);
-            this.buttonMenu.TabIndex = 11;
-            this.buttonMenu.Text = "Menu";
-            this.buttonMenu.UseVisualStyleBackColor = true;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
-            // 
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -163,7 +150,6 @@
             this.ClientSize = new System.Drawing.Size(274, 232);
             this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.textBoxCidadeNatal);
             this.Controls.Add(this.labelCidadeNatal);
@@ -191,7 +177,6 @@
         private Label labelCidadeNatal;
         private TextBox textBoxCidadeNatal;
         private Button buttonCancelar;
-        private Button buttonMenu;
         private Button buttonSalvar;
         private MaskedTextBox maskedTextBoxCpf;
     }

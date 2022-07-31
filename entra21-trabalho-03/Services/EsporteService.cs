@@ -29,11 +29,11 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
                 @"INSERT INTO esportes (nome, quantidade_jogadores_time, quantidade_atletas_clube, local_praticado, id_clube)
                 VALUES (@NOME, @QUANTIDADE_JOGADORES_TIME, @QUANTIDADE_ATLETAS_CLUBE, @LOCAL_PRATICADO, @ID_CLUBE)";
 
+            comando.Parameters.AddWithValue("@ID_CLUBE", esportes.Clube.Id);
             comando.Parameters.AddWithValue("@NOME", esportes.Nome);
             comando.Parameters.AddWithValue("@QUANTIDADE_JOGADORES_TIME", esportes.QuantidadesJogadoresTime);
             comando.Parameters.AddWithValue("@QUANTIDADE_ATLETAS_CLUBE", esportes.QuantidadesAtletasClube);
             comando.Parameters.AddWithValue("@LOCAL_PRATICADO", esportes.LocalPraticado);
-            comando.Parameters.AddWithValue("@ID_CLUBE", esportes.Clube.Id);
 
             comando.ExecuteNonQuery();
             conexao.Close();
@@ -66,7 +66,8 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
             var comando = conexao.CreateCommand();
 
             comando.CommandText =
-                @"SELECT id, nome, quantidade_jogadores_time, quantidades_atletas_clube, local_praticado, id_clube FROM esportes WHERE id = @ID";
+            @"SELECT id, nome, quantidade_jogadores_time, quantidades_atletas_clube,
+            local_praticado, id_clube FROM esportes WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@ID", id);
 
@@ -118,7 +119,6 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Services
                 esporte.Clube.Id = Convert.ToInt32(linha["id_clube"]);
 
                 paises.Add(esporte);
-
             }
             return paises;
         }

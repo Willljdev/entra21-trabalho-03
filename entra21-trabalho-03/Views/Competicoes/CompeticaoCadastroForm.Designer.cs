@@ -30,7 +30,6 @@
         {
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonMenu = new System.Windows.Forms.Button();
             this.labelNome = new System.Windows.Forms.Label();
             this.labelDataInicio = new System.Windows.Forms.Label();
             this.labelDataTermino = new System.Windows.Forms.Label();
@@ -46,9 +45,9 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonSalvar.Location = new System.Drawing.Point(186, 256);
+            this.buttonSalvar.Location = new System.Drawing.Point(177, 256);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(63, 34);
+            this.buttonSalvar.Size = new System.Drawing.Size(72, 34);
             this.buttonSalvar.TabIndex = 0;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
@@ -64,17 +63,6 @@
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
-            // buttonMenu
-            // 
-            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(105, 256);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(75, 34);
-            this.buttonMenu.TabIndex = 2;
-            this.buttonMenu.Text = "Menu";
-            this.buttonMenu.UseVisualStyleBackColor = true;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // labelNome
             // 
@@ -185,7 +173,6 @@
             this.Controls.Add(this.labelDataTermino);
             this.Controls.Add(this.labelDataInicio);
             this.Controls.Add(this.labelNome);
-            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
             this.Name = "CompeticaoCadastroForm";
@@ -200,7 +187,6 @@
 
         private Button buttonSalvar;
         private Button buttonCancelar;
-        private Button buttonMenu;
         private Label labelNome;
         private Label labelDataInicio;
         private Label labelDataTermino;

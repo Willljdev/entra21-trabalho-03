@@ -28,8 +28,6 @@ namespace entra21_trabalho_03.Views.Competicoes
                     competicao.DataInicio.ToString("dd/MM/yyyy"),
                     competicao.DataTermino.ToString("dd/MM/yyyy"),
                 });
-
-
             }
         }
 
@@ -42,17 +40,8 @@ namespace entra21_trabalho_03.Views.Competicoes
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione uma competição pra apagar");
+            if (ValidarDados() == false)
                 return;
-            }
-
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("Primeiro cadastre uma competição!!");
-                return;
-            }
 
             var linha = dataGridView1.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
@@ -65,17 +54,8 @@ namespace entra21_trabalho_03.Views.Competicoes
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione uma competição pra Editar");
+            if (ValidarDados() == false)
                 return;
-            }
-
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("Cadastre uma competição primeiro!!");
-                return;
-            }
 
             var linha = dataGridView1.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
@@ -85,6 +65,34 @@ namespace entra21_trabalho_03.Views.Competicoes
             competicaoForm.ShowDialog();
 
             PreencherDataGridView();
+        }
+
+        private bool ValidarDados()
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma competição pra Editar");
+                return false;
+            }
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Cadastre uma competição primeiro!!");
+                return false;
+            }
+
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma competição pra apagar");
+                return false;
+            }
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Primeiro cadastre uma competição!!");
+                return false;
+            }
+            return true;
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)

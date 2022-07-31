@@ -36,6 +36,7 @@ namespace entra21_trabalho_03.Services
             var comando = conexao.CreateCommand();
 
             comando.CommandText = "UPDATE posicoes SET nome = @NOME WHERE id = @ID";
+
             comando.Parameters.AddWithValue("@NOME", posicao.Nome);
             comando.Parameters.AddWithValue("@ID", posicao.Id);
 
@@ -49,6 +50,7 @@ namespace entra21_trabalho_03.Services
             var comando = conexao.CreateCommand();
 
             comando.CommandText = "SELECT id, nome FROM posicoes WHERE id = @ID";
+
             comando.Parameters.AddWithValue("@ID", id);
 
             var tabelaMemoria = new DataTable();

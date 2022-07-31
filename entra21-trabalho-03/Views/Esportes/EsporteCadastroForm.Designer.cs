@@ -33,7 +33,6 @@
             this.labelContinente = new System.Windows.Forms.Label();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonMenu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelLocalPraticado = new System.Windows.Forms.Label();
             this.comboBoxClube = new System.Windows.Forms.ComboBox();
@@ -94,17 +93,6 @@
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
-            // buttonMenu
-            // 
-            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(104, 247);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(63, 30);
-            this.buttonMenu.TabIndex = 8;
-            this.buttonMenu.Text = "Menu";
-            this.buttonMenu.UseVisualStyleBackColor = true;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // label1
             // 
@@ -188,7 +176,6 @@
             this.Controls.Add(this.comboBoxClube);
             this.Controls.Add(this.labelLocalPraticado);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.labelContinente);
@@ -211,7 +198,6 @@
         private Label labelContinente;
         private Button buttonSalvar;
         private Button buttonCancelar;
-        private Button buttonMenu;
         private Label label1;
         private Label labelLocalPraticado;
         private ComboBox comboBoxClube;

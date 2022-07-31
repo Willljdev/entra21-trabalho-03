@@ -79,7 +79,6 @@ namespace entra21_trabalho_03.Views.Posicoes
 
         private bool ValidarDados()
         {
-
             if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("Nenhuma posição cadastrada");

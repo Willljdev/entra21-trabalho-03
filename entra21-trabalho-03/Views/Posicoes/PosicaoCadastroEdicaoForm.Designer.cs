@@ -32,7 +32,6 @@
             this.textBoxPosicao = new System.Windows.Forms.TextBox();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelPosicao
@@ -71,25 +70,13 @@
             this.buttonCancelar.BackColor = System.Drawing.Color.Azure;
             this.buttonCancelar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonCancelar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonCancelar.Location = new System.Drawing.Point(2, 60);
+            this.buttonCancelar.Location = new System.Drawing.Point(12, 63);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(89, 34);
+            this.buttonCancelar.Size = new System.Drawing.Size(84, 34);
             this.buttonCancelar.TabIndex = 3;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
-            // buttonMenu
-            // 
-            this.buttonMenu.BackColor = System.Drawing.Color.Azure;
-            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(97, 60);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(75, 34);
-            this.buttonMenu.TabIndex = 4;
-            this.buttonMenu.Text = "Menu";
-            this.buttonMenu.UseVisualStyleBackColor = false;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // PosicaoCadastroEdicaoForm
             // 
@@ -97,7 +84,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(265, 102);
-            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.textBoxPosicao);
@@ -116,6 +102,5 @@
         private TextBox textBoxPosicao;
         private Button buttonSalvar;
         private Button buttonCancelar;
-        private Button buttonMenu;
     }
 }
