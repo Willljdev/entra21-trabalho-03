@@ -1,12 +1,7 @@
-﻿using entra21_trabalho_03.DataBase;
-using entra21_trabalho_03.Models;
-using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using entra21_trabalho_03.DataBase;
+using entra21_trabalho_03.Models;
 
 namespace entra21_trabalho_03.Services
 {
@@ -32,8 +27,15 @@ namespace entra21_trabalho_03.Services
 
             SqlCommand comando = conexao.CreateCommand();
 
-            comando.CommandText = "INSERT INTO tecnicos (nome) VALUES (@NOME)";
-            comando.Parameters.AddWithValue("@NOME", tecnico.Id);
+            comando.CommandText =
+                @"INSERT INTO tecnicos (nome, id_clube, cpf, data_nascimento, cidade_natal)
+                VALUES (@NOME, @ID_CLUBE, @CPF, @DATA_NASCIMENTO, @CIDADE_NATAL)";
+
+            comando.Parameters.AddWithValue("@NOME", tecnico.Nome);
+            comando.Parameters.AddWithValue("@ID_CLUBE", tecnico.Clube.Id);
+            comando.Parameters.AddWithValue("@CPF", tecnico.Cpf);
+            comando.Parameters.AddWithValue("@DATA_NASCIMENTO", tecnico.DataNascimento);
+            comando.Parameters.AddWithValue("@CIDADE_NATAL", tecnico.CidadeNatal);
 
             comando.ExecuteNonQuery();
 
@@ -45,10 +47,19 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
 
             var comando = conexao.CreateCommand();
-            comando.CommandText = "UPDATE tecnicos SET nome = @NOME WHERE id= @ID";
-            comando.Parameters.AddWithValue("@NOME", tecnico.Nome);
-            comando.Parameters.AddWithValue("@CIDADE_NATAL", tecnico.CidadeNatal);
+
+            comando.CommandText = @"UPDATE tecnicos SET nome = @NOME,
+                                                        id_clube = @ID_CLUBE,
+                                                        cpf = @CPF,
+                                                        data_nascimento = @DATA_NASCIMENTO,
+                                                        cidade_natal = @CIDADE_NATAL WHERE id= @ID";
+
             comando.Parameters.AddWithValue("@ID", tecnico.Id);
+            comando.Parameters.AddWithValue("@NOME", tecnico.Nome);
+            comando.Parameters.AddWithValue("@ID_CLUBE", tecnico.Clube.Id);
+            comando.Parameters.AddWithValue("@CPF", tecnico.Cpf);
+            comando.Parameters.AddWithValue("@DATA_NASCIMENTO", tecnico.DataNascimento);
+            comando.Parameters.AddWithValue("@CIDADE_NATAL", tecnico.CidadeNatal);
 
             comando.ExecuteNonQuery();
 
@@ -60,7 +71,8 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
 
             var comando = conexao.CreateCommand();
-            comando.CommandText = "SELECT id, nome, cidada_natal FROM tecnicos WHERE id= @ID";
+            comando.CommandText = "SELECT id, nome, id_clube, cpf, data_nascimento, cidada_natal FROM tecnicos WHERE id= @ID";
+
             comando.Parameters.AddWithValue("@ID", id);
 
             var tabelaEmMemoria = new DataTable();
@@ -78,7 +90,7 @@ namespace entra21_trabalho_03.Services
             tecnico.Cpf = primeiroRegistro["cpf"].ToString();
             tecnico.DataNascimento = Convert.ToDateTime(primeiroRegistro["data_nascimento"]);
             tecnico.CidadeNatal = primeiroRegistro["cidade_natal"].ToString();
-            
+
             tecnico.Clube = new Clube();
             tecnico.Clube.Id = Convert.ToInt32(primeiroRegistro["id_clube"]);
 
@@ -93,17 +105,22 @@ namespace entra21_trabalho_03.Services
             comando.CommandText = @"SELECT
 t.id AS 'id',
 t.nome AS 'nome',
-c.id AS 'id',
-c.nome AS 'nome',
+t.cpf AS 'cpf',
+t.data.nascimento AS 'data_nascimento',
+t.cidade_natal AS 'cidade_natal',
+c.id AS 'id_clube',
+c.nome AS 'nome_clube',
+c.cidade_sede AS 'cidade_sede_clube',
+c.ano_fundacao AS 'ano_fundacao_clube'
 FROM tecnicos AS t
-INNER JOIN clubes AS c ON(c.id_clube = c.id)";
+INNER JOIN clubes AS c ON(t.id_clube = c.id)";
 
             var tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
 
             var tecnicos = new List<Tecnico>();
 
-            for(int i =0; i < tabelaEmMemoria.Rows.Count; i++)
+            for (int i = 0; i < tabelaEmMemoria.Rows.Count; i++)
             {
                 var registro = tabelaEmMemoria.Rows[i];
                 var tecnico = new Tecnico();
@@ -117,6 +134,7 @@ INNER JOIN clubes AS c ON(c.id_clube = c.id)";
                 tecnico.Clube.Id = Convert.ToInt32(registro["clube_id"]);
                 tecnico.Clube.Nome = registro["clube_nome"].ToString();
                 tecnico.Clube.CidadeSede = registro["clube_cidade_sede"].ToString();
+                tecnico.Clube.AnoFundacao = Convert.ToDateTime(registro["ano_fundacao_clube"]);
 
                 tecnicos.Add(tecnico);
             }

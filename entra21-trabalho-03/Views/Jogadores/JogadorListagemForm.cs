@@ -34,17 +34,8 @@ namespace entra21_trabalho_03.Views.Jogadores
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione um jogador para apagar");
+            if (ValidarDados() == false)
                 return;
-            }
-
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("Cadastre um jogador primeiro");
-                return;
-            }
 
             var linha = dataGridView1.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
@@ -58,17 +49,8 @@ namespace entra21_trabalho_03.Views.Jogadores
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione um jogador para editar");
+            if (ValidarDados() == false)
                 return;
-            }
-
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("Primeiro cadastre um jogador");
-                return;
-            }
 
             var linha = dataGridView1.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
@@ -95,6 +77,34 @@ namespace entra21_trabalho_03.Views.Jogadores
         private void JogadorListagemForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private bool ValidarDados()
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um jogador para apagar");
+                return false;
+            }
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Cadastre um jogador primeiro");
+                return false;
+            }
+
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um jogador para editar");
+                return false;
+            }
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Primeiro cadastre um jogador");
+                return false;
+            }
+            return true;
         }
     }
 }

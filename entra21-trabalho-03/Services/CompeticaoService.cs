@@ -82,12 +82,17 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            //Arrumar
+            
             comando.CommandText = @"SELECT
-j.id AS 'id'
-j.nome AS 'nome'
-j.data_inicio AS 'data_inicio'
-j.data_termino AS 'data_termino'";
+c.id AS 'id',
+c.nome 'nome',
+c.data_inicio AS 'data_inicio',
+c.data_termino AS 'data_termino',
+p.id AS 'pais_id',
+p.nome AS 'pais_nome',
+p.continente AS 'continente_pais'
+FROM clubes AS c
+INNER JOIN paises AS p ON(c.id_pais = p.id)";
 
             var tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
