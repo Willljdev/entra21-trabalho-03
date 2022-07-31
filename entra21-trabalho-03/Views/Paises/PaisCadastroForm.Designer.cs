@@ -31,9 +31,7 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.labelPais = new System.Windows.Forms.Label();
             this.labelContinente = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBoxContinente = new System.Windows.Forms.TextBox();
-            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
@@ -64,15 +62,6 @@
             this.labelContinente.TabIndex = 2;
             this.labelContinente.Text = "Continente";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Estado";
-            // 
             // textBoxContinente
             // 
             this.textBoxContinente.Location = new System.Drawing.Point(12, 84);
@@ -80,17 +69,9 @@
             this.textBoxContinente.Size = new System.Drawing.Size(121, 23);
             this.textBoxContinente.TabIndex = 4;
             // 
-            // comboBoxEstado
-            // 
-            this.comboBoxEstado.FormattingEnabled = true;
-            this.comboBoxEstado.Location = new System.Drawing.Point(12, 137);
-            this.comboBoxEstado.Name = "comboBoxEstado";
-            this.comboBoxEstado.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxEstado.TabIndex = 5;
-            // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(165, 180);
+            this.buttonSalvar.Location = new System.Drawing.Point(169, 135);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 6;
@@ -100,7 +81,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(3, 180);
+            this.buttonCancelar.Location = new System.Drawing.Point(3, 135);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 7;
@@ -110,7 +91,7 @@
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(84, 180);
+            this.buttonMenu.Location = new System.Drawing.Point(84, 135);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(75, 23);
             this.buttonMenu.TabIndex = 8;
@@ -122,13 +103,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 396);
+            this.ClientSize = new System.Drawing.Size(256, 174);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.comboBoxEstado);
             this.Controls.Add(this.textBoxContinente);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelContinente);
             this.Controls.Add(this.labelPais);
             this.Controls.Add(this.textBoxNome);
@@ -145,9 +124,7 @@
         private TextBox textBoxNome;
         private Label labelPais;
         private Label labelContinente;
-        private Label label2;
         private TextBox textBoxContinente;
-        private ComboBox comboBoxEstado;
         private Button buttonSalvar;
         private Button buttonCancelar;
         private Button buttonMenu;

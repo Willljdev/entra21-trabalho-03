@@ -33,6 +33,10 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
+            this.ColumnCódigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnData_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumndDataTermino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,6 +45,11 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnCódigo,
+            this.ColumnNome,
+            this.ColumnData_inicio,
+            this.ColumndDataTermino});
             this.dataGridView1.Location = new System.Drawing.Point(12, 120);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -88,6 +97,30 @@
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
+            // ColumnCódigo
+            // 
+            this.ColumnCódigo.HeaderText = "Código";
+            this.ColumnCódigo.Name = "ColumnCódigo";
+            this.ColumnCódigo.ReadOnly = true;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnData_inicio
+            // 
+            this.ColumnData_inicio.HeaderText = "Data de inicio";
+            this.ColumnData_inicio.Name = "ColumnData_inicio";
+            this.ColumnData_inicio.ReadOnly = true;
+            // 
+            // ColumndDataTermino
+            // 
+            this.ColumndDataTermino.HeaderText = "Data de término";
+            this.ColumndDataTermino.Name = "ColumndDataTermino";
+            this.ColumndDataTermino.ReadOnly = true;
+            // 
             // CompeticoesListagemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -116,5 +149,9 @@
         private Button buttonApagar;
         private Button buttonEditar;
         private Button buttonMenu;
+        private DataGridViewTextBoxColumn ColumnCódigo;
+        private DataGridViewTextBoxColumn ColumnNome;
+        private DataGridViewTextBoxColumn ColumnData_inicio;
+        private DataGridViewTextBoxColumn ColumndDataTermino;
     }
 }
