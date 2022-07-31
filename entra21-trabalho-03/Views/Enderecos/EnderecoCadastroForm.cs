@@ -19,7 +19,7 @@ namespace entra21_trabalho_03.Views.Enderecos
 
             PreencherComboBoxNome();
 
-            PreencherDataGridViewComEnderecos();
+            EnderecosSelecionados();
         }
 
         private void PreencherComboBoxNome()
@@ -63,7 +63,7 @@ namespace entra21_trabalho_03.Views.Enderecos
             else
                 EditarEndereco(cep, enderecoCompleto);
 
-            PreencherDataGridViewComEnderecos();
+            EnderecosSelecionados();
 
             LimparCampos();
         }
@@ -99,7 +99,7 @@ namespace entra21_trabalho_03.Views.Enderecos
             dataGridView1.ClearSelection();
         }
 
-        private void PreencherDataGridViewComEnderecos()
+        private void EnderecosSelecionados()
         {
             var enderecos = EnderecoCadastroService.ObterTodos();
 
@@ -160,11 +160,12 @@ namespace entra21_trabalho_03.Views.Enderecos
 
             maskedTextBoxCep.Text = endereco.Cep;
             textBoxEnderecoCompleto.Text = endereco.EnderecoCompleto;
+            
         }
 
         private void EnderecosForm_Load(object sender, EventArgs e)
         {
-            PreencherDataGridViewComEnderecos();
+            EnderecosSelecionados();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -187,22 +188,32 @@ namespace entra21_trabalho_03.Views.Enderecos
             }
 
             var resposta = MessageBox.Show(
-                "realmente Deseja apagar o endereço?", "Aviso",
-                MessageBoxButtons.YesNo);
+                "Realmente deseja apagar o endereço?", "Aviso",
+                MessageBoxButtons.OKCancel);
 
-            if (resposta == DialogResult.Yes)
+
+
+            if (resposta == DialogResult.Cancel)
             {
                 MessageBox.Show("Apagado com sucesso");
 
                 return;
             }
 
+            Endereco endereco = NewMethod();
+
+            EnderecosSelecionados();
+            EnderecoCadastroService.Apagar(endereco);
+
+            
+        }
+
+        private Endereco NewMethod()
+        {
             var linhaSelecionada = dataGridView1.SelectedRows[0];
             var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
             var endereco = EnderecoCadastroService.ObterPorCodigo(codigo);
-            EnderecoCadastroService.Apagar(endereco);
-
-            PreencherDataGridViewComEnderecos();
+            return endereco;
         }
 
         private void ObterDadosCep()
@@ -237,7 +248,7 @@ namespace entra21_trabalho_03.Views.Enderecos
 
         private void EnderecoCadastroFormPreencher(object sender, EventArgs e)
         {
-            PreencherDataGridViewComEnderecos();
+            EnderecosSelecionados();
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -252,7 +263,7 @@ namespace entra21_trabalho_03.Views.Enderecos
             else
                 EditarEndereco(cep,enderecoCompleto);
 
-            PreencherDataGridViewComEnderecos();
+            EnderecosSelecionados();
 
             LimparCampos();
 
@@ -261,6 +272,26 @@ namespace entra21_trabalho_03.Views.Enderecos
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void ValidarDados(string cnpj, object endereco)
+        {
+            try
+            {
+                if(endereco == "")
+                {
+                    MessageBox.Show("Selecione um endereço");
+
+                    textBoxEnderecoCompleto.Focus();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro" + ex);
+
+                textBoxEnderecoCompleto.Focus();
+                return false;
+            }
         }
     }
 }
