@@ -44,11 +44,11 @@
             this.buttonApagar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonApagar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonApagar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonApagar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonApagar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonApagar.ForeColor = System.Drawing.SystemColors.WindowText;
             this.buttonApagar.Location = new System.Drawing.Point(3, 12);
             this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(62, 34);
+            this.buttonApagar.Size = new System.Drawing.Size(70, 34);
             this.buttonApagar.TabIndex = 0;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = false;
@@ -57,11 +57,11 @@
             // buttonEditar
             // 
             this.buttonEditar.BackColor = System.Drawing.Color.Azure;
-            this.buttonEditar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEditar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonEditar.Location = new System.Drawing.Point(71, 12);
+            this.buttonEditar.Location = new System.Drawing.Point(73, 12);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(65, 34);
+            this.buttonEditar.Size = new System.Drawing.Size(74, 34);
             this.buttonEditar.TabIndex = 1;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = false;
@@ -70,7 +70,7 @@
             // buttonCadastrar
             // 
             this.buttonCadastrar.BackColor = System.Drawing.Color.Azure;
-            this.buttonCadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCadastrar.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonCadastrar.ForeColor = System.Drawing.SystemColors.WindowText;
             this.buttonCadastrar.Location = new System.Drawing.Point(210, 12);
             this.buttonCadastrar.Name = "buttonCadastrar";
@@ -113,10 +113,10 @@
             // buttonMenu
             // 
             this.buttonMenu.BackColor = System.Drawing.Color.Azure;
-            this.buttonMenu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(142, 13);
+            this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonMenu.Location = new System.Drawing.Point(145, 13);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(62, 33);
+            this.buttonMenu.Size = new System.Drawing.Size(59, 33);
             this.buttonMenu.TabIndex = 4;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = false;
