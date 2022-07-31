@@ -23,8 +23,9 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "INSERT INTO competicoes (nome, data_inicio, data_termino) " +
-                "VALUES (@NOME, @DATA_INICIO, @DATA_TERMINO);";
+            comando.CommandText = 
+                @"INSERT INTO competicoes (nome, data_inicio, data_termino, id_pais)
+                VALUES (@NOME, @DATA_INICIO, @DATA_TERMINO, @ID_PAIS);";
 
             comando.Parameters.AddWithValue("@NOME", competicao.Nome);
             comando.Parameters.AddWithValue("@DATA_INICIO", competicao.Data_inicio);
@@ -39,11 +40,17 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "UPDATE competicoes SET nome = @NOME, data_inicio = @DATA_INICIO, data_termino = @DATA_TERMINO";
+            comando.CommandText = 
+                @"UPDATE competicoes SET nome = @NOME,
+                                         data_inicio = @DATA_INICIO,
+                                         data_termino = @DATA_TERMINO,
+                                         id_pais = @ID_PAIS WHERE id = @ID";
 
+            comando.Parameters.AddWithValue("@ID", competicao.Id);
             comando.Parameters.AddWithValue("@NOME", competicao.Nome);
             comando.Parameters.AddWithValue("@DATA_INICIO", competicao.Data_inicio);
             comando.Parameters.AddWithValue("@DATA_TERMINO", competicao.Data_termino);
+            comando.Parameters.AddWithValue("@ID_PAIS", competicao.Pais.Id);
 
             comando.ExecuteNonQuery();
             conexao.Close();
@@ -54,7 +61,9 @@ namespace entra21_trabalho_03.Services
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT id, nome, data_inicio, data_termino FROM competicoes WHERE id = @ID";
+            comando.CommandText = 
+                "SELECT id, nome, data_inicio, data_termino, id_pais FROM competicoes WHERE id = @ID";
+
             comando.Parameters.AddWithValue("@ID", id);
 
             var tabelaemmemoria = new DataTable();
@@ -83,30 +92,34 @@ namespace entra21_trabalho_03.Services
             var comando = conexao.CreateCommand();
 
             
-            comando.CommandText = @"SELECT
+            comando.CommandText = @"SELECT 
 c.id AS 'id',
-c.nome 'nome',
+c.nome AS 'nome',
 c.data_inicio AS 'data_inicio',
 c.data_termino AS 'data_termino',
-p.id AS 'pais_id',
+p.id AS 'id_pais',
 p.nome AS 'pais_nome',
 p.continente AS 'continente_pais'
 FROM clubes AS c
-INNER JOIN paises AS p ON(c.id_pais = p.id)";
+INNER JOIN paises AS p ON(c.id_pais = p.id);";
 
-            var tabelaEmMemoria = new DataTable();
-            tabelaEmMemoria.Load(comando.ExecuteReader());
+            var tabelaMemoria = new DataTable();
+            tabelaMemoria.Load(comando.ExecuteReader());
 
             var competicoes = new List<Competicao>();
-            for (var i = 0; i < tabelaEmMemoria.Rows.Count; i++)
+            for (var i = 0; i < tabelaMemoria.Rows.Count; i++)
             {
-                var registro = tabelaEmMemoria.Rows[i];
+                var registro = tabelaMemoria.Rows[i];
                 var competicao = new Competicao();
 
                 competicao.Id = Convert.ToInt32(registro["id"]);
                 competicao.Nome = registro["nome"].ToString();
                 competicao.Data_inicio = Convert.ToDateTime(registro["data_inicio"]);
                 competicao.Data_termino = Convert.ToDateTime(registro["data_termino"]);
+
+                competicao.Pais.Id = Convert.ToInt32(registro["id_pais"]);
+                competicao.Pais.Nome = registro["pais_nome"].ToString();
+                competicao.Pais.Continente = registro["continente_pais"].ToString();
 
                 competicoes.Add(competicao);
             }

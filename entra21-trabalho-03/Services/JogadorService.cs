@@ -24,10 +24,11 @@ namespace entra21_trabalho_03.Services
             var comando = conexao.CreateCommand();
 
             comando.CommandText =
-            @"INSERT INTO jogadores (nome, id_posicao, id_clube, cpf, data_nascimento)
-            VALUES (@NOME, @ID_POSICAO, @ID_CLUBE, @CPF, @DATA_NASCIMENTO);";
+            @"INSERT INTO jogadores (nome, genero, id_posicao, id_clube, cpf, data_nascimento)
+            VALUES (@NOME, @GENERO, @ID_POSICAO, @ID_CLUBE, @CPF, @DATA_NASCIMENTO);";
 
             comando.Parameters.AddWithValue("@NOME", jogador.Nome);
+            comando.Parameters.AddWithValue("@GENERO", jogador.Genero);
             comando.Parameters.AddWithValue("@ID_POSICAO", jogador.Posicao.Id);
             comando.Parameters.AddWithValue("@ID_CLUBE", jogador.Clube.Id);
             comando.Parameters.AddWithValue("@CPF", jogador.Cpf);
@@ -44,13 +45,14 @@ namespace entra21_trabalho_03.Services
 
             comando.CommandText =
                 @"UPDATE jogadores SET id_posicao = @ID_POSICAO,
-                id_clube = @ID_CLUBE, nome = @NOME, cpf = @CPF,
-                data_nascimento = @DATA_NASCIMENTO WHERE id = @ID";
+                id_clube = @ID_CLUBE, nome = @NOME,genero = @GENERO,
+                cpf = @CPF, data_nascimento = @DATA_NASCIMENTO WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@ID", jogador.Id);
             comando.Parameters.AddWithValue("@ID_POSICAO", jogador.Posicao.Id);
             comando.Parameters.AddWithValue("@ID_CLUBE", jogador.Clube.Id);
             comando.Parameters.AddWithValue("@NOME", jogador.Nome);
+            comando.Parameters.AddWithValue("@GENERO", jogador.Genero);
             comando.Parameters.AddWithValue("@CPF", jogador.Cpf);
             comando.Parameters.AddWithValue("@DATA_NASCIMENTO", jogador.DataNascimento);
 
@@ -64,7 +66,7 @@ namespace entra21_trabalho_03.Services
             var comando = conexao.CreateCommand();
 
             comando.CommandText =
-                @"SELECT id, id_posicao, id_clube, nome, cpf, data_nascimento 
+                @"SELECT id, id_posicao, id_clube, nome, genero, cpf, data_nascimento 
                 FROM jogadores WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@ID", id);
@@ -86,6 +88,9 @@ namespace entra21_trabalho_03.Services
             jogador.Clube.Id = Convert.ToInt32(registro["id_clube"]);
 
             jogador.Nome = registro["nome"].ToString();
+            jogador.Genero = registro["genero"].ToString();
+            jogador.Cpf = registro["cpf"].ToString();
+            jogador.DataNascimento = Convert.ToDateTime(registro["data_nascimento"]);
 
             conexao.Close();
             return jogador;
@@ -100,6 +105,7 @@ namespace entra21_trabalho_03.Services
             comando.CommandText = @"SELECT
 j.id AS 'id',
 j.nome AS 'nome',
+j.genero AS 'genero',
 j.cpf AS 'cpf',
 j.data_nascimento AS 'data_nascimento',
 p.id AS 'posicao_id',
@@ -122,6 +128,7 @@ INNER JOIN clubes AS c ON(j.id_clube = c.id)";
 
                 jogador.Id = Convert.ToInt32(registro["id"]);
                 jogador.Nome = registro["nome"].ToString();
+                jogador.Genero = registro["genero"].ToString();
                 jogador.Cpf = registro["cpf"].ToString();
                 jogador.DataNascimento = Convert.ToDateTime(registro["data_nascimento"]);
 
