@@ -28,7 +28,9 @@ namespace entra21_trabalho_03.Services
 
             comando.CommandText = @"INSERT INTO clubes (nome, cidade_sede, ano_fundacao)
                 VALUES(@NOME, @CIDADE_SEDE, @ANO_FUNDACAO);";
-            comando.Parameters.AddWithValue("@CLUBE", clube.Nome);
+            comando.Parameters.AddWithValue("@NOME", clube.Nome);
+            comando.Parameters.AddWithValue("@CIDADE_SEDE", clube.CidadeSede);
+            comando.Parameters.AddWithValue("@ANO_FUNDACAO", clube.AnoFundacao);
 
             comando.ExecuteNonQuery();
 
