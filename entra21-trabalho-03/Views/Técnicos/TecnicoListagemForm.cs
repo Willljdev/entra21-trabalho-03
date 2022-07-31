@@ -10,6 +10,7 @@ namespace entra21_trabalho_03.Views.Técnicos
             InitializeComponent();
             _tecnicoService = new TecnicoService();
             PreencherDataGridView();
+            BotoesTransparentes();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
@@ -89,6 +90,33 @@ namespace entra21_trabalho_03.Views.Técnicos
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BotoesTransparentes()
+        {
+            buttonApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonApagar.FlatAppearance.BorderSize = 0;
+            buttonApagar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonApagar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonApagar.BackColor = Color.Transparent;
+
+            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonMenu.BackColor = Color.Transparent;
+
+            buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonEditar.FlatAppearance.BorderSize = 0;
+            buttonEditar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonEditar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonEditar.BackColor = Color.Transparent;
+
+            buttonCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonCadastrar.FlatAppearance.BorderSize = 0;
+            buttonCadastrar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonCadastrar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonCadastrar.BackColor = Color.Transparent;
         }
     }
 }

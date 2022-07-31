@@ -53,6 +53,7 @@
             // 
             // textBoxNomeTecnico
             // 
+            this.textBoxNomeTecnico.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxNomeTecnico.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxNomeTecnico.Location = new System.Drawing.Point(10, 24);
             this.textBoxNomeTecnico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -155,6 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(274, 232);
             this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonSalvar);

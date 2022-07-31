@@ -1,14 +1,5 @@
 ﻿using entra21_trabalho_03.Models;
 using entra21_trabalho_03.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace entra21_trabalho_03.Views.Técnicos
 {
@@ -18,7 +9,7 @@ namespace entra21_trabalho_03.Views.Técnicos
         public TecnicoCadastroEdicaoForm()
         {
             InitializeComponent();
-
+            BotoesTransparentes();
             _idEditar = -1;
         }
 
@@ -79,14 +70,33 @@ namespace entra21_trabalho_03.Views.Técnicos
                 textBoxNomeTecnico.Focus();
                 return false;
             }
-            
-
             return true;
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BotoesTransparentes()
+        {
+            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonMenu.BackColor = Color.Transparent;
+
+            buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonCancelar.FlatAppearance.BorderSize = 0;
+            buttonCancelar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonCancelar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonCancelar.BackColor = Color.Transparent;
+
+            buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonSalvar.FlatAppearance.BorderSize = 0;
+            buttonSalvar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonSalvar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonSalvar.BackColor = Color.Transparent;
         }
     }
 }

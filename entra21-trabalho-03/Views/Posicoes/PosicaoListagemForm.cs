@@ -12,6 +12,7 @@ namespace entra21_trabalho_03.Views.Posicoes
             posicaoService = new PosicaoService();
 
             AtualizarDataGrideView();
+            BotoesTransparente();
         }
 
         private void AtualizarDataGrideView()
@@ -65,7 +66,7 @@ namespace entra21_trabalho_03.Views.Posicoes
             AtualizarDataGrideView();
 
             var apagar = MessageBox.Show("Deseja realmente apagar?", "ATENÇÃO !!!", MessageBoxButtons.YesNo);
-            
+
             if (apagar == DialogResult.Yes)
             {
                 posicaoService.Apagar(id);
@@ -108,6 +109,33 @@ namespace entra21_trabalho_03.Views.Posicoes
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BotoesTransparente()
+        {
+            buttonApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonApagar.FlatAppearance.BorderSize = 0;
+            buttonApagar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonApagar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonApagar.BackColor = Color.Transparent;
+
+            buttonCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonCadastrar.FlatAppearance.BorderSize = 0;
+            buttonCadastrar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonCadastrar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonCadastrar.BackColor = Color.Transparent;
+
+            buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonMenu.BackColor = Color.Transparent;
+
+            buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonEditar.FlatAppearance.BorderSize = 0;
+            buttonEditar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonEditar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonEditar.BackColor = Color.Transparent;
         }
     }
 }
