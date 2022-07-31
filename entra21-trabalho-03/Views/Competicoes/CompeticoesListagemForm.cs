@@ -24,8 +24,8 @@ namespace entra21_trabalho_03.Views.Competicoes
                 {
                     competicao.Id,
                     competicao.Nome,
-                    competicao.Data_inicio.ToString("dd/MM/yyyy"),
-                    competicao.Data_termino.ToString("dd/MM/yyyy"),
+                    competicao.DataInicio.ToString("dd/MM/yyyy"),
+                    competicao.DataTermino.ToString("dd/MM/yyyy"),
                 });
 
 

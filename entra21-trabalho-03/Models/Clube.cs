@@ -6,5 +6,6 @@
         public string Nome { get; set; }
         public string CidadeSede { get; set; }
         public DateTime AnoFundacao { get; set; }
+        public Tecnico Tecnico { get; set; }
     }
 }

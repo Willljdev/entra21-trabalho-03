@@ -25,9 +25,8 @@ namespace entra21_trabalho_03.Views.Jogadores
         {
             _idEditar = jogador.Id;
             textBoxNome.Text = jogador.Nome;
-            jogador.Genero = ObterGenero();
             maskedTextBoxCpf.Text = jogador.Cpf;
-            dateTimePickerDataNascimento.Value = Convert.ToDateTime(jogador.DataNascimento.ToString("dd/MM/yy"));
+            dateTimePickerDataNascimento.Value = Convert.ToDateTime(jogador.DataNascimento.ToString("dd/MM/yyyy"));
             dateTimePickerHoraNascimento.Value = Convert.ToDateTime(jogador.DataNascimento.ToString("HH:mm:ss"));
 
             for (var i = 0; i < comboBoxClube.Items.Count; i++)
@@ -78,16 +77,15 @@ namespace entra21_trabalho_03.Views.Jogadores
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
-        { 
+        {
             var posicao = comboBoxPosicao.SelectedItem as Posicao;
             var clube = comboBoxClube.SelectedItem as Clube;
-            
+
             if (ValidarDados() == false)
                 return;
 
             var jogador = new Jogador();
             jogador.Nome = textBoxNome.Text.Trim();
-            jogador.Genero = ObterGenero();
             jogador.Posicao = posicao;
             jogador.Clube = clube;
             jogador.Cpf = maskedTextBoxCpf.Text.Trim();
@@ -136,24 +134,9 @@ namespace entra21_trabalho_03.Views.Jogadores
             return true;
         }
 
-        private string ObterGenero()
-        {
-            if (radioButtonMasculino.Checked == true)
-            {
-                return radioButtonMasculino.Text;
-            }
-
-            return radioButtonFeminino.Text;
-        }
-
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void JogadorCadastroEdicaoForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

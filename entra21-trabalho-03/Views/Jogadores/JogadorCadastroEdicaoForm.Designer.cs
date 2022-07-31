@@ -43,8 +43,6 @@
             this.buttonMenu = new System.Windows.Forms.Button();
             this.dateTimePickerHoraNascimento = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
-            this.radioButtonFeminino = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +59,7 @@
             // 
             this.labelPosicao.AutoSize = true;
             this.labelPosicao.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPosicao.Location = new System.Drawing.Point(12, 77);
+            this.labelPosicao.Location = new System.Drawing.Point(12, 52);
             this.labelPosicao.Name = "labelPosicao";
             this.labelPosicao.Size = new System.Drawing.Size(65, 18);
             this.labelPosicao.TabIndex = 2;
@@ -71,7 +69,7 @@
             // 
             this.labelClube.AutoSize = true;
             this.labelClube.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelClube.Location = new System.Drawing.Point(12, 125);
+            this.labelClube.Location = new System.Drawing.Point(12, 100);
             this.labelClube.Name = "labelClube";
             this.labelClube.Size = new System.Drawing.Size(49, 18);
             this.labelClube.TabIndex = 4;
@@ -81,7 +79,7 @@
             // 
             this.labelCpf.AutoSize = true;
             this.labelCpf.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCpf.Location = new System.Drawing.Point(12, 173);
+            this.labelCpf.Location = new System.Drawing.Point(12, 148);
             this.labelCpf.Name = "labelCpf";
             this.labelCpf.Size = new System.Drawing.Size(36, 18);
             this.labelCpf.TabIndex = 6;
@@ -91,7 +89,7 @@
             // 
             this.labelDataNascimento.AutoSize = true;
             this.labelDataNascimento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelDataNascimento.Location = new System.Drawing.Point(12, 219);
+            this.labelDataNascimento.Location = new System.Drawing.Point(12, 194);
             this.labelDataNascimento.Name = "labelDataNascimento";
             this.labelDataNascimento.Size = new System.Drawing.Size(133, 16);
             this.labelDataNascimento.TabIndex = 8;
@@ -112,7 +110,7 @@
             this.comboBoxPosicao.DisplayMember = "nome";
             this.comboBoxPosicao.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxPosicao.FormattingEnabled = true;
-            this.comboBoxPosicao.Location = new System.Drawing.Point(12, 98);
+            this.comboBoxPosicao.Location = new System.Drawing.Point(12, 73);
             this.comboBoxPosicao.Name = "comboBoxPosicao";
             this.comboBoxPosicao.Size = new System.Drawing.Size(215, 24);
             this.comboBoxPosicao.TabIndex = 10;
@@ -123,7 +121,7 @@
             this.comboBoxClube.DisplayMember = "nome";
             this.comboBoxClube.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxClube.FormattingEnabled = true;
-            this.comboBoxClube.Location = new System.Drawing.Point(12, 146);
+            this.comboBoxClube.Location = new System.Drawing.Point(12, 121);
             this.comboBoxClube.Name = "comboBoxClube";
             this.comboBoxClube.Size = new System.Drawing.Size(215, 24);
             this.comboBoxClube.TabIndex = 11;
@@ -137,7 +135,7 @@
             this.dateTimePickerDataNascimento.CustomFormat = "";
             this.dateTimePickerDataNascimento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(12, 238);
+            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(12, 213);
             this.dateTimePickerDataNascimento.MaxDate = new System.DateTime(2022, 1, 8, 23, 59, 0, 0);
             this.dateTimePickerDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
@@ -149,7 +147,7 @@
             // 
             this.buttonCancelar.BackColor = System.Drawing.Color.Azure;
             this.buttonCancelar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancelar.Location = new System.Drawing.Point(12, 270);
+            this.buttonCancelar.Location = new System.Drawing.Point(12, 245);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(88, 31);
             this.buttonCancelar.TabIndex = 14;
@@ -161,7 +159,7 @@
             // 
             this.buttonSalvar.BackColor = System.Drawing.Color.Azure;
             this.buttonSalvar.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonSalvar.Location = new System.Drawing.Point(200, 271);
+            this.buttonSalvar.Location = new System.Drawing.Point(200, 246);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(88, 31);
             this.buttonSalvar.TabIndex = 15;
@@ -172,7 +170,7 @@
             // maskedTextBoxCpf
             // 
             this.maskedTextBoxCpf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBoxCpf.Location = new System.Drawing.Point(12, 194);
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(12, 169);
             this.maskedTextBoxCpf.Mask = "000.000.000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(215, 22);
@@ -182,7 +180,7 @@
             // 
             this.buttonMenu.BackColor = System.Drawing.Color.Azure;
             this.buttonMenu.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(106, 271);
+            this.buttonMenu.Location = new System.Drawing.Point(106, 246);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(88, 31);
             this.buttonMenu.TabIndex = 17;
@@ -194,7 +192,7 @@
             // 
             this.dateTimePickerHoraNascimento.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerHoraNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePickerHoraNascimento.Location = new System.Drawing.Point(154, 239);
+            this.dateTimePickerHoraNascimento.Location = new System.Drawing.Point(154, 214);
             this.dateTimePickerHoraNascimento.Name = "dateTimePickerHoraNascimento";
             this.dateTimePickerHoraNascimento.Size = new System.Drawing.Size(128, 26);
             this.dateTimePickerHoraNascimento.TabIndex = 18;
@@ -203,44 +201,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(154, 219);
+            this.label2.Location = new System.Drawing.Point(154, 194);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 16);
             this.label2.TabIndex = 19;
             this.label2.Text = "Hora de nascimento";
-            // 
-            // radioButtonMasculino
-            // 
-            this.radioButtonMasculino.AutoSize = true;
-            this.radioButtonMasculino.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonMasculino.Location = new System.Drawing.Point(12, 55);
-            this.radioButtonMasculino.Name = "radioButtonMasculino";
-            this.radioButtonMasculino.Size = new System.Drawing.Size(99, 22);
-            this.radioButtonMasculino.TabIndex = 20;
-            this.radioButtonMasculino.TabStop = true;
-            this.radioButtonMasculino.Text = "Masculino";
-            this.radioButtonMasculino.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonFeminino
-            // 
-            this.radioButtonFeminino.AutoSize = true;
-            this.radioButtonFeminino.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonFeminino.Location = new System.Drawing.Point(135, 55);
-            this.radioButtonFeminino.Name = "radioButtonFeminino";
-            this.radioButtonFeminino.Size = new System.Drawing.Size(92, 22);
-            this.radioButtonFeminino.TabIndex = 21;
-            this.radioButtonFeminino.TabStop = true;
-            this.radioButtonFeminino.Text = "Feminino";
-            this.radioButtonFeminino.UseVisualStyleBackColor = true;
             // 
             // JogadorCadastroEdicaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(294, 309);
-            this.Controls.Add(this.radioButtonFeminino);
-            this.Controls.Add(this.radioButtonMasculino);
+            this.ClientSize = new System.Drawing.Size(298, 309);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePickerHoraNascimento);
             this.Controls.Add(this.buttonMenu);
@@ -259,7 +231,6 @@
             this.Name = "JogadorCadastroEdicaoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de jogadores";
-            this.Load += new System.EventHandler(this.JogadorCadastroEdicaoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
