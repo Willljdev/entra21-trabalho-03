@@ -36,8 +36,6 @@
             this.dateTimePickerDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.labelCidadeNatal = new System.Windows.Forms.Label();
             this.textBoxCidadeNatal = new System.Windows.Forms.TextBox();
-            this.labelClubeAtual = new System.Windows.Forms.Label();
-            this.comboBoxClubeAtual = new System.Windows.Forms.ComboBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
@@ -46,90 +44,86 @@
             // labelNomeTecnico
             // 
             this.labelNomeTecnico.AutoSize = true;
-            this.labelNomeTecnico.Location = new System.Drawing.Point(12, 9);
+            this.labelNomeTecnico.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelNomeTecnico.Location = new System.Drawing.Point(10, 4);
             this.labelNomeTecnico.Name = "labelNomeTecnico";
-            this.labelNomeTecnico.Size = new System.Drawing.Size(124, 20);
+            this.labelNomeTecnico.Size = new System.Drawing.Size(131, 18);
             this.labelNomeTecnico.TabIndex = 0;
             this.labelNomeTecnico.Text = "Nome do técnico";
             // 
             // textBoxNomeTecnico
             // 
-            this.textBoxNomeTecnico.Location = new System.Drawing.Point(12, 32);
+            this.textBoxNomeTecnico.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxNomeTecnico.Location = new System.Drawing.Point(10, 24);
+            this.textBoxNomeTecnico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeTecnico.Name = "textBoxNomeTecnico";
-            this.textBoxNomeTecnico.Size = new System.Drawing.Size(275, 27);
+            this.textBoxNomeTecnico.Size = new System.Drawing.Size(241, 26);
             this.textBoxNomeTecnico.TabIndex = 1;
             // 
             // labelCpf
             // 
             this.labelCpf.AutoSize = true;
-            this.labelCpf.Location = new System.Drawing.Point(12, 62);
+            this.labelCpf.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCpf.Location = new System.Drawing.Point(10, 52);
             this.labelCpf.Name = "labelCpf";
-            this.labelCpf.Size = new System.Drawing.Size(107, 20);
+            this.labelCpf.Size = new System.Drawing.Size(117, 18);
             this.labelCpf.TabIndex = 2;
             this.labelCpf.Text = "CPF do técnico";
             // 
             // maskedTextBoxCpf
             // 
-            this.maskedTextBoxCpf.Location = new System.Drawing.Point(12, 85);
+            this.maskedTextBoxCpf.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(10, 72);
+            this.maskedTextBoxCpf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
-            this.maskedTextBoxCpf.Size = new System.Drawing.Size(184, 27);
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(162, 26);
             this.maskedTextBoxCpf.TabIndex = 3;
             // 
             // labelDataNascimento
             // 
             this.labelDataNascimento.AutoSize = true;
-            this.labelDataNascimento.Location = new System.Drawing.Point(12, 115);
+            this.labelDataNascimento.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelDataNascimento.Location = new System.Drawing.Point(10, 100);
             this.labelDataNascimento.Name = "labelDataNascimento";
-            this.labelDataNascimento.Size = new System.Drawing.Size(216, 20);
+            this.labelDataNascimento.Size = new System.Drawing.Size(153, 18);
             this.labelDataNascimento.TabIndex = 4;
-            this.labelDataNascimento.Text = "Data de nascimento do técnico";
+            this.labelDataNascimento.Text = "Data de nascimento\r\n";
             // 
             // dateTimePickerDataNascimento
             // 
+            this.dateTimePickerDataNascimento.CalendarFont = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(12, 138);
+            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(10, 120);
+            this.dateTimePickerDataNascimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
-            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(250, 27);
+            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(219, 23);
             this.dateTimePickerDataNascimento.TabIndex = 5;
             // 
             // labelCidadeNatal
             // 
             this.labelCidadeNatal.AutoSize = true;
-            this.labelCidadeNatal.Location = new System.Drawing.Point(12, 168);
+            this.labelCidadeNatal.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCidadeNatal.Location = new System.Drawing.Point(9, 145);
             this.labelCidadeNatal.Name = "labelCidadeNatal";
-            this.labelCidadeNatal.Size = new System.Drawing.Size(93, 20);
+            this.labelCidadeNatal.Size = new System.Drawing.Size(99, 18);
             this.labelCidadeNatal.TabIndex = 6;
             this.labelCidadeNatal.Text = "Cidade natal";
             // 
             // textBoxCidadeNatal
             // 
-            this.textBoxCidadeNatal.Location = new System.Drawing.Point(12, 191);
+            this.textBoxCidadeNatal.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCidadeNatal.Location = new System.Drawing.Point(9, 165);
+            this.textBoxCidadeNatal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCidadeNatal.Name = "textBoxCidadeNatal";
-            this.textBoxCidadeNatal.Size = new System.Drawing.Size(184, 27);
+            this.textBoxCidadeNatal.Size = new System.Drawing.Size(162, 26);
             this.textBoxCidadeNatal.TabIndex = 7;
-            // 
-            // labelClubeAtual
-            // 
-            this.labelClubeAtual.AutoSize = true;
-            this.labelClubeAtual.Location = new System.Drawing.Point(12, 221);
-            this.labelClubeAtual.Name = "labelClubeAtual";
-            this.labelClubeAtual.Size = new System.Drawing.Size(86, 20);
-            this.labelClubeAtual.TabIndex = 8;
-            this.labelClubeAtual.Text = "Clube Atual";
-            // 
-            // comboBoxClubeAtual
-            // 
-            this.comboBoxClubeAtual.FormattingEnabled = true;
-            this.comboBoxClubeAtual.Location = new System.Drawing.Point(12, 244);
-            this.comboBoxClubeAtual.Name = "comboBoxClubeAtual";
-            this.comboBoxClubeAtual.Size = new System.Drawing.Size(184, 28);
-            this.comboBoxClubeAtual.TabIndex = 9;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(12, 297);
+            this.buttonCancelar.Location = new System.Drawing.Point(9, 195);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
+            this.buttonCancelar.Size = new System.Drawing.Size(82, 32);
             this.buttonCancelar.TabIndex = 10;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -137,9 +131,10 @@
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(112, 297);
+            this.buttonMenu.Location = new System.Drawing.Point(97, 195);
+            this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(94, 29);
+            this.buttonMenu.Size = new System.Drawing.Size(82, 32);
             this.buttonMenu.TabIndex = 11;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
@@ -147,9 +142,10 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(212, 297);
+            this.buttonSalvar.Location = new System.Drawing.Point(185, 195);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
+            this.buttonSalvar.Size = new System.Drawing.Size(82, 32);
             this.buttonSalvar.TabIndex = 12;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
@@ -157,14 +153,12 @@
             // 
             // TecnicoCadastroEdicaoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 340);
+            this.ClientSize = new System.Drawing.Size(274, 232);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.comboBoxClubeAtual);
-            this.Controls.Add(this.labelClubeAtual);
             this.Controls.Add(this.textBoxCidadeNatal);
             this.Controls.Add(this.labelCidadeNatal);
             this.Controls.Add(this.dateTimePickerDataNascimento);
@@ -173,6 +167,7 @@
             this.Controls.Add(this.labelCpf);
             this.Controls.Add(this.textBoxNomeTecnico);
             this.Controls.Add(this.labelNomeTecnico);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TecnicoCadastroEdicaoForm";
             this.Text = "TecnicoCadastroEdicaoForm";
             this.ResumeLayout(false);
@@ -190,8 +185,6 @@
         private DateTimePicker dateTimePickerDataNascimento;
         private Label labelCidadeNatal;
         private TextBox textBoxCidadeNatal;
-        private Label labelClubeAtual;
-        private ComboBox comboBoxClubeAtual;
         private Button buttonCancelar;
         private Button buttonMenu;
         private Button buttonSalvar;

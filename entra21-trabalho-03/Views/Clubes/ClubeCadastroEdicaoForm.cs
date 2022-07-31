@@ -25,10 +25,11 @@ namespace entra21_trabalho_03.Views.Clubes
             for (var i = 0; i < comboBoxTecnicoClube.Items.Count; i++)
             {
                 var tecnicoPercorrido = comboBoxTecnicoClube.Items[i] as Tecnico;
+
                 if (tecnicoPercorrido.Id == clube.Tecnico.Id)
                 {
                     comboBoxTecnicoClube.SelectedItem = tecnicoPercorrido;
-                    break;
+                    
                 }
             }
         }

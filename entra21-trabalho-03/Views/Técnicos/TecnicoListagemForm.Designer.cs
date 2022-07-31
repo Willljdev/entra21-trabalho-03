@@ -35,9 +35,9 @@
             this.buttonApagar = new System.Windows.Forms.Button();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnClube = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCidadeNatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaTecnicos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,9 +49,9 @@
             this.dataGridViewListaTecnicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,
             this.ColumnNome,
-            this.ColumnClube,
             this.ColumnCpf,
-            this.ColumnDataNascimento});
+            this.ColumnDataNascimento,
+            this.ColumnCidadeNatal});
             this.dataGridViewListaTecnicos.Location = new System.Drawing.Point(10, 27);
             this.dataGridViewListaTecnicos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewListaTecnicos.Name = "dataGridViewListaTecnicos";
@@ -117,12 +117,6 @@
             this.ColumnNome.Name = "ColumnNome";
             this.ColumnNome.ReadOnly = true;
             // 
-            // ColumnClube
-            // 
-            this.ColumnClube.HeaderText = "Clube";
-            this.ColumnClube.Name = "ColumnClube";
-            this.ColumnClube.ReadOnly = true;
-            // 
             // ColumnCpf
             // 
             this.ColumnCpf.HeaderText = "CPF";
@@ -134,6 +128,12 @@
             this.ColumnDataNascimento.HeaderText = "Data de nascimento";
             this.ColumnDataNascimento.Name = "ColumnDataNascimento";
             this.ColumnDataNascimento.ReadOnly = true;
+            // 
+            // ColumnCidadeNatal
+            // 
+            this.ColumnCidadeNatal.HeaderText = "Cidade Natal";
+            this.ColumnCidadeNatal.Name = "ColumnCidadeNatal";
+            this.ColumnCidadeNatal.ReadOnly = true;
             // 
             // TecnicoListagemForm
             // 
@@ -160,13 +160,13 @@
         private Button buttonCadastrar;
         private Button buttonEditar;
         private DataGridViewTextBoxColumn ColumnID;
-        private DataGridViewTextBoxColumn ColumnNome;
-        private DataGridViewTextBoxColumn ColumnCpf;
         private DataGridViewTextBoxColumn ColumnClubeAtual;
         private Button buttonMenu;
         private Button buttonApagar;
         private DataGridViewTextBoxColumn ColumnId;
-        private DataGridViewTextBoxColumn ColumnClube;
+        private DataGridViewTextBoxColumn ColumnNome;
+        private DataGridViewTextBoxColumn ColumnCpf;
         private DataGridViewTextBoxColumn ColumnDataNascimento;
+        private DataGridViewTextBoxColumn ColumnCidadeNatal;
     }
 }

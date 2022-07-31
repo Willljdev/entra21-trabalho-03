@@ -48,7 +48,6 @@ namespace entra21_trabalho_03.Views.Técnicos
                 {
                     tecnico.Id,
                     tecnico.Nome,
-                    tecnico.Clube.Nome,
                     tecnico.Cpf,
                     tecnico.CidadeNatal,
                     tecnico.DataNascimento.ToString("dd/MM/yyyy")

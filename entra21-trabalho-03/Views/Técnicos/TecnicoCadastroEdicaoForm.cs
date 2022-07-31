@@ -29,17 +29,6 @@ namespace entra21_trabalho_03.Views.Técnicos
             maskedTextBoxCpf.Text = tecnico.Cpf;
             dateTimePickerDataNascimento.Value = tecnico.DataNascimento;
             textBoxCidadeNatal.Text = tecnico.CidadeNatal;
-
-            for (var i = 0; i < comboBoxClubeAtual.Items.Count; i++)
-            {
-                var clubePercorrer = comboBoxClubeAtual.Items[i] as Clube;
-
-                if(clubePercorrer.Id == tecnico.Clube.Id)
-                {
-                    comboBoxClubeAtual.SelectedItem = clubePercorrer;
-                    break;
-                }
-            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -50,10 +39,9 @@ namespace entra21_trabalho_03.Views.Técnicos
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             var nome = textBoxNomeTecnico.Text.Trim();
-            var cpf = maskedTextBoxCpf
+            var cpf = maskedTextBoxCpf.Text.Trim();
             var cidadeNatal = textBoxCidadeNatal.Text.Trim();
             var dataNascimento = Convert.ToDateTime(dateTimePickerDataNascimento.Text);
-            var clubeAtual = comboBoxClubeAtual.SelectedItem as Clube;
 
             if (ValidarDados() == false)
               return;
@@ -63,7 +51,6 @@ namespace entra21_trabalho_03.Views.Técnicos
             tecnico.Cpf = cpf;
             tecnico.CidadeNatal = cidadeNatal;
             tecnico.DataNascimento = dataNascimento;
-            tecnico.Clube = clubeAtual;
 
             var tecnicoService = new TecnicoService();
 

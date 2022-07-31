@@ -95,8 +95,8 @@ namespace entra21_trabalho_03.Services
             comando.CommandText = @"SELECT 
 c.id AS 'id',
 c.nome AS 'nome',
-c.data_inicio AS 'data_inicio',
-c.data_termino AS 'data_termino',
+c.data_inicio AS 'inicio',
+c.data_termino AS 'termino',
 e.id AS 'id_esporte',
 e.nome AS 'nome_esporte',
 e.quantidade_jogadores_time AS 'jogadores_time',
@@ -127,11 +127,11 @@ INNER JOIN tecnicos AS t ON(cb.id_tecnico = t.id);";
 
                 competicao.Id = Convert.ToInt32(registro["id"]);
                 competicao.Nome = registro["nome"].ToString();
-                competicao.DataInicio = Convert.ToDateTime(registro["data_inicio"]);
-                competicao.DataTermino = Convert.ToDateTime(registro["data_termino"]);
+                competicao.DataInicio = Convert.ToDateTime(registro["inicio"]);
+                competicao.DataTermino = Convert.ToDateTime(registro["termino"]);
 
-                competicao.Esporte.Id = Convert.ToInt32(registro["id_pais"]);
-                competicao.Esporte.Nome = registro["pais_nome"].ToString();
+                competicao.Esporte.Id = Convert.ToInt32(registro["id_esporte"]);
+                competicao.Esporte.Nome = registro["nome_esporte"].ToString();
                 competicao.Esporte.QuantidadesJogadoresTime = Convert.ToInt32(registro["jogadores_time"]);
                 competicao.Esporte.QuantidadesAtletasClube = Convert.ToInt32(registro["jogadores_clube"]);
                 competicao.Esporte.LocalPraticado = registro["local_praticado"].ToString();
