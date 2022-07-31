@@ -1,11 +1,12 @@
-﻿namespace entra21_trabalho_03.PaisesCompeticoes.Models
+﻿using entra21_trabalho_03.Models;
+
+namespace entra21_trabalho_03.PaisesCompeticoes.Models
 {
     public class Competicao
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public DateTime Data_inicio { get; set; }
-        public DateTime Data_termino { get; set; }
-        public Pais Pais { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime DataTermino { get; set; }
     }
 }

@@ -1,24 +1,17 @@
 ﻿using entra21_trabalho_03.Models;
 using entra21_trabalho_03.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace entra21_trabalho_03.Views.Clubes
 {
     public partial class ClubeCadastroEdicaoForm : Form
     {
         private readonly int _idEditar;
+        private readonly TecnicoService _tecnicoService;
         public ClubeCadastroEdicaoForm()
         {
             InitializeComponent();
-
+            _tecnicoService = new TecnicoService();
+            PreencherComboBox();
             _idEditar = -1;
         }
         public ClubeCadastroEdicaoForm(Clube clube) : this()
@@ -26,25 +19,39 @@ namespace entra21_trabalho_03.Views.Clubes
             _idEditar = clube.Id;
             textBoxNomeClube.Text = clube.Nome;
             textBoxCidadeSede.Text = clube.CidadeSede;
-            dateTimePickerAnoFundacao.Value = clube.AnoFundacao;
+            dateTimePickerAnoFundacao.Value = Convert.ToDateTime(clube.AnoFundacao.ToString("dd/MM/yyyy"));
+            dateTimePickerHoraFundacao.Value = Convert.ToDateTime(clube.AnoFundacao.ToString("HH:mm:ss"));
+
+            for (var i = 0; i < comboBoxTecnicoClube.Items.Count; i++)
+            {
+                var tecnicoPercorrido = comboBoxTecnicoClube.Items[i] as Tecnico;
+                if (tecnicoPercorrido.Id == clube.Tecnico.Id)
+                {
+                    comboBoxTecnicoClube.SelectedItem = tecnicoPercorrido;
+                    break;
+                }
+            }
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            var tecnico = comboBoxTecnicoClube.SelectedItem as Tecnico;
             var nome = textBoxNomeClube.Text.Trim();
             var cidadeSede = textBoxCidadeSede.Text.Trim();
             var dataFundacao = Convert.ToDateTime(dateTimePickerAnoFundacao.Text);
 
             if (ValidarDados() == false)
                 return;
+
             var clube = new Clube();
             clube.Nome = nome;
             clube.CidadeSede = cidadeSede;
             clube.AnoFundacao = dataFundacao;
+            clube.Tecnico = tecnico;
 
             var clubeService = new ClubeService();
 
-            if(_idEditar ==-1)
+            if (_idEditar == -1)
             {
                 clubeService.Cadastrar(clube);
                 MessageBox.Show("Clube cadastrado com sucesso!");
@@ -60,7 +67,7 @@ namespace entra21_trabalho_03.Views.Clubes
         }
         private bool ValidarDados()
         {
-            if(textBoxNomeClube.Text.Length < 3 || textBoxNomeClube.Text.Length > 15)
+            if (textBoxNomeClube.Text.Length < 3 || textBoxNomeClube.Text.Length > 15)
             {
                 MessageBox.Show("O nome do clube deve de 3 à 15 caracteres!");
                 textBoxNomeClube.ResetText();
@@ -68,7 +75,7 @@ namespace entra21_trabalho_03.Views.Clubes
                 return false;
             }
 
-            if(textBoxCidadeSede.Text.Length < 3 || textBoxCidadeSede.Text.Length > 20)
+            if (textBoxCidadeSede.Text.Length < 3 || textBoxCidadeSede.Text.Length > 20)
             {
                 MessageBox.Show("O nome da cidade deve de 3 à 20 caracteres!");
                 textBoxNomeClube.ResetText();
@@ -76,6 +83,16 @@ namespace entra21_trabalho_03.Views.Clubes
                 return false;
             }
             return true;
+        }
+
+        private void PreencherComboBox()
+        {
+            var tecnicos = _tecnicoService.ObterTodos();
+            for (var i = 0; i < tecnicos.Count; i++)
+            {
+                var tecnico = tecnicos[i];
+                comboBoxTecnicoClube.Items.Add(tecnico);
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)

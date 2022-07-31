@@ -11,9 +11,14 @@ CREATE TABLE paises(
 
 CREATE TABLE clubes(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),
+
+	id_tecnico INTEGER,
+
 	nome VARCHAR(72),
 	cidade_sede VARCHAR(60),
 	ano_fundacao DATETIME2
+
+	FOREIGN KEY (id_tecnico) REFERENCES tecnicos(id)
 );
 
 CREATE TABLE jogadores(
@@ -45,13 +50,8 @@ CREATE TABLE competicoes(
 
 CREATE TABLE tecnicos(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),
-
-	id_clube INTEGER,
-
 	nome VARCHAR(50),
 	cpf VARCHAR(14),
 	data_nascimento DATETIME2,
 	cidade_natal VARCHAR(60)
-
-	FOREIGN KEY (id_clube) REFERENCES clubes(id)
 );

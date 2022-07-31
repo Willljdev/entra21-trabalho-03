@@ -35,15 +35,18 @@
             this.labelDataInicio = new System.Windows.Forms.Label();
             this.labelDataTermino = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.dateTimePickerDataInicio = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerDataTermino = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerHoraInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDateInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDateTermino = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerHoraTermino = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // buttonCadastrar
             // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(174, 169);
+            this.buttonCadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCadastrar.Location = new System.Drawing.Point(174, 186);
             this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCadastrar.Size = new System.Drawing.Size(75, 34);
             this.buttonCadastrar.TabIndex = 0;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
@@ -51,9 +54,10 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(12, 169);
+            this.buttonCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancelar.Location = new System.Drawing.Point(12, 186);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 34);
             this.buttonCancelar.TabIndex = 1;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -61,9 +65,10 @@
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(93, 169);
+            this.buttonMenu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonMenu.Location = new System.Drawing.Point(93, 186);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(75, 23);
+            this.buttonMenu.Size = new System.Drawing.Size(75, 34);
             this.buttonMenu.TabIndex = 2;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
@@ -72,58 +77,86 @@
             // labelNome
             // 
             this.labelNome.AutoSize = true;
+            this.labelNome.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelNome.Location = new System.Drawing.Point(12, 9);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(122, 15);
+            this.labelNome.Size = new System.Drawing.Size(162, 18);
             this.labelNome.TabIndex = 3;
             this.labelNome.Text = "Nome da competição";
             // 
             // labelDataInicio
             // 
             this.labelDataInicio.AutoSize = true;
+            this.labelDataInicio.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelDataInicio.Location = new System.Drawing.Point(12, 62);
             this.labelDataInicio.Name = "labelDataInicio";
-            this.labelDataInicio.Size = new System.Drawing.Size(76, 15);
+            this.labelDataInicio.Size = new System.Drawing.Size(157, 18);
             this.labelDataInicio.TabIndex = 4;
-            this.labelDataInicio.Text = "Data te início";
+            this.labelDataInicio.Text = "Data e hora de início";
             // 
             // labelDataTermino
             // 
             this.labelDataTermino.AutoSize = true;
-            this.labelDataTermino.Location = new System.Drawing.Point(12, 122);
+            this.labelDataTermino.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelDataTermino.Location = new System.Drawing.Point(12, 126);
             this.labelDataTermino.Name = "labelDataTermino";
-            this.labelDataTermino.Size = new System.Drawing.Size(76, 15);
+            this.labelDataTermino.Size = new System.Drawing.Size(175, 18);
             this.labelDataTermino.TabIndex = 5;
-            this.labelDataTermino.Text = "Data término";
+            this.labelDataTermino.Text = "Data e hora de término";
             // 
             // textBoxNome
             // 
+            this.textBoxNome.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxNome.Location = new System.Drawing.Point(12, 27);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(200, 23);
+            this.textBoxNome.Size = new System.Drawing.Size(200, 26);
             this.textBoxNome.TabIndex = 6;
             // 
-            // dateTimePickerDataInicio
+            // dateTimePickerHoraInicio
             // 
-            this.dateTimePickerDataInicio.Location = new System.Drawing.Point(12, 80);
-            this.dateTimePickerDataInicio.Name = "dateTimePickerDataInicio";
-            this.dateTimePickerDataInicio.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePickerDataInicio.TabIndex = 7;
+            this.dateTimePickerHoraInicio.CalendarFont = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerHoraInicio.Location = new System.Drawing.Point(118, 83);
+            this.dateTimePickerHoraInicio.Name = "dateTimePickerHoraInicio";
+            this.dateTimePickerHoraInicio.Size = new System.Drawing.Size(94, 23);
+            this.dateTimePickerHoraInicio.TabIndex = 7;
             // 
-            // dateTimePickerDataTermino
+            // dateTimePickerDateInicio
             // 
-            this.dateTimePickerDataTermino.Location = new System.Drawing.Point(12, 140);
-            this.dateTimePickerDataTermino.Name = "dateTimePickerDataTermino";
-            this.dateTimePickerDataTermino.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePickerDataTermino.TabIndex = 8;
+            this.dateTimePickerDateInicio.CalendarFont = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerDateInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDateInicio.Location = new System.Drawing.Point(12, 83);
+            this.dateTimePickerDateInicio.Name = "dateTimePickerDateInicio";
+            this.dateTimePickerDateInicio.Size = new System.Drawing.Size(94, 23);
+            this.dateTimePickerDateInicio.TabIndex = 8;
+            // 
+            // dateTimePickerDateTermino
+            // 
+            this.dateTimePickerDateTermino.CalendarFont = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerDateTermino.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDateTermino.Location = new System.Drawing.Point(12, 147);
+            this.dateTimePickerDateTermino.Name = "dateTimePickerDateTermino";
+            this.dateTimePickerDateTermino.Size = new System.Drawing.Size(94, 23);
+            this.dateTimePickerDateTermino.TabIndex = 9;
+            // 
+            // dateTimePickerHoraTermino
+            // 
+            this.dateTimePickerHoraTermino.CalendarFont = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerHoraTermino.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerHoraTermino.Location = new System.Drawing.Point(118, 147);
+            this.dateTimePickerHoraTermino.Name = "dateTimePickerHoraTermino";
+            this.dateTimePickerHoraTermino.Size = new System.Drawing.Size(94, 23);
+            this.dateTimePickerHoraTermino.TabIndex = 10;
             // 
             // CompeticaoCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 331);
-            this.Controls.Add(this.dateTimePickerDataTermino);
-            this.Controls.Add(this.dateTimePickerDataInicio);
+            this.ClientSize = new System.Drawing.Size(258, 232);
+            this.Controls.Add(this.dateTimePickerHoraTermino);
+            this.Controls.Add(this.dateTimePickerDateTermino);
+            this.Controls.Add(this.dateTimePickerDateInicio);
+            this.Controls.Add(this.dateTimePickerHoraInicio);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.labelDataTermino);
             this.Controls.Add(this.labelDataInicio);
@@ -148,7 +181,9 @@
         private Label labelDataInicio;
         private Label labelDataTermino;
         private TextBox textBoxNome;
-        private DateTimePicker dateTimePickerDataInicio;
-        private DateTimePicker dateTimePickerDataTermino;
+        private DateTimePicker dateTimePickerHoraInicio;
+        private DateTimePicker dateTimePickerDateInicio;
+        private DateTimePicker dateTimePickerDateTermino;
+        private DateTimePicker dateTimePickerHoraTermino;
     }
 }

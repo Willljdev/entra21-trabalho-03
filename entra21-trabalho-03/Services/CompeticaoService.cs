@@ -28,8 +28,8 @@ namespace entra21_trabalho_03.Services
                 VALUES (@NOME, @DATA_INICIO, @DATA_TERMINO, @ID_PAIS);";
 
             comando.Parameters.AddWithValue("@NOME", competicao.Nome);
-            comando.Parameters.AddWithValue("@DATA_INICIO", competicao.Data_inicio);
-            comando.Parameters.AddWithValue("@DATA_TERMINO", competicao.Data_termino);
+            comando.Parameters.AddWithValue("@DATA_INICIO", competicao.DataInicio);
+            comando.Parameters.AddWithValue("@DATA_TERMINO", competicao.DataTermino);
 
             comando.ExecuteNonQuery();
             conexao.Close();
@@ -48,8 +48,8 @@ namespace entra21_trabalho_03.Services
 
             comando.Parameters.AddWithValue("@ID", competicao.Id);
             comando.Parameters.AddWithValue("@NOME", competicao.Nome);
-            comando.Parameters.AddWithValue("@DATA_INICIO", competicao.Data_inicio);
-            comando.Parameters.AddWithValue("@DATA_TERMINO", competicao.Data_termino);
+            comando.Parameters.AddWithValue("@DATA_INICIO", competicao.DataInicio);
+            comando.Parameters.AddWithValue("@DATA_TERMINO", competicao.DataTermino);
             comando.Parameters.AddWithValue("@ID_PAIS", competicao.Pais.Id);
 
             comando.ExecuteNonQuery();
@@ -76,8 +76,8 @@ namespace entra21_trabalho_03.Services
             var competicoes = new Competicao();
             competicoes.Id = Convert.ToInt32(registro["id"]);
             competicoes.Nome = registro["nome"].ToString();
-            competicoes.Data_inicio = Convert.ToDateTime(registro["data_inicio"]);
-            competicoes.Data_termino = Convert.ToDateTime(registro["data_termino"]);
+            competicoes.DataInicio = Convert.ToDateTime(registro["data_inicio"]);
+            competicoes.DataTermino = Convert.ToDateTime(registro["data_termino"]);
 
             
             comando.Connection.Close();
@@ -114,8 +114,8 @@ INNER JOIN paises AS p ON(c.id_pais = p.id);";
 
                 competicao.Id = Convert.ToInt32(registro["id"]);
                 competicao.Nome = registro["nome"].ToString();
-                competicao.Data_inicio = Convert.ToDateTime(registro["data_inicio"]);
-                competicao.Data_termino = Convert.ToDateTime(registro["data_termino"]);
+                competicao.DataInicio = Convert.ToDateTime(registro["data_inicio"]);
+                competicao.DataTermino = Convert.ToDateTime(registro["data_termino"]);
 
                 competicao.Pais.Id = Convert.ToInt32(registro["id_pais"]);
                 competicao.Pais.Nome = registro["pais_nome"].ToString();

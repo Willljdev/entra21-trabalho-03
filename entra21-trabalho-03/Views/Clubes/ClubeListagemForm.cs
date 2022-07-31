@@ -1,13 +1,4 @@
 ﻿using entra21_trabalho_03.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace entra21_trabalho_03.Views.Clubes
 {
@@ -23,7 +14,15 @@ namespace entra21_trabalho_03.Views.Clubes
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
+            if (ValidarDados() == false)
+                return;
 
+            var linha = dataGridViewListaClubes.SelectedRows[0];
+            var id = Convert.ToInt32(linha.Cells[0].Value);
+
+            _clubeService.Apagar(id);
+            PreencherDataGridView();
+            MessageBox.Show("Clube apagado do sistema!");
         }
 
         private void PreencherDataGridView()
@@ -35,28 +34,19 @@ namespace entra21_trabalho_03.Views.Clubes
             {
                 var clube = clubes[i];
                 dataGridViewListaClubes.Rows.Add(new object[]
-                    {
+                {
                         clube.Id,
                         clube.Nome,
                         clube.CidadeSede,
                         clube.AnoFundacao.ToString("dd/MM/yyyy")
-                    });
+                });
             }
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewListaClubes.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione um clube para editar!");
+            if (ValidarDados() == false)
                 return;
-            }
-
-            if (dataGridViewListaClubes.Rows.Count == 0)
-            {
-                MessageBox.Show("Não há nem um clube cadastrado!");
-                return;
-            }
 
             var linha = dataGridViewListaClubes.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
@@ -77,17 +67,8 @@ namespace entra21_trabalho_03.Views.Clubes
 
         private void buttonApagar_Click_1(object sender, EventArgs e)
         {
-            if (dataGridViewListaClubes.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione um clube para apagar!");
+            if (ValidarDados() == false)
                 return;
-            }
-
-            if (dataGridViewListaClubes.Rows.Count == 0)
-            {
-                MessageBox.Show("Não há nem um clube cadastrado sistema!");
-                return;
-            }
 
             var linha = dataGridViewListaClubes.SelectedRows[0];
             var id = Convert.ToInt32(linha.Cells[0].Value);
@@ -100,6 +81,47 @@ namespace entra21_trabalho_03.Views.Clubes
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private bool ValidarDados()
+        {
+            if (dataGridViewListaClubes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um clube para editar!");
+                return false;
+            }
+
+            if (dataGridViewListaClubes.Rows.Count == 0)
+            {
+                MessageBox.Show("Não há nem um clube cadastrado!");
+                return false;
+            }
+
+            if (dataGridViewListaClubes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um clube para apagar!");
+                return false;
+            }
+
+            if (dataGridViewListaClubes.Rows.Count == 0)
+            {
+                MessageBox.Show("Não há nem um clube cadastrado sistema!");
+                return false;
+            }
+            return true;
+        }
+
+        private void buttonApagar_Click_2(object sender, EventArgs e)
+        {
+            if (ValidarDados() == false)
+                return;
+
+            var linha = dataGridViewListaClubes.SelectedRows[0];
+            var id = Convert.ToInt32(linha.Cells[0].Value);
+
+            _clubeService.Apagar(id);
+            PreencherDataGridView();
+            MessageBox.Show("Clube apagado do sistema!");
         }
     }
 }

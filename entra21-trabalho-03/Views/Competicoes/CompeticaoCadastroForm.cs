@@ -20,9 +20,8 @@ namespace entra21_trabalho_03.Views.Competicoes
         {
             _idEditar = competicao.Id;
             textBoxNome.Text = competicao.Nome;
-            dateTimePickerDataInicio.Value = competicao.Data_inicio;
-            dateTimePickerDataTermino.Value = competicao.Data_termino;
-
+            dateTimePickerDateInicio.Value = Convert.ToDateTime(competicao.DataInicio.ToString("dd/MM/yyyy"));
+            dateTimePickerDateInicio.Value = Convert.ToDateTime(competicao.DataInicio.ToString("HH:mm:ss"));
             
         }
 
@@ -39,8 +38,8 @@ namespace entra21_trabalho_03.Views.Competicoes
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
             var nome = textBoxNome.Text.Trim();
-            var dataInicio = Convert.ToDateTime(dateTimePickerDataInicio.Text);
-            var dataTermino = Convert.ToDateTime(dateTimePickerDataTermino.Text);
+            var dataInicio = Convert.ToDateTime(dateTimePickerHoraInicio.Text);
+            var dataTermino = Convert.ToDateTime(dateTimePickerDateInicio.Text);
 
             if (nome.Length < 3 || nome.Length > 50)
             {
