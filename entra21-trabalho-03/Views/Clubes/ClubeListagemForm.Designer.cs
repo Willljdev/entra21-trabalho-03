@@ -59,6 +59,7 @@
             this.dataGridViewListaClubes.ReadOnly = true;
             this.dataGridViewListaClubes.RowHeadersWidth = 51;
             this.dataGridViewListaClubes.RowTemplate.Height = 29;
+            this.dataGridViewListaClubes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaClubes.Size = new System.Drawing.Size(652, 290);
             this.dataGridViewListaClubes.TabIndex = 0;
             // 

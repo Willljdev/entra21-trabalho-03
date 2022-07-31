@@ -61,7 +61,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 296);
+            this.dataGridView1.Size = new System.Drawing.Size(799, 296);
             this.dataGridView1.TabIndex = 0;
             // 
             // ColumnId
@@ -115,9 +115,9 @@
             // buttonApagar
             // 
             this.buttonApagar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonApagar.Location = new System.Drawing.Point(418, 12);
+            this.buttonApagar.Location = new System.Drawing.Point(574, 5);
             this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(75, 32);
+            this.buttonApagar.Size = new System.Drawing.Size(75, 38);
             this.buttonApagar.TabIndex = 1;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
@@ -126,9 +126,9 @@
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonEditar.Location = new System.Drawing.Point(499, 12);
+            this.buttonEditar.Location = new System.Drawing.Point(655, 4);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(75, 32);
+            this.buttonEditar.Size = new System.Drawing.Size(75, 39);
             this.buttonEditar.TabIndex = 2;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
@@ -137,9 +137,9 @@
             // buttonCadastrar
             // 
             this.buttonCadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCadastrar.Location = new System.Drawing.Point(580, 12);
+            this.buttonCadastrar.Location = new System.Drawing.Point(736, 5);
             this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(75, 32);
+            this.buttonCadastrar.Size = new System.Drawing.Size(75, 38);
             this.buttonCadastrar.TabIndex = 3;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
@@ -148,19 +148,19 @@
             // labelListagem
             // 
             this.labelListagem.AutoSize = true;
-            this.labelListagem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelListagem.Location = new System.Drawing.Point(12, 18);
+            this.labelListagem.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelListagem.Location = new System.Drawing.Point(26, 11);
             this.labelListagem.Name = "labelListagem";
-            this.labelListagem.Size = new System.Drawing.Size(282, 19);
+            this.labelListagem.Size = new System.Drawing.Size(343, 22);
             this.labelListagem.TabIndex = 4;
             this.labelListagem.Text = "Listagem de jogadores cadastrados";
             // 
             // buttonMenu
             // 
             this.buttonMenu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenu.Location = new System.Drawing.Point(337, 11);
+            this.buttonMenu.Location = new System.Drawing.Point(493, 4);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(75, 32);
+            this.buttonMenu.Size = new System.Drawing.Size(75, 39);
             this.buttonMenu.TabIndex = 5;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 358);
+            this.ClientSize = new System.Drawing.Size(826, 358);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.labelListagem);
             this.Controls.Add(this.buttonCadastrar);

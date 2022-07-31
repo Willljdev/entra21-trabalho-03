@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridViewListaTecnicos = new System.Windows.Forms.DataGridView();
-            this.buttonCadastrar = new System.Windows.Forms.Button();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonMenu = new System.Windows.Forms.Button();
-            this.buttonApagar = new System.Windows.Forms.Button();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCidadeNatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonCadastrar = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
+            this.buttonMenu = new System.Windows.Forms.Button();
+            this.buttonApagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaTecnicos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,58 +52,15 @@
             this.ColumnCpf,
             this.ColumnDataNascimento,
             this.ColumnCidadeNatal});
-            this.dataGridViewListaTecnicos.Location = new System.Drawing.Point(10, 27);
+            this.dataGridViewListaTecnicos.Location = new System.Drawing.Point(10, 48);
             this.dataGridViewListaTecnicos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewListaTecnicos.Name = "dataGridViewListaTecnicos";
             this.dataGridViewListaTecnicos.ReadOnly = true;
             this.dataGridViewListaTecnicos.RowHeadersWidth = 51;
             this.dataGridViewListaTecnicos.RowTemplate.Height = 29;
-            this.dataGridViewListaTecnicos.Size = new System.Drawing.Size(477, 302);
+            this.dataGridViewListaTecnicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewListaTecnicos.Size = new System.Drawing.Size(554, 355);
             this.dataGridViewListaTecnicos.TabIndex = 0;
-            // 
-            // buttonCadastrar
-            // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(297, 384);
-            this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(82, 22);
-            this.buttonCadastrar.TabIndex = 1;
-            this.buttonCadastrar.Text = "Cadastrar";
-            this.buttonCadastrar.UseVisualStyleBackColor = true;
-            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Location = new System.Drawing.Point(209, 384);
-            this.buttonEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(82, 22);
-            this.buttonEditar.TabIndex = 2;
-            this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // buttonMenu
-            // 
-            this.buttonMenu.Location = new System.Drawing.Point(122, 384);
-            this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(82, 22);
-            this.buttonMenu.TabIndex = 3;
-            this.buttonMenu.Text = "Menu";
-            this.buttonMenu.UseVisualStyleBackColor = true;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
-            // 
-            // buttonApagar
-            // 
-            this.buttonApagar.Location = new System.Drawing.Point(34, 384);
-            this.buttonApagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(82, 22);
-            this.buttonApagar.TabIndex = 4;
-            this.buttonApagar.Text = "Apagar";
-            this.buttonApagar.UseVisualStyleBackColor = true;
-            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // ColumnId
             // 
@@ -135,11 +92,55 @@
             this.ColumnCidadeNatal.Name = "ColumnCidadeNatal";
             this.ColumnCidadeNatal.ReadOnly = true;
             // 
+            // buttonCadastrar
+            // 
+            this.buttonCadastrar.Location = new System.Drawing.Point(482, 6);
+            this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCadastrar.Name = "buttonCadastrar";
+            this.buttonCadastrar.Size = new System.Drawing.Size(82, 33);
+            this.buttonCadastrar.TabIndex = 1;
+            this.buttonCadastrar.Text = "Cadastrar";
+            this.buttonCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.Location = new System.Drawing.Point(394, 6);
+            this.buttonEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(82, 33);
+            this.buttonEditar.TabIndex = 2;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
+            // 
+            // buttonMenu
+            // 
+            this.buttonMenu.Location = new System.Drawing.Point(218, 6);
+            this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(82, 33);
+            this.buttonMenu.TabIndex = 3;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
+            // buttonApagar
+            // 
+            this.buttonApagar.Location = new System.Drawing.Point(306, 6);
+            this.buttonApagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonApagar.Name = "buttonApagar";
+            this.buttonApagar.Size = new System.Drawing.Size(82, 33);
+            this.buttonApagar.TabIndex = 4;
+            this.buttonApagar.Text = "Apagar";
+            this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
+            // 
             // TecnicoListagemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 414);
+            this.ClientSize = new System.Drawing.Size(577, 414);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonEditar);

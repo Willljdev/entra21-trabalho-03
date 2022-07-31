@@ -31,7 +31,6 @@
             this.labelNomeTecnico = new System.Windows.Forms.Label();
             this.textBoxNomeTecnico = new System.Windows.Forms.TextBox();
             this.labelCpf = new System.Windows.Forms.Label();
-            this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.labelDataNascimento = new System.Windows.Forms.Label();
             this.dateTimePickerDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.labelCidadeNatal = new System.Windows.Forms.Label();
@@ -39,6 +38,7 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
+            this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // labelNomeTecnico
@@ -57,7 +57,7 @@
             this.textBoxNomeTecnico.Location = new System.Drawing.Point(10, 24);
             this.textBoxNomeTecnico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeTecnico.Name = "textBoxNomeTecnico";
-            this.textBoxNomeTecnico.Size = new System.Drawing.Size(241, 26);
+            this.textBoxNomeTecnico.Size = new System.Drawing.Size(200, 26);
             this.textBoxNomeTecnico.TabIndex = 1;
             // 
             // labelCpf
@@ -69,15 +69,6 @@
             this.labelCpf.Size = new System.Drawing.Size(117, 18);
             this.labelCpf.TabIndex = 2;
             this.labelCpf.Text = "CPF do técnico";
-            // 
-            // maskedTextBoxCpf
-            // 
-            this.maskedTextBoxCpf.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBoxCpf.Location = new System.Drawing.Point(10, 72);
-            this.maskedTextBoxCpf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
-            this.maskedTextBoxCpf.Size = new System.Drawing.Size(162, 26);
-            this.maskedTextBoxCpf.TabIndex = 3;
             // 
             // labelDataNascimento
             // 
@@ -96,7 +87,7 @@
             this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(10, 120);
             this.dateTimePickerDataNascimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
-            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(219, 23);
+            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(200, 23);
             this.dateTimePickerDataNascimento.TabIndex = 5;
             // 
             // labelCidadeNatal
@@ -115,7 +106,7 @@
             this.textBoxCidadeNatal.Location = new System.Drawing.Point(9, 165);
             this.textBoxCidadeNatal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCidadeNatal.Name = "textBoxCidadeNatal";
-            this.textBoxCidadeNatal.Size = new System.Drawing.Size(162, 26);
+            this.textBoxCidadeNatal.Size = new System.Drawing.Size(201, 26);
             this.textBoxCidadeNatal.TabIndex = 7;
             // 
             // buttonCancelar
@@ -151,11 +142,21 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
+            // maskedTextBoxCpf
+            // 
+            this.maskedTextBoxCpf.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(10, 73);
+            this.maskedTextBoxCpf.Mask = "000.000.000-00";
+            this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(200, 26);
+            this.maskedTextBoxCpf.TabIndex = 13;
+            // 
             // TecnicoCadastroEdicaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 232);
+            this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonCancelar);
@@ -163,12 +164,12 @@
             this.Controls.Add(this.labelCidadeNatal);
             this.Controls.Add(this.dateTimePickerDataNascimento);
             this.Controls.Add(this.labelDataNascimento);
-            this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.labelCpf);
             this.Controls.Add(this.textBoxNomeTecnico);
             this.Controls.Add(this.labelNomeTecnico);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TecnicoCadastroEdicaoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TecnicoCadastroEdicaoForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,7 +181,6 @@
         private Label labelNomeTecnico;
         private TextBox textBoxNomeTecnico;
         private Label labelCpf;
-        private MaskedTextBox maskedTextBoxCpf;
         private Label labelDataNascimento;
         private DateTimePicker dateTimePickerDataNascimento;
         private Label labelCidadeNatal;
@@ -188,5 +188,6 @@
         private Button buttonCancelar;
         private Button buttonMenu;
         private Button buttonSalvar;
+        private MaskedTextBox maskedTextBoxCpf;
     }
 }

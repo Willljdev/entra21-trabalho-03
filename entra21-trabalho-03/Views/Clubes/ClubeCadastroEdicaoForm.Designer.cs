@@ -186,6 +186,7 @@
             this.Controls.Add(this.labelNomeClube);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ClubeCadastroEdicaoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro e Edição";
             this.ResumeLayout(false);
             this.PerformLayout();

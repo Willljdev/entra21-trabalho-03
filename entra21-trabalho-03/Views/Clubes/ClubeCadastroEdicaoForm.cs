@@ -24,13 +24,10 @@ namespace entra21_trabalho_03.Views.Clubes
 
             for (var i = 0; i < comboBoxTecnicoClube.Items.Count; i++)
             {
-                var tecnicoPercorrido = comboBoxTecnicoClube.Items[i] as Tecnico;
+                var posicaoPercorrida = comboBoxTecnicoClube.Items[i] as Posicao;
 
-                if (tecnicoPercorrido.Id == clube.Tecnico.Id)
-                {
-                    comboBoxTecnicoClube.SelectedItem = tecnicoPercorrido;
-                    
-                }
+                if (posicaoPercorrida.Id == clube.Tecnico.Id)
+                    comboBoxTecnicoClube.SelectedItem = posicaoPercorrida;
             }
         }
 
@@ -68,17 +65,17 @@ namespace entra21_trabalho_03.Views.Clubes
         }
         private bool ValidarDados()
         {
-            if (textBoxNomeClube.Text.Length < 3 || textBoxNomeClube.Text.Length > 15)
+            if (textBoxNomeClube.Text.Length < 3 || textBoxNomeClube.Text.Length > 30)
             {
-                MessageBox.Show("O nome do clube deve de 3 à 15 caracteres!");
+                MessageBox.Show("O nome do clube deve de 3 à 30 caracteres!");
                 textBoxNomeClube.ResetText();
                 textBoxNomeClube.Focus();
                 return false;
             }
 
-            if (textBoxCidadeSede.Text.Length < 3 || textBoxCidadeSede.Text.Length > 20)
+            if (textBoxCidadeSede.Text.Length < 3 || textBoxCidadeSede.Text.Length > 25)
             {
-                MessageBox.Show("O nome da cidade deve de 3 à 20 caracteres!");
+                MessageBox.Show("O nome da cidade deve de 3 à 25 caracteres!");
                 textBoxNomeClube.ResetText();
                 textBoxNomeClube.Focus();
                 return false;
