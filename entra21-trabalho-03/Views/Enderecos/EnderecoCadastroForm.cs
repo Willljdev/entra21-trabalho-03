@@ -349,5 +349,15 @@ namespace entra21_trabalho_03.Views.Enderecos
         {
 
         }
+
+        private void buttonLimpar_Click_1(object sender, EventArgs e)
+        {
+            maskedTextBoxCep.ResetText();
+            textBoxEnderecoCompleto.ResetText();
+            textBoxCidade.ResetText();
+            textBoxBairro.ResetText();
+            textBoxSigla.ResetText();
+            textBoxRua.ResetText();
+        }
     }
 }

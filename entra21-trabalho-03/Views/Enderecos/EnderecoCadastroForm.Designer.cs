@@ -51,6 +51,7 @@
             this.labelBairro = new System.Windows.Forms.Label();
             this.textBoxRua = new System.Windows.Forms.TextBox();
             this.labelRua = new System.Windows.Forms.Label();
+            this.buttonLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +86,7 @@
             // 
             // buttonCadastrar
             // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(130, 303);
+            this.buttonCadastrar.Location = new System.Drawing.Point(114, 303);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
             this.buttonCadastrar.TabIndex = 12;
@@ -250,11 +251,22 @@
             this.labelRua.TabIndex = 25;
             this.labelRua.Text = "Rua";
             // 
+            // buttonLimpar
+            // 
+            this.buttonLimpar.Location = new System.Drawing.Point(195, 303);
+            this.buttonLimpar.Name = "buttonLimpar";
+            this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpar.TabIndex = 26;
+            this.buttonLimpar.Text = "Limpar";
+            this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click_1);
+            // 
             // EnderecoCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(881, 330);
+            this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.labelRua);
             this.Controls.Add(this.textBoxRua);
             this.Controls.Add(this.labelBairro);
@@ -306,5 +318,6 @@
         private Label labelBairro;
         private TextBox textBoxRua;
         private Label labelRua;
+        private Button buttonLimpar;
     }
 }
