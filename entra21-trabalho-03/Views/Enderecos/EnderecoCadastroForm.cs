@@ -4,10 +4,10 @@ using Newtonsoft.Json;
 
 namespace entra21_trabalho_03.Views.Enderecos
 {
-    public partial class EnderecoCadastro : Form
+    public partial class EnderecoCadastroForm : Form
     {
         private readonly EnderecoCadastroService EnderecoCadastroService;
-        public EnderecoCadastro()
+        public EnderecoCadastroForm()
         {
             InitializeComponent();
 
@@ -104,12 +104,11 @@ namespace entra21_trabalho_03.Views.Enderecos
                 dataGridView1.Rows.Add(new object[]
                 {
                     endereco.Codigo,
-                    endereco.EnderecoCompleto,
                     endereco.Cep,
                     endereco.Estado,
-                    endereco.Rua,
                     endereco.Cidade,
-                    endereco.Bairro
+                    endereco.Bairro,
+                    endereco.Rua,
                 });
             }
         }
@@ -233,7 +232,7 @@ namespace entra21_trabalho_03.Views.Enderecos
             ObterDadosCep();
         }
 
-        private void EnderecoCadastroForm(object sender, EventArgs e)
+        private void EnderecoCadastroFormPreencher(object sender, EventArgs e)
         {
             PreencherDataGridViewComEnderecos();
         }

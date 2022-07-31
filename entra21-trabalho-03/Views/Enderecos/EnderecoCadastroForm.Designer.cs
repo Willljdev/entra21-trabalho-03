@@ -1,6 +1,6 @@
 ﻿namespace entra21_trabalho_03.Views.Enderecos
 {
-    partial class EnderecoCadastro
+    partial class EnderecoCadastroForm
     {
         /// <summary>
         /// Required designer variable.
