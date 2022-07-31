@@ -194,11 +194,7 @@ namespace entra21_trabalho_03.Views.Enderecos
 
 
             if (resposta == DialogResult.Cancel)
-            {
-                MessageBox.Show("Apagado com sucesso");
-
                 return;
-            }
 
             Endereco endereco = NewMethod();
 
