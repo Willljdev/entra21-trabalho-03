@@ -6,6 +6,6 @@
         public string Nome { get; set; }
         public DateTime Data_inicio { get; set; }
         public DateTime Data_termino { get; set; }
-        public Pais pais { get; set; }
+        public Pais Pais { get; set; }
     }
 }

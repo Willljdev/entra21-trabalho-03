@@ -25,6 +25,7 @@ namespace entra21_trabalho_03.Views.Jogadores
         {
             _idEditar = jogador.Id;
             textBoxNome.Text = jogador.Nome;
+            jogador.Genero = ObterGenero();
             maskedTextBoxCpf.Text = jogador.Cpf;
             dateTimePickerDataNascimento.Value = Convert.ToDateTime(jogador.DataNascimento.ToString("dd/MM/yy"));
             dateTimePickerHoraNascimento.Value = Convert.ToDateTime(jogador.DataNascimento.ToString("HH:mm:ss"));
@@ -86,13 +87,12 @@ namespace entra21_trabalho_03.Views.Jogadores
 
             var jogador = new Jogador();
             jogador.Nome = textBoxNome.Text.Trim();
+            jogador.Genero = ObterGenero();
             jogador.Posicao = posicao;
             jogador.Clube = clube;
             jogador.Cpf = maskedTextBoxCpf.Text.Trim();
             jogador.DataNascimento = Convert.ToDateTime(dateTimePickerDataNascimento.Value.Date.ToString("dd/MM/yyyy") + " " +
                 dateTimePickerHoraNascimento.Value.TimeOfDay);
-
-
 
             var jogadorService = new JogadorService();
 
@@ -134,6 +134,16 @@ namespace entra21_trabalho_03.Views.Jogadores
                 return false;
             }
             return true;
+        }
+
+        private string ObterGenero()
+        {
+            if (radioButtonMasculino.Checked == true)
+            {
+                return radioButtonMasculino.Text;
+            }
+
+            return radioButtonFeminino.Text;
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
