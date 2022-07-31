@@ -37,28 +37,37 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnCódigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEnderecoCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnMorador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
-            this.comboBoxMorador = new System.Windows.Forms.ComboBox();
-            this.labelMorador = new System.Windows.Forms.Label();
+            this.labelCidade = new System.Windows.Forms.Label();
+            this.textBoxCidade = new System.Windows.Forms.TextBox();
+            this.textBoxSigla = new System.Windows.Forms.TextBox();
+            this.labelSiglaEstado = new System.Windows.Forms.Label();
+            this.textBoxBairro = new System.Windows.Forms.TextBox();
+            this.labelBairro = new System.Windows.Forms.Label();
+            this.textBoxRua = new System.Windows.Forms.TextBox();
+            this.labelRua = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // maskedTextBoxCep
             // 
-            this.maskedTextBoxCep.Location = new System.Drawing.Point(21, 41);
+            this.maskedTextBoxCep.Location = new System.Drawing.Point(21, 30);
             this.maskedTextBoxCep.Mask = "99999-999";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
             this.maskedTextBoxCep.Size = new System.Drawing.Size(100, 23);
             this.maskedTextBoxCep.TabIndex = 0;
+            this.maskedTextBoxCep.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxCep_MaskInputRejected);
             this.maskedTextBoxCep.Leave += new System.EventHandler(this.maskedTextBoxCep_Leave);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 23);
+            this.label5.Location = new System.Drawing.Point(21, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 15);
             this.label5.TabIndex = 9;
@@ -66,7 +75,7 @@
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(21, 186);
+            this.buttonMenu.Location = new System.Drawing.Point(33, 303);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(75, 23);
             this.buttonMenu.TabIndex = 11;
@@ -76,7 +85,7 @@
             // 
             // buttonCadastrar
             // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(135, 186);
+            this.buttonCadastrar.Location = new System.Drawing.Point(130, 303);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
             this.buttonCadastrar.TabIndex = 12;
@@ -86,15 +95,16 @@
             // 
             // textBoxEnderecoCompleto
             // 
-            this.textBoxEnderecoCompleto.Location = new System.Drawing.Point(21, 104);
+            this.textBoxEnderecoCompleto.Location = new System.Drawing.Point(21, 274);
             this.textBoxEnderecoCompleto.Name = "textBoxEnderecoCompleto";
-            this.textBoxEnderecoCompleto.Size = new System.Drawing.Size(189, 23);
+            this.textBoxEnderecoCompleto.Size = new System.Drawing.Size(184, 23);
             this.textBoxEnderecoCompleto.TabIndex = 13;
+            this.textBoxEnderecoCompleto.TextChanged += new System.EventHandler(this.textBoxEnderecoCompleto_TextChanged);
             // 
             // labelEnderecoCompleto
             // 
             this.labelEnderecoCompleto.AutoSize = true;
-            this.labelEnderecoCompleto.Location = new System.Drawing.Point(21, 86);
+            this.labelEnderecoCompleto.Location = new System.Drawing.Point(16, 256);
             this.labelEnderecoCompleto.Name = "labelEnderecoCompleto";
             this.labelEnderecoCompleto.Size = new System.Drawing.Size(110, 15);
             this.labelEnderecoCompleto.TabIndex = 14;
@@ -108,14 +118,16 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCódigo,
             this.ColumnCep,
-            this.ColumnEnderecoCompleto,
-            this.ColumnMorador});
+            this.ColumnSigla,
+            this.ColumnCidade,
+            this.ColumnBairro,
+            this.ColumnRua});
             this.dataGridView1.Location = new System.Drawing.Point(235, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(445, 275);
+            this.dataGridView1.Size = new System.Drawing.Size(643, 275);
             this.dataGridView1.TabIndex = 15;
             // 
             // ColumnCódigo
@@ -130,17 +142,29 @@
             this.ColumnCep.Name = "ColumnCep";
             this.ColumnCep.ReadOnly = true;
             // 
-            // ColumnEnderecoCompleto
+            // ColumnSigla
             // 
-            this.ColumnEnderecoCompleto.HeaderText = "Endereço completo";
-            this.ColumnEnderecoCompleto.Name = "ColumnEnderecoCompleto";
-            this.ColumnEnderecoCompleto.ReadOnly = true;
+            this.ColumnSigla.HeaderText = "Sigla";
+            this.ColumnSigla.Name = "ColumnSigla";
+            this.ColumnSigla.ReadOnly = true;
             // 
-            // ColumnMorador
+            // ColumnCidade
             // 
-            this.ColumnMorador.HeaderText = "Morador";
-            this.ColumnMorador.Name = "ColumnMorador";
-            this.ColumnMorador.ReadOnly = true;
+            this.ColumnCidade.HeaderText = "Cidade";
+            this.ColumnCidade.Name = "ColumnCidade";
+            this.ColumnCidade.ReadOnly = true;
+            // 
+            // ColumnBairro
+            // 
+            this.ColumnBairro.HeaderText = "Bairro";
+            this.ColumnBairro.Name = "ColumnBairro";
+            this.ColumnBairro.ReadOnly = true;
+            // 
+            // ColumnRua
+            // 
+            this.ColumnRua.HeaderText = "Rua";
+            this.ColumnRua.Name = "ColumnRua";
+            this.ColumnRua.ReadOnly = true;
             // 
             // buttonApagar
             // 
@@ -162,32 +186,83 @@
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
-            // comboBoxMorador
+            // labelCidade
             // 
-            this.comboBoxMorador.DisplayMember = "Nome";
-            this.comboBoxMorador.FormattingEnabled = true;
-            this.comboBoxMorador.Location = new System.Drawing.Point(21, 157);
-            this.comboBoxMorador.Name = "comboBoxMorador";
-            this.comboBoxMorador.Size = new System.Drawing.Size(189, 23);
-            this.comboBoxMorador.TabIndex = 18;
-            this.comboBoxMorador.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.labelCidade.AutoSize = true;
+            this.labelCidade.Location = new System.Drawing.Point(21, 113);
+            this.labelCidade.Name = "labelCidade";
+            this.labelCidade.Size = new System.Drawing.Size(44, 15);
+            this.labelCidade.TabIndex = 18;
+            this.labelCidade.Text = "Cidade";
             // 
-            // labelMorador
+            // textBoxCidade
             // 
-            this.labelMorador.AutoSize = true;
-            this.labelMorador.Location = new System.Drawing.Point(21, 139);
-            this.labelMorador.Name = "labelMorador";
-            this.labelMorador.Size = new System.Drawing.Size(53, 15);
-            this.labelMorador.TabIndex = 19;
-            this.labelMorador.Text = "Morador";
+            this.textBoxCidade.Location = new System.Drawing.Point(21, 131);
+            this.textBoxCidade.Name = "textBoxCidade";
+            this.textBoxCidade.Size = new System.Drawing.Size(184, 23);
+            this.textBoxCidade.TabIndex = 19;
+            // 
+            // textBoxSigla
+            // 
+            this.textBoxSigla.Location = new System.Drawing.Point(21, 87);
+            this.textBoxSigla.Name = "textBoxSigla";
+            this.textBoxSigla.Size = new System.Drawing.Size(44, 23);
+            this.textBoxSigla.TabIndex = 20;
+            // 
+            // labelSiglaEstado
+            // 
+            this.labelSiglaEstado.AutoSize = true;
+            this.labelSiglaEstado.Location = new System.Drawing.Point(21, 69);
+            this.labelSiglaEstado.Name = "labelSiglaEstado";
+            this.labelSiglaEstado.Size = new System.Drawing.Size(87, 15);
+            this.labelSiglaEstado.TabIndex = 21;
+            this.labelSiglaEstado.Text = "Sigla do estado";
+            // 
+            // textBoxBairro
+            // 
+            this.textBoxBairro.Location = new System.Drawing.Point(21, 186);
+            this.textBoxBairro.Name = "textBoxBairro";
+            this.textBoxBairro.Size = new System.Drawing.Size(184, 23);
+            this.textBoxBairro.TabIndex = 22;
+            // 
+            // labelBairro
+            // 
+            this.labelBairro.AutoSize = true;
+            this.labelBairro.Location = new System.Drawing.Point(21, 168);
+            this.labelBairro.Name = "labelBairro";
+            this.labelBairro.Size = new System.Drawing.Size(38, 15);
+            this.labelBairro.TabIndex = 23;
+            this.labelBairro.Text = "Bairro";
+            // 
+            // textBoxRua
+            // 
+            this.textBoxRua.Location = new System.Drawing.Point(21, 230);
+            this.textBoxRua.Name = "textBoxRua";
+            this.textBoxRua.Size = new System.Drawing.Size(184, 23);
+            this.textBoxRua.TabIndex = 24;
+            // 
+            // labelRua
+            // 
+            this.labelRua.AutoSize = true;
+            this.labelRua.Location = new System.Drawing.Point(21, 212);
+            this.labelRua.Name = "labelRua";
+            this.labelRua.Size = new System.Drawing.Size(27, 15);
+            this.labelRua.TabIndex = 25;
+            this.labelRua.Text = "Rua";
             // 
             // EnderecoCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 328);
-            this.Controls.Add(this.labelMorador);
-            this.Controls.Add(this.comboBoxMorador);
+            this.ClientSize = new System.Drawing.Size(881, 330);
+            this.Controls.Add(this.labelRua);
+            this.Controls.Add(this.textBoxRua);
+            this.Controls.Add(this.labelBairro);
+            this.Controls.Add(this.textBoxBairro);
+            this.Controls.Add(this.labelSiglaEstado);
+            this.Controls.Add(this.textBoxSigla);
+            this.Controls.Add(this.textBoxCidade);
+            this.Controls.Add(this.labelCidade);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.dataGridView1);
@@ -219,9 +294,17 @@
         private Button buttonEditar;
         private DataGridViewTextBoxColumn ColumnCódigo;
         private DataGridViewTextBoxColumn ColumnCep;
-        private DataGridViewTextBoxColumn ColumnEnderecoCompleto;
-        private DataGridViewTextBoxColumn ColumnMorador;
-        private ComboBox comboBoxMorador;
-        private Label labelMorador;
+        private DataGridViewTextBoxColumn ColumnSigla;
+        private DataGridViewTextBoxColumn ColumnCidade;
+        private DataGridViewTextBoxColumn ColumnBairro;
+        private DataGridViewTextBoxColumn ColumnRua;
+        private Label labelCidade;
+        private TextBox textBoxCidade;
+        private TextBox textBoxSigla;
+        private Label labelSiglaEstado;
+        private TextBox textBoxBairro;
+        private Label labelBairro;
+        private TextBox textBoxRua;
+        private Label labelRua;
     }
 }
