@@ -18,14 +18,9 @@ CREATE TABLE esportes(
 
 CREATE TABLE clubes(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),
-
-	id_tecnico INTEGER,
-
 	nome VARCHAR(72),
 	cidade_sede VARCHAR(60),
 	ano_fundacao DATETIME2
-
-	FOREIGN KEY (id_tecnico) REFERENCES tecnicos(id)
 );
 
 CREATE TABLE jogadores(

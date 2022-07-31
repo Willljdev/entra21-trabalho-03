@@ -6,12 +6,9 @@ namespace entra21_trabalho_03.Views.Clubes
     public partial class ClubeCadastroEdicaoForm : Form
     {
         private readonly int _idEditar;
-        private readonly TecnicoService _tecnicoService;
         public ClubeCadastroEdicaoForm()
         {
             InitializeComponent();
-            _tecnicoService = new TecnicoService();
-            PreencherComboBox();
             _idEditar = -1;
         }
         public ClubeCadastroEdicaoForm(Clube clube) : this()
@@ -21,22 +18,10 @@ namespace entra21_trabalho_03.Views.Clubes
             textBoxCidadeSede.Text = clube.CidadeSede;
             dateTimePickerAnoFundacao.Value = Convert.ToDateTime(clube.AnoFundacao.ToString("dd/MM/yyyy"));
             dateTimePickerHoraFundacao.Value = Convert.ToDateTime(clube.AnoFundacao.ToString("HH:mm:ss"));
-
-            for (var i = 0; i < comboBoxTecnicoClube.Items.Count; i++)
-            {
-                var tecnicoPercorrido = comboBoxTecnicoClube.Items[i] as Tecnico;
-
-                if (tecnicoPercorrido.Nome == clube.Tecnico.Nome)
-                {
-                    comboBoxTecnicoClube.SelectedItem = tecnicoPercorrido;
-                    break;
-                }
-            }
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            var tecnico = comboBoxTecnicoClube.SelectedItem as Tecnico;
             var nome = textBoxNomeClube.Text.Trim();
             var cidadeSede = textBoxCidadeSede.Text.Trim();
             var dataFundacao = Convert.ToDateTime(dateTimePickerAnoFundacao.Value.Date.ToString("dd/MM/yyyy") + " " +
@@ -49,7 +34,6 @@ namespace entra21_trabalho_03.Views.Clubes
             clube.Nome = nome;
             clube.CidadeSede = cidadeSede;
             clube.AnoFundacao = dataFundacao;
-            clube.Tecnico = tecnico;
 
             var clubeService = new ClubeService();
 
@@ -85,16 +69,6 @@ namespace entra21_trabalho_03.Views.Clubes
                 return false;
             }
             return true;
-        }
-
-        private void PreencherComboBox()
-        {
-            var tecnicos = _tecnicoService.ObterTodos();
-            for (var i = 0; i < tecnicos.Count; i++)
-            {
-                var tecnico = tecnicos[i];
-                comboBoxTecnicoClube.Items.Add(tecnico);
-            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)

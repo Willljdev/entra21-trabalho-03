@@ -1,5 +1,6 @@
 ﻿using entra21_trabalho_03.Views.Clubes;
 using entra21_trabalho_03.Views.Competicoes;
+using entra21_trabalho_03.Views.Enderecos;
 using entra21_trabalho_03.Views.Jogadores;
 using entra21_trabalho_03.Views.Paises;
 using entra21_trabalho_03.Views.Posicoes;
@@ -50,6 +51,11 @@ namespace entra21_trabalho_03.Views
             var tecnicos = new TecnicoListagemForm();
             tecnicos.ShowDialog();
         }
+        private void buttonEnderecos_Click(object sender, EventArgs e)
+        {
+            var enderecosForm = new EnderecoCadastroForm();
+            enderecosForm.ShowDialog();
+        }
         private void BotoesTransparentes()
         {
             buttonPosicoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -87,6 +93,12 @@ namespace entra21_trabalho_03.Views
             buttonTecnicos.FlatAppearance.MouseDownBackColor = Color.Transparent;
             buttonTecnicos.FlatAppearance.MouseOverBackColor = Color.Transparent;
             buttonTecnicos.BackColor = Color.Transparent;
+
+            buttonEnderecos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonEnderecos.FlatAppearance.BorderSize = 0;
+            buttonEnderecos.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonEnderecos.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonEnderecos.BackColor = Color.Transparent;
         }
     }
 }
