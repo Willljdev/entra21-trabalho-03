@@ -35,11 +35,11 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelLocalPraticado = new System.Windows.Forms.Label();
-            this.comboBoxClube = new System.Windows.Forms.ComboBox();
-            this.labelClube = new System.Windows.Forms.Label();
             this.textBoxLocalPraticado = new System.Windows.Forms.TextBox();
             this.numericUpDownJogadores = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownClube = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxTecnico = new System.Windows.Forms.ComboBox();
+            this.labelTecnico = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJogadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClube)).BeginInit();
             this.SuspendLayout();
@@ -114,32 +114,12 @@
             this.labelLocalPraticado.TabIndex = 12;
             this.labelLocalPraticado.Text = "Local praticado";
             // 
-            // comboBoxClube
-            // 
-            this.comboBoxClube.DisplayMember = "nome";
-            this.comboBoxClube.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.comboBoxClube.FormattingEnabled = true;
-            this.comboBoxClube.Location = new System.Drawing.Point(11, 215);
-            this.comboBoxClube.Name = "comboBoxClube";
-            this.comboBoxClube.Size = new System.Drawing.Size(121, 26);
-            this.comboBoxClube.TabIndex = 17;
-            // 
-            // labelClube
-            // 
-            this.labelClube.AutoSize = true;
-            this.labelClube.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelClube.Location = new System.Drawing.Point(12, 194);
-            this.labelClube.Name = "labelClube";
-            this.labelClube.Size = new System.Drawing.Size(53, 18);
-            this.labelClube.TabIndex = 18;
-            this.labelClube.Text = "Clube ";
-            // 
             // textBoxLocalPraticado
             // 
             this.textBoxLocalPraticado.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxLocalPraticado.Location = new System.Drawing.Point(12, 168);
             this.textBoxLocalPraticado.Name = "textBoxLocalPraticado";
-            this.textBoxLocalPraticado.Size = new System.Drawing.Size(139, 26);
+            this.textBoxLocalPraticado.Size = new System.Drawing.Size(193, 26);
             this.textBoxLocalPraticado.TabIndex = 19;
             // 
             // numericUpDownJogadores
@@ -147,7 +127,7 @@
             this.numericUpDownJogadores.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.numericUpDownJogadores.Location = new System.Drawing.Point(12, 76);
             this.numericUpDownJogadores.Name = "numericUpDownJogadores";
-            this.numericUpDownJogadores.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDownJogadores.Size = new System.Drawing.Size(193, 26);
             this.numericUpDownJogadores.TabIndex = 20;
             // 
             // numericUpDownClube
@@ -160,8 +140,28 @@
             0,
             0});
             this.numericUpDownClube.Name = "numericUpDownClube";
-            this.numericUpDownClube.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDownClube.Size = new System.Drawing.Size(192, 26);
             this.numericUpDownClube.TabIndex = 21;
+            // 
+            // comboBoxTecnico
+            // 
+            this.comboBoxTecnico.DisplayMember = "Nome";
+            this.comboBoxTecnico.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxTecnico.FormattingEnabled = true;
+            this.comboBoxTecnico.Location = new System.Drawing.Point(12, 215);
+            this.comboBoxTecnico.Name = "comboBoxTecnico";
+            this.comboBoxTecnico.Size = new System.Drawing.Size(192, 26);
+            this.comboBoxTecnico.TabIndex = 22;
+            // 
+            // labelTecnico
+            // 
+            this.labelTecnico.AutoSize = true;
+            this.labelTecnico.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelTecnico.Location = new System.Drawing.Point(13, 197);
+            this.labelTecnico.Name = "labelTecnico";
+            this.labelTecnico.Size = new System.Drawing.Size(66, 18);
+            this.labelTecnico.TabIndex = 23;
+            this.labelTecnico.Text = "Técnico";
             // 
             // EsporteCadastroForm
             // 
@@ -169,11 +169,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(255, 288);
+            this.Controls.Add(this.labelTecnico);
+            this.Controls.Add(this.comboBoxTecnico);
             this.Controls.Add(this.numericUpDownClube);
             this.Controls.Add(this.numericUpDownJogadores);
             this.Controls.Add(this.textBoxLocalPraticado);
-            this.Controls.Add(this.labelClube);
-            this.Controls.Add(this.comboBoxClube);
             this.Controls.Add(this.labelLocalPraticado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelar);
@@ -200,10 +200,10 @@
         private Button buttonCancelar;
         private Label label1;
         private Label labelLocalPraticado;
-        private ComboBox comboBoxClube;
-        private Label labelClube;
         private TextBox textBoxLocalPraticado;
         private NumericUpDown numericUpDownJogadores;
         private NumericUpDown numericUpDownClube;
+        private ComboBox comboBoxTecnico;
+        private Label labelTecnico;
     }
 }

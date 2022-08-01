@@ -5,15 +5,15 @@
 
 CREATE TABLE esportes(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),
-	
-	id_clube INTEGER,
+
+	id_tecnico INTEGER,
 
 	nome VARCHAR(60),
 	quantidade_jogadores_time INTEGER,
 	quantidade_atletas_clube INTEGER,
 	local_praticado VARCHAR(50),
-	
-	FOREIGN KEY (id_clube) REFERENCES clubes(id)
+
+	FOREIGN KEY (id_tecnico) REFERENCES tecnicos(id)
 );
 
 CREATE TABLE clubes(

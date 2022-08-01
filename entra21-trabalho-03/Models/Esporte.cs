@@ -14,6 +14,6 @@ namespace entra21_trabalho_03.EsportesCompeticoes.Models
 
         public string LocalPraticado { get; set; }
 
-        public Clube Clube { get; set; }
+        public Tecnico Tecnico { get; set; }
     }
 }

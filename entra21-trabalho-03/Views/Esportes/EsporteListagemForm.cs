@@ -23,19 +23,20 @@ namespace entra21_trabalho_03.Views.Paises
 
         private void PreencherDataGridView()
         {
-            var esporte = _esporteService.ObterTodos();
+            var esportes = _esporteService.ObterTodos();
             dataGridView1.Rows.Clear();
 
-            for (int i = 0; i < esporte.Count; i++)
+            for (int i = 0; i < esportes.Count; i++)
             {
-                var esportes = esporte[i];
+                var esporte = esportes[i];
                 dataGridView1.Rows.Add(new object[]
                 {
-                    esportes.Id,
-                    esportes.Nome,
-                    esportes.QuantidadesJogadoresTime,
-                    esportes.QuantidadesAtletasClube,
-                    esportes.LocalPraticado
+                    esporte.Id,
+                    esporte.Nome,
+                    esporte.QuantidadesJogadoresTime,
+                    esporte.QuantidadesAtletasClube,
+                    esporte.LocalPraticado,
+                    esporte.Tecnico.Nome
                 });
             }
         }

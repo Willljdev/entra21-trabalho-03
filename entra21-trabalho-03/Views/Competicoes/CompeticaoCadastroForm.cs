@@ -1,17 +1,18 @@
 ﻿using entra21_trabalho_03.EsportesCompeticoes.Models;
+using entra21_trabalho_03.EsportesCompeticoes.Services;
 using entra21_trabalho_03.Services;
 
 namespace entra21_trabalho_03.Views.Competicoes
 {
     public partial class CompeticaoCadastroForm : Form
     {
-        private readonly CompeticaoService _competicaoService;
+        private readonly EsporteService _esporteService;
         private readonly int _idEditar;
         public CompeticaoCadastroForm()
         {
             InitializeComponent();
 
-            _competicaoService = new CompeticaoService();
+            _esporteService = new EsporteService();
 
             PreencherComboBoxEsporte();
             BotoesTransparentes();
@@ -41,7 +42,7 @@ namespace entra21_trabalho_03.Views.Competicoes
 
         private void PreencherComboBoxEsporte()
         {
-            var esportes = _competicaoService.ObterTodos();
+            var esportes = _esporteService.ObterTodos();
 
             for (var i = 0; i < esportes.Count; i++)
             {
@@ -62,18 +63,42 @@ namespace entra21_trabalho_03.Views.Competicoes
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-            var nome = textBoxNome.Text.Trim();
-            var dataInicio = Convert.ToDateTime(dateTimePickerHoraInicio.Text);
-            var dataTermino = Convert.ToDateTime(dateTimePickerDateInicio.Text);
+            var esportes = comboBoxEsportes.SelectedItem as Esporte;
 
-            if (nome.Length < 3 || nome.Length > 50)
+            if (textBoxNome.Text.Length < 3 || textBoxNome.Text.Length > 50)
             {
                 MessageBox.Show("Digita um nome maior ai poh!!");
                 textBoxNome.ResetText();
                 textBoxNome.Focus();
                 return;
             }
+
+            var competicao = new Competicao();
+            competicao.Nome = textBoxNome.Text.Trim();
+            competicao.DataInicio = Convert.ToDateTime(dateTimePickerDateInicio.Value.Date.ToString("dd/MM/yyyy") + " " +
+                dateTimePickerHoraInicio.Value.Hour.ToString("HH:mm:ss"));
+            competicao.DataTermino = Convert.ToDateTime(dateTimePickerDateTermino.Value.Date.ToString("dd/MM/yyyy") + " " +
+                dateTimePickerHoraTermino.Value.Hour.ToString("HH:mm:ss"));
+            competicao.Esporte = esportes;
+
+            var competicaoService = new CompeticaoService();
+
+            if(_idEditar == -1)
+            {
+                competicaoService.Cadastrar(competicao);
+                MessageBox.Show("Cadastro da competição realizado");
+                Close();
+            }
+            else
+            {
+                competicao.Id = _idEditar;
+                competicaoService.Editar(competicao);
+                MessageBox.Show("Competição cadastrada com sucesso");
+                Close();
+            }
         }
+
+        
 
         private void BotoesTransparentes()
         {
